@@ -68,8 +68,12 @@ namespace Ensino
 
         private void btnEditarCurso_Click(object sender, EventArgs e)
         {
-            var curso = cursoBindingSource.Current as Curso;
-            MessageBox.Show(curso.Nome);
+            var cursoId = Convert.ToInt32(dgvCursos.CurrentRow.Cells[0].Value);
+            var curso = _cursoRepository.ObterPorId(cursoId);
+            using (var form = new FormCurso(curso))
+            {
+                form.ShowDialog();
+            }
         }
     }
 }

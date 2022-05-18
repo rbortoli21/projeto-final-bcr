@@ -23,7 +23,12 @@ namespace Ensino.Views
 
         private void FormCurso_Load(object sender, EventArgs e)
         {
-            
+            if(!string.IsNullOrEmpty(curso.Nome))
+            {
+                textBoxNomeCurso.Text = curso.Nome;
+                comboBoxCursoTurno.Text = curso.Turno;
+                numericCargaHoraria.Value = curso.CargaHoraria;
+            }
         }
 
         private void btnCursoSalvar_Click(object sender, EventArgs e)
