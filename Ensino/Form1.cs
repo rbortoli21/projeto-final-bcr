@@ -74,6 +74,7 @@ namespace Ensino
        
         private void btnEditarCurso_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             var id = Convert.ToInt32(dgvCursos.CurrentRow.Cells[0].Value);
             var curso = _cursoRepository.ObterPorId(id);
             using (var form = new FormCurso(curso))
@@ -105,6 +106,14 @@ namespace Ensino
                 }
             }
             AtualizarGrid();
+=======
+            var cursoId = Convert.ToInt32(dgvCursos.CurrentRow.Cells[0].Value);
+            var curso = _cursoRepository.ObterPorId(cursoId);
+            using (var form = new FormCurso(curso))
+            {
+                form.ShowDialog();
+            }
+>>>>>>> telas
         }
 
         private void btnDeletarCurso_Click(object sender, EventArgs e)
