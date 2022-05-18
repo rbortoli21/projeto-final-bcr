@@ -48,6 +48,7 @@
             // 
             // comboBoxCursoTurno
             // 
+            this.comboBoxCursoTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCursoTurno.FormattingEnabled = true;
             this.comboBoxCursoTurno.Items.AddRange(new object[] {
             "Matutino",
@@ -169,14 +170,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxNomeCurso;
-        private System.Windows.Forms.ComboBox comboBoxCursoTurno;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericCargaHoraria;
         private System.Windows.Forms.Button btnCursoSalvar;
         private System.Windows.Forms.Button btnCursoCancelar;
+        public System.Windows.Forms.TextBox textBoxNomeCurso;
+        public System.Windows.Forms.ComboBox comboBoxCursoTurno;
+        public System.Windows.Forms.NumericUpDown numericCargaHoraria;
     }
 }

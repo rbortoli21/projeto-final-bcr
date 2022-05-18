@@ -23,7 +23,12 @@ namespace Ensino.Views
 
         private void FormCurso_Load(object sender, EventArgs e)
         {
-            
+            if (!string.IsNullOrEmpty(curso.Nome))
+            {
+                textBoxNomeCurso.Text = curso.Nome;
+                comboBoxCursoTurno.Text = curso.Turno;
+                numericCargaHoraria.Value = curso.CargaHoraria;
+            }
         }
 
         private void btnCursoSalvar_Click(object sender, EventArgs e)
@@ -33,7 +38,6 @@ namespace Ensino.Views
             curso.CargaHoraria = (int)numericCargaHoraria.Value;
             using (var db = new DataContext())
                 curso.QuantidadeAlunos = db.Alunos.Where(aluno => aluno.Curso.Id == curso.Id).Count();
-            MessageBox.Show($"Carga horária: {curso.CargaHoraria}, Nome: {curso.Nome}, Turno: {curso.Turno}, Quantidade: {curso.QuantidadeAlunos}");
         }
     }
 }
