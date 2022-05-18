@@ -13,24 +13,33 @@ namespace Ensino.Models.Repositories
         private DataContext _dbContext;
         public CursoRepository() => _dbContext = new DataContext();
 
-        public void Alterar()
+        public Curso Alterar(Curso cursoAtual, Curso cursoNovo)
         {
-            throw new NotImplementedException();
+            if (_dbContext.Cursos.Where(c => c.Turno == cursoNovo.Turno).Where(c => c.Nome == cursoNovo.Nome).Any())
+                throw new DuplicateWaitObjectException();
+            cursoAtual = cursoNovo;
+            return cursoAtual;
         }
-
         public Curso Cadastrar(Curso curso)
         {
-            _dbContext.Cursos.Add(curso);
-            _dbContext.SaveChanges();
+            if (_dbContext.Cursos.Where(c => c.Turno == curso.Turno).Where(c => c.Nome == curso.Nome).Any())
+                throw new DuplicateWaitObjectException();
+            else
+            {
+                _dbContext.Cursos.Add(curso);
+                _dbContext.SaveChanges();
+            }
             return curso;
         }
 
         public void Deletar(Curso curso)
         {
-            _dbContext.Cursos.Remove(curso);
-            _dbContext.SaveChanges();
+            if (_dbContext.Cursos.Where(c => c.Id == curso.Id).Any())
+            {
+                _dbContext.Cursos.Remove(curso);
+                _dbContext.SaveChanges();
+            }
         }
-
         public List<Curso> Obter()
         => _dbContext.Cursos.ToList();
         public Curso ObterPorId(int id)

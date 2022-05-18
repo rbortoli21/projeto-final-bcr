@@ -11,7 +11,7 @@ namespace Ensino.Models.Repositories.Interfaces
         List<Curso> Obter();
         Curso ObterPorId(int id);
         Curso Cadastrar(Curso aluno);
-        void Alterar();
+        Curso Alterar(Curso cursoAtual, Curso cursoNovo);
         void Deletar(Curso aluno);
     }
 }
