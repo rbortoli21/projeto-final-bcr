@@ -23,11 +23,7 @@ namespace Ensino.Views
 
         private void FormCurso_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             if (!string.IsNullOrEmpty(curso.Nome))
-=======
-            if(!string.IsNullOrEmpty(curso.Nome))
->>>>>>> telas
             {
                 textBoxNomeCurso.Text = curso.Nome;
                 comboBoxCursoTurno.Text = curso.Turno;
