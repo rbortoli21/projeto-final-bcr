@@ -17,12 +17,10 @@ namespace Ensino
 {
     public partial class Form1 : Form
     {
-        private readonly IAlunoRepository _alunoRepository; 
-        private readonly ICursoRepository _cursoRepository; 
+        private readonly ICursoRepository _cursoRepository;
         public Form1()
         {
             InitializeComponent();
-            _alunoRepository = new AlunoRepository();
             _cursoRepository = new CursoRepository();
         }
 
@@ -40,9 +38,9 @@ namespace Ensino
 
         private void dgvCategorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvCursos.CurrentRow.Index != -1)
-                btnDeletarCurso.Enabled = true;
-            btnDeletarCurso.Enabled = false;
+            if (dgvCursos.CurrentRow.Index == -1)
+                btnDeletarCurso.Enabled = false;
+            btnDeletarCurso.Enabled = true;
         }
 
         private void btnNovoCurso_Click(object sender, EventArgs e)
@@ -51,7 +49,7 @@ namespace Ensino
             using (var form = new FormCurso(curso))
             {
                 if (form.ShowDialog() == DialogResult.OK)
-                {   
+                {
                     try
                     {
                         _cursoRepository.Cadastrar(curso);
@@ -66,14 +64,14 @@ namespace Ensino
                         MessageBox.Show($"O curso \"{curso.Nome}\" não pôde ser cadastrado, verifique os campos e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    MessageBox.Show($"O curso \"{curso.Nome}\" foi cadastrado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);      
-                }     
+                    MessageBox.Show($"O curso \"{curso.Nome}\" foi cadastrado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             AtualizarGrid();
         }
-       
+
         private void btnEditarCurso_Click(object sender, EventArgs e)
-        { 
+        {
             var id = Convert.ToInt32(dgvCursos.CurrentRow.Cells[0].Value);
             var curso = _cursoRepository.ObterPorId(id);
             using (var form = new FormCurso(curso))
@@ -88,7 +86,7 @@ namespace Ensino
                             Turno = form.comboBoxCursoTurno.Text,
                             CargaHoraria = (int)form.numericCargaHoraria.Value
                         };
-                        _cursoRepository.Alterar(curso, curso_n); 
+                        _cursoRepository.Alterar(curso, curso_n);
                     }
                     catch (DuplicateWaitObjectException)
                     {
@@ -124,6 +122,15 @@ namespace Ensino
             MessageBox.Show($"O curso \"{curso.Nome}\" foi deletado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AtualizarGrid();
         }
-        
+
+        private void btnImprimirCurso_Click(object sender, EventArgs e)
+        {
+            List<Curso> dt = (List<Curso>)dgvCursos.DataSource;
+            using (var form = new FormRelatorio(dt))
+            {
+                form.ShowDialog();
+            }
+        }
+
     }
 }

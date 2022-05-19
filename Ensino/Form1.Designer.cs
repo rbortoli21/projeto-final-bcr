@@ -40,6 +40,7 @@
             this.btnNovoCurso = new System.Windows.Forms.Button();
             this.btnEditarCurso = new System.Windows.Forms.Button();
             this.btnDeletarCurso = new System.Windows.Forms.Button();
+            this.btnImprimirCurso = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -149,12 +150,23 @@
             this.btnDeletarCurso.UseVisualStyleBackColor = true;
             this.btnDeletarCurso.Click += new System.EventHandler(this.btnDeletarCurso_Click);
             // 
+            // btnImprimirCurso
+            // 
+            this.btnImprimirCurso.Location = new System.Drawing.Point(713, 206);
+            this.btnImprimirCurso.Name = "btnImprimirCurso";
+            this.btnImprimirCurso.Size = new System.Drawing.Size(75, 23);
+            this.btnImprimirCurso.TabIndex = 3;
+            this.btnImprimirCurso.Text = "Imprimir";
+            this.btnImprimirCurso.UseVisualStyleBackColor = true;
+            this.btnImprimirCurso.Click += new System.EventHandler(this.btnImprimirCurso_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(29)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnImprimirCurso);
             this.Controls.Add(this.btnDeletarCurso);
             this.Controls.Add(this.btnEditarCurso);
             this.Controls.Add(this.btnNovoCurso);
@@ -183,6 +195,7 @@
         private System.Windows.Forms.Button btnNovoCurso;
         private System.Windows.Forms.Button btnEditarCurso;
         private System.Windows.Forms.Button btnDeletarCurso;
+        private System.Windows.Forms.Button btnImprimirCurso;
     }
 }
 

@@ -10,7 +10,7 @@ namespace Ensino.Models.Repositories.Interfaces
     {
         List<Aluno> Obter();
         Aluno ObterPorId(int id);
-        void Cadastrar(Aluno aluno);
+        Aluno Cadastrar(Aluno aluno);
         void Alterar();
         void Deletar(Aluno aluno);
     }

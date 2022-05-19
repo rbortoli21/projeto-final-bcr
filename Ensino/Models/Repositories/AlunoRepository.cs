@@ -18,16 +18,20 @@ namespace Ensino.Models.Repositories
             throw new NotImplementedException();
         }
 
-        public void Cadastrar(Aluno aluno)
+        public Aluno Cadastrar(Aluno aluno)
         {
             _dbContext.Alunos.Add(aluno);
             _dbContext.SaveChanges();
+            return aluno;
         }
 
         public void Deletar(Aluno aluno)
         {
-            _dbContext.Alunos.Remove(aluno);
-            _dbContext.SaveChanges();
+            if (_dbContext.Alunos.Where(c => c.Id == aluno.Id).Any())
+            {
+                _dbContext.Alunos.Remove(aluno);
+                _dbContext.SaveChanges();
+            }
         } 
 
         public List<Aluno> Obter()
