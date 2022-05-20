@@ -17,7 +17,9 @@ namespace Ensino.Models.Repositories
         {
             if (_dbContext.Cursos.Where(c => c.Turno == cursoNovo.Turno).Where(c => c.Nome == cursoNovo.Nome).Any())
                 throw new DuplicateWaitObjectException();
-            cursoAtual = cursoNovo;
+            cursoAtual.Nome = cursoNovo.Nome;
+            cursoAtual.Turno = cursoNovo.Turno;
+            cursoAtual.CargaHoraria = cursoNovo.CargaHoraria;
             return cursoAtual;
         }
         public Curso Cadastrar(Curso curso)
