@@ -51,8 +51,8 @@ namespace Ensino.Views
         private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam);
         private void FCursos_Load(object sender, EventArgs e)
         {
-            dgvListarCursos.DataSource = _cursoRepository.Obter();
             SendMessage(this.comboBoxTurnoCurso.Handle, CB_SETCUEBANNER, 0, "Selecione um Turno");
+            dgvListarCursos.DataSource = _cursoRepository.Obter();
         }
 
 

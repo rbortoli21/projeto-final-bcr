@@ -43,9 +43,10 @@ namespace Ensino.Models.Repositories
                 _dbContext.SaveChanges();
             }
         }
-        public List<Curso> Obter()
-        => _dbContext.Cursos.ToList();
-        
+        public async Task<List<Curso>> Obter()
+        {
+            return _dbContext.Cursos.ToList();
+        }
         public Curso ObterPorId(int id)
         => _dbContext.Cursos.ToList().FirstOrDefault(curso => curso.Id == id);
 
