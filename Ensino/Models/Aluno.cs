@@ -25,17 +25,5 @@ namespace Ensino.Models
         public string Endereco { get; set; }
         [Required]
         public Curso Curso { get; set; }
-
-        public Aluno(string nome, string email, string telefone, string responsavel, string matricula, string endereco, Curso curso)
-        {
-            Nome = nome;
-            Email = email;
-            Telefone = telefone;
-            Responsavel = responsavel;
-            Matricula = matricula;
-            Endereco = endereco;
-            Curso = curso;
-        }
-        public Aluno() { }
     }
 }
