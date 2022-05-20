@@ -93,7 +93,7 @@
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(250, 40);
             this.btnDashboard.TabIndex = 18;
-            this.btnDashboard.Text = "Dashboard";
+            this.btnDashboard.Text = "Painel de Controle";
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 

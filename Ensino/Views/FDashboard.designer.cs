@@ -161,9 +161,9 @@
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label15.Location = new System.Drawing.Point(17, 9);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(88, 20);
+            this.label15.Size = new System.Drawing.Size(138, 20);
             this.label15.TabIndex = 37;
-            this.label15.Text = "Dashboard";
+            this.label15.Text = "Painel de Controle";
             // 
             // panel9
             // 

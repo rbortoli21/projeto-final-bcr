@@ -20,6 +20,7 @@ namespace Ensino.Models.Repositories
             cursoAtual.Nome = cursoNovo.Nome;
             cursoAtual.Turno = cursoNovo.Turno;
             cursoAtual.CargaHoraria = cursoNovo.CargaHoraria;
+            _dbContext.SaveChanges();
             return cursoAtual;
         }
         public Curso Cadastrar(Curso curso)
@@ -44,6 +45,7 @@ namespace Ensino.Models.Repositories
         }
         public List<Curso> Obter()
         => _dbContext.Cursos.ToList();
+        
         public Curso ObterPorId(int id)
         => _dbContext.Cursos.ToList().FirstOrDefault(curso => curso.Id == id);
 

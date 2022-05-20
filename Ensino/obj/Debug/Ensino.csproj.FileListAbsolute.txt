@@ -261,3 +261,8 @@ C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.csproj.CopyComplete
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.exe
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.pdb
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FAlunos.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FCursos.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FDashboard.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FEditarCurso.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FLayout.resources

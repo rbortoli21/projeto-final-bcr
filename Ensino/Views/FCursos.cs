@@ -61,7 +61,6 @@ namespace Ensino.Views
         {
             var id = Convert.ToInt32(dgvListarCursos.CurrentRow.Cells[0].Value);
             var curso = _cursoRepository.ObterPorId(id);
-            PegarDadosParaAlteracao(curso);
         }
 
         //Cadastro
@@ -78,7 +77,7 @@ namespace Ensino.Views
                 MessageBox.Show($"O curso \"{curso.Nome}\" já está cadastrado neste Turno, para poder cadastrá-lo novamente, altere o turno.");
                 return;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show($"O curso \"{curso.Nome}\" não pôde ser cadastrado, verifique os campos e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -101,44 +100,36 @@ namespace Ensino.Views
         {
             var id = Convert.ToInt32(dgvListarCursos.CurrentRow.Cells[0].Value);
             var curso = _cursoRepository.ObterPorId(id);
-            try
+            using (var form = new FEditarCurso(curso))
             {
-                var curso_n = new Curso
+                if (form.ShowDialog() == DialogResult.OK)
                 {
-                    Nome = txtBoxNomeCurso.Text,
-                    Turno = comboBoxTurnoCurso.Text,
-                    CargaHoraria = (int)numericUpDownCargaHoraria.Value
-                };
-                _cursoRepository.Alterar(curso, curso_n);
+                    try
+                    {
+                        var curso_n = new Curso
+                        {
+                            Nome = form.txtBoxNomeCurso.Text,
+                            Turno = form.comboBoxTurnoCurso.Text,
+                            CargaHoraria = (int)form.numericUpDownCargaHoraria.Value
+                        };
+                        _cursoRepository.Alterar(curso, curso_n);
+                    }
+                    catch (DuplicateWaitObjectException)
+                    {
+                        MessageBox.Show($"O curso \"{curso.Nome}\" já está cadastrado neste Turno, para poder cadastrá-lo novamente, altere o turno.");
+                        return;
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show($"O curso \"{curso.Nome}\" não pôde ser alterado, verifique os dados e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    MessageBox.Show($"O curso \"{curso.Nome}\" foi alterado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizarGrid();
+                }
             }
-            catch (DuplicateWaitObjectException)
-            {
-                MessageBox.Show($"O curso \"{curso.Nome}\" já está cadastrado neste Turno, para poder cadastrá-lo novamente, altere o turno.");
-                return;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"O curso \"{curso.Nome}\" não pôde ser alterado, verifique os dados e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            MessageBox.Show($"O curso \"{curso.Nome}\" foi alterado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            AtualizarGrid();
-            LimparCampos();
-            btnEditarCurso.Visible = false;
-            btnSalvarCurso.Visible = true;
         }
 
-        private void PegarDadosParaAlteracao(Curso curso)
-        {
-            btnSalvarCurso.Visible = false;
-            btnEditarCurso.Visible = true;
-            if (!string.IsNullOrEmpty(curso.Nome))
-            {
-                txtBoxNomeCurso.Text = curso.Nome;
-                comboBoxTurnoCurso.Text = curso.Turno;
-                numericUpDownCargaHoraria.Value = curso.CargaHoraria;
-            }
-        }
         //Deleção
         private void btnDeletarCurso_Click(object sender, EventArgs e)
         {
@@ -161,8 +152,6 @@ namespace Ensino.Views
 
         private void btnCancelarCurso_Click(object sender, EventArgs e)
         {
-            btnEditarCurso.Visible = false;
-            btnSalvarCurso.Visible = true;
             if (!string.IsNullOrEmpty(txtBoxNomeCurso.Text))
             {
                 txtBoxNomeCurso.Text = String.Empty;
@@ -170,7 +159,7 @@ namespace Ensino.Views
                 numericUpDownCargaHoraria.Value = decimal.Zero;
             }
         }
-        
+
         private void LimparCampos()
         {
             if (!string.IsNullOrEmpty(txtBoxNomeCurso.Text))

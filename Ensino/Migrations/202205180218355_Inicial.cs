@@ -1,4 +1,4 @@
-﻿namespace Ensino.Migrations
+﻿ namespace Ensino.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
