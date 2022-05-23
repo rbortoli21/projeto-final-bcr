@@ -23,7 +23,7 @@ namespace Ensino.Views
             _cursoRepository = new CursoRepository();
         }
 
-        private void AtualizarGrid()
+        public void AtualizarGrid()
         {
             dgvListarCursos.DataSource = _cursoRepository.Obter();
             dgvListarCursos.Refresh();

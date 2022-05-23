@@ -14,6 +14,7 @@ namespace Ensino.Models
         [Required(AllowEmptyStrings = true)]
         public string Nome { get; set; }
         [Required(AllowEmptyStrings = true)]
+        public string NomeCurso { get; set; }
         public string CPF { get; set; }
         [Required(AllowEmptyStrings = true)]
         public string Email { get; set; }
@@ -25,7 +26,7 @@ namespace Ensino.Models
         public string Matricula { get; set; }
         [Required(AllowEmptyStrings = true)]
         public string Endereco { get; set; }
-        [Required(AllowEmptyStrings = true)]
+        [Required]
         public Curso Curso { get; set; }
     }
 }

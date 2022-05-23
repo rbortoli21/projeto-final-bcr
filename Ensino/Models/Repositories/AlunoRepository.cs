@@ -15,8 +15,6 @@ namespace Ensino.Models.Repositories
         
         public Aluno Alterar(Aluno alunoAtual, Aluno alunoNovo)
         {
-            if(_dbContext.Alunos.Where(c => c.CPF== alunoNovo.CPF).Any())
-                throw new DuplicateWaitObjectException();
             alunoAtual.Nome = alunoNovo.Nome;
             alunoAtual.CPF = alunoNovo.CPF;
             alunoAtual.Curso = alunoNovo.Curso;
@@ -25,13 +23,22 @@ namespace Ensino.Models.Repositories
             alunoAtual.Matricula = alunoNovo.Matricula;
             alunoAtual.Telefone = alunoNovo.Telefone;
             alunoAtual.Responsavel = alunoNovo.Responsavel;
+            alunoAtual.NomeCurso = alunoNovo.NomeCurso;
+
+            _dbContext.SaveChanges();
+
             return alunoAtual;
         }
 
         public Aluno Cadastrar(Aluno aluno)
         {
-            _dbContext.Alunos.Add(aluno);
-            _dbContext.SaveChanges();
+            if (_dbContext.Alunos.Where(a => a.CPF == aluno.CPF).Any())
+                throw new DuplicateWaitObjectException();
+            else
+            {
+                _dbContext.Alunos.Add(aluno);
+                _dbContext.SaveChanges();
+            }
             return aluno;
         }
 

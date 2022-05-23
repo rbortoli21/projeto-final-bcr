@@ -169,7 +169,7 @@
             this.dgvListarCursos.AutoGenerateColumns = false;
             this.dgvListarCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListarCursos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvListarCursos.BackgroundColor = System.Drawing.Color.Gray;
+            this.dgvListarCursos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvListarCursos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvListarCursos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;

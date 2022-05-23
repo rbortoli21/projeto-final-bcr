@@ -29,6 +29,33 @@ namespace Ensino.Views
 
         private void FDashboard_Load(object sender, EventArgs e)
         {
+            using (var form = new FAlunos())
+            {
+                var alunos = form._alunoRepository.Obter().Count();
+                quantidadeAlunos.Text = alunos.ToString();
+                if (alunos == 1)
+                    quantidadeAlunos.Text += " Aluno";
+                else
+                    quantidadeAlunos.Text += " Alunos";
+            }
+            using (var form = new FCursos())
+            {
+                var cursos = form._cursoRepository.Obter().Count();
+                quantidadeCursos.Text = cursos.ToString();
+                if (cursos == 1)
+                    quantidadeCursos.Text += " Curso";
+                else
+                    quantidadeCursos.Text += " Cursos";
+            }
+        }
+
+        private void quantidadeAlunos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quantidadeCursos_Click(object sender, EventArgs e)
+        {
 
         }
     }

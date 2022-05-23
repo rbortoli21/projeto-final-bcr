@@ -156,6 +156,14 @@
     <Compile Include="Migrations\202205231712215_AlterandoTabelasNovamente2.designer.cs">
       <DependentUpon>202205231712215_AlterandoTabelasNovamente2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205231827463_AlterandoTabelasNovamente3.cs" />
+    <Compile Include="Migrations\202205231827463_AlterandoTabelasNovamente3.designer.cs">
+      <DependentUpon>202205231827463_AlterandoTabelasNovamente3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205232026116_AlterandoTabelasNovamente4.cs" />
+    <Compile Include="Migrations\202205232026116_AlterandoTabelasNovamente4.designer.cs">
+      <DependentUpon>202205232026116_AlterandoTabelasNovamente4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Curso.cs" />
@@ -183,6 +191,12 @@
     </Compile>
     <Compile Include="Views\FDashboard.designer.cs">
       <DependentUpon>FDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FEditarAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FEditarAluno.Designer.cs">
+      <DependentUpon>FEditarAluno.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FEditarCurso.cs">
       <SubType>Form</SubType>
@@ -229,6 +243,12 @@
     <EmbeddedResource Include="Migrations\202205231712215_AlterandoTabelasNovamente2.resx">
       <DependentUpon>202205231712215_AlterandoTabelasNovamente2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231827463_AlterandoTabelasNovamente3.resx">
+      <DependentUpon>202205231827463_AlterandoTabelasNovamente3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205232026116_AlterandoTabelasNovamente4.resx">
+      <DependentUpon>202205232026116_AlterandoTabelasNovamente4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -247,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FDashboard.resx">
       <DependentUpon>FDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FEditarAluno.resx">
+      <DependentUpon>FEditarAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FEditarCurso.resx">
       <DependentUpon>FEditarCurso.cs</DependentUpon>
