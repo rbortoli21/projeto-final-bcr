@@ -266,3 +266,7 @@ C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FDashboard.resources
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FEditarCurso.resources
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FLayout.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.AlterandoTabelas.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.AlterandoTabelasNovamente.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.AlterandoTabelasNovamente1.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.AlterandoTabelasNovamente2.resources

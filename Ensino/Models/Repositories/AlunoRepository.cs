@@ -13,9 +13,19 @@ namespace Ensino.Models.Repositories
         private DataContext _dbContext;
         public AlunoRepository() => _dbContext = new DataContext();
         
-        public void Alterar()
+        public Aluno Alterar(Aluno alunoAtual, Aluno alunoNovo)
         {
-            throw new NotImplementedException();
+            if(_dbContext.Alunos.Where(c => c.CPF== alunoNovo.CPF).Any())
+                throw new DuplicateWaitObjectException();
+            alunoAtual.Nome = alunoNovo.Nome;
+            alunoAtual.CPF = alunoNovo.CPF;
+            alunoAtual.Curso = alunoNovo.Curso;
+            alunoAtual.Email = alunoNovo.Email;
+            alunoAtual.Endereco = alunoNovo.Endereco;
+            alunoAtual.Matricula = alunoNovo.Matricula;
+            alunoAtual.Telefone = alunoNovo.Telefone;
+            alunoAtual.Responsavel = alunoNovo.Responsavel;
+            return alunoAtual;
         }
 
         public Aluno Cadastrar(Aluno aluno)
@@ -25,13 +35,14 @@ namespace Ensino.Models.Repositories
             return aluno;
         }
 
-        public void Deletar(Aluno aluno)
+        public Aluno Deletar(Aluno aluno)
         {
             if (_dbContext.Alunos.Where(c => c.Id == aluno.Id).Any())
             {
                 _dbContext.Alunos.Remove(aluno);
                 _dbContext.SaveChanges();
             }
+            return aluno;
         } 
 
         public List<Aluno> Obter()

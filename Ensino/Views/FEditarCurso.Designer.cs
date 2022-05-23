@@ -164,6 +164,7 @@ namespace Ensino.Views
             this.Controls.Add(this.txtBoxNomeCurso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FEditarCurso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FEditarCurso";
             this.Load += new System.EventHandler(this.FEditarCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCargaHoraria)).EndInit();

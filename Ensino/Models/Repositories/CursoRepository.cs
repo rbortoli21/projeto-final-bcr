@@ -2,6 +2,7 @@
 using Ensino.Models.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,10 +44,9 @@ namespace Ensino.Models.Repositories
                 _dbContext.SaveChanges();
             }
         }
-        public async Task<List<Curso>> Obter()
-        {
-            return _dbContext.Cursos.ToList();
-        }
+        public List<Curso> Obter()
+        => _dbContext.Cursos.ToList();
+
         public Curso ObterPorId(int id)
         => _dbContext.Cursos.ToList().FirstOrDefault(curso => curso.Id == id);
 

@@ -65,7 +65,7 @@
             this.btnSalvarCurso.ForeColor = System.Drawing.Color.White;
             this.btnSalvarCurso.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarCurso.Image")));
             this.btnSalvarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarCurso.Location = new System.Drawing.Point(679, 478);
+            this.btnSalvarCurso.Location = new System.Drawing.Point(679, 516);
             this.btnSalvarCurso.Name = "btnSalvarCurso";
             this.btnSalvarCurso.Size = new System.Drawing.Size(180, 35);
             this.btnSalvarCurso.TabIndex = 3;
@@ -200,11 +200,12 @@
             this.dgvListarCursos.EnableHeadersVisualStyles = false;
             this.dgvListarCursos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvListarCursos.Location = new System.Drawing.Point(72, 211);
+            this.dgvListarCursos.MultiSelect = false;
             this.dgvListarCursos.Name = "dgvListarCursos";
             this.dgvListarCursos.ReadOnly = true;
             this.dgvListarCursos.RowHeadersVisible = false;
             this.dgvListarCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListarCursos.Size = new System.Drawing.Size(511, 245);
+            this.dgvListarCursos.Size = new System.Drawing.Size(511, 286);
             this.dgvListarCursos.TabIndex = 48;
             this.dgvListarCursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarCursos_CellContentClick);
             // 
@@ -217,7 +218,7 @@
             this.btnDeletarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletarCurso.ForeColor = System.Drawing.Color.White;
             this.btnDeletarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeletarCurso.Location = new System.Drawing.Point(195, 478);
+            this.btnDeletarCurso.Location = new System.Drawing.Point(195, 516);
             this.btnDeletarCurso.Name = "btnDeletarCurso";
             this.btnDeletarCurso.Size = new System.Drawing.Size(115, 35);
             this.btnDeletarCurso.TabIndex = 50;
@@ -234,7 +235,7 @@
             this.btnCancelarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarCurso.ForeColor = System.Drawing.Color.White;
             this.btnCancelarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarCurso.Location = new System.Drawing.Point(72, 478);
+            this.btnCancelarCurso.Location = new System.Drawing.Point(72, 516);
             this.btnCancelarCurso.Name = "btnCancelarCurso";
             this.btnCancelarCurso.Size = new System.Drawing.Size(115, 35);
             this.btnCancelarCurso.TabIndex = 51;
@@ -251,7 +252,7 @@
             this.btnEditarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCurso.ForeColor = System.Drawing.Color.White;
             this.btnEditarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCurso.Location = new System.Drawing.Point(316, 478);
+            this.btnEditarCurso.Location = new System.Drawing.Point(316, 516);
             this.btnEditarCurso.Name = "btnEditarCurso";
             this.btnEditarCurso.Size = new System.Drawing.Size(115, 35);
             this.btnEditarCurso.TabIndex = 52;
@@ -308,7 +309,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(871, 525);
+            this.ClientSize = new System.Drawing.Size(871, 563);
             this.Controls.Add(this.btnEditarCurso);
             this.Controls.Add(this.btnCancelarCurso);
             this.Controls.Add(this.btnDeletarCurso);
@@ -343,7 +344,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownCargaHoraria;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dgvListarCursos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
@@ -353,5 +353,6 @@
         private System.Windows.Forms.Button btnDeletarCurso;
         private System.Windows.Forms.Button btnCancelarCurso;
         private System.Windows.Forms.Button btnEditarCurso;
+        public System.Windows.Forms.DataGridView dgvListarCursos;
     }
 }

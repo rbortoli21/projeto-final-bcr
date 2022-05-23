@@ -16,7 +16,7 @@ namespace Ensino.Views
 {
     public partial class FCursos : Form
     {
-        private readonly ICursoRepository _cursoRepository;
+        public readonly ICursoRepository _cursoRepository;
         public FCursos()
         {
             InitializeComponent();
@@ -43,8 +43,6 @@ namespace Ensino.Views
         {
 
         }
-
-
         private const int CB_SETCUEBANNER = 0x1703;
 
         [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
@@ -67,19 +65,25 @@ namespace Ensino.Views
         private void btnNovoCurso_Click(object sender, EventArgs e)
         {
             var curso = new Curso();
-            PegarDadosParaCadastro(curso);
             try
             {
+                PegarDadosParaCadastro(curso);
                 _cursoRepository.Cadastrar(curso);
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
+                return;
             }
             catch (DuplicateWaitObjectException)
             {
                 MessageBox.Show($"O curso \"{curso.Nome}\" já está cadastrado neste Turno, para poder cadastrá-lo novamente, altere o turno.");
                 return;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show($"O curso \"{curso.Nome}\" não pôde ser cadastrado, verifique os campos e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                AtualizarGrid();
                 return;
             }
             MessageBox.Show($"O curso \"{curso.Nome}\" foi cadastrado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -91,6 +95,8 @@ namespace Ensino.Views
         {
             curso.Nome = txtBoxNomeCurso.Text;
             curso.Turno = comboBoxTurnoCurso.Text;
+            if (string.IsNullOrEmpty(curso.Nome) || string.IsNullOrEmpty(curso.Turno))
+                throw new ArgumentNullException();
             curso.CargaHoraria = (int)numericUpDownCargaHoraria.Value;
             using (var db = new DataContext())
                 curso.QuantidadeAlunos = db.Alunos.Where(aluno => aluno.Curso.Id == curso.Id).Count();
@@ -155,7 +161,6 @@ namespace Ensino.Views
             if (!string.IsNullOrEmpty(txtBoxNomeCurso.Text))
             {
                 txtBoxNomeCurso.Text = String.Empty;
-                comboBoxTurnoCurso.DropDownStyle = ComboBoxStyle.DropDownList;
                 numericUpDownCargaHoraria.Value = decimal.Zero;
             }
         }
@@ -165,7 +170,6 @@ namespace Ensino.Views
             if (!string.IsNullOrEmpty(txtBoxNomeCurso.Text))
             {
                 txtBoxNomeCurso.Text = String.Empty;
-                comboBoxTurnoCurso.DropDownStyle = ComboBoxStyle.DropDownList;
                 numericUpDownCargaHoraria.Value = decimal.Zero;
             }
         }

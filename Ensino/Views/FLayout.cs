@@ -76,15 +76,10 @@ namespace Ensino.Views
         {
             AbrirFormulario(new FAlunos());
         }
-
-        private void btnlogoInicio_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FDashboard());
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            btnlogoInicio_Click(null,e);
+            using (var form = new FCursos())
+                form.dgvListarCursos.DataSource = form._cursoRepository.Obter();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

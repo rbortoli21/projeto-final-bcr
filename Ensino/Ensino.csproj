@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5AA05057-35D9-4C34-818E-3F75BD9584F0}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Ensino</RootNamespace>
     <AssemblyName>Ensino</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -34,6 +34,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -137,6 +140,22 @@
     <Compile Include="Migrations\202205180259113_Tabelas.designer.cs">
       <DependentUpon>202205180259113_Tabelas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205231648125_AlterandoTabelas.cs" />
+    <Compile Include="Migrations\202205231648125_AlterandoTabelas.designer.cs">
+      <DependentUpon>202205231648125_AlterandoTabelas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205231654253_AlterandoTabelasNovamente.cs" />
+    <Compile Include="Migrations\202205231654253_AlterandoTabelasNovamente.designer.cs">
+      <DependentUpon>202205231654253_AlterandoTabelasNovamente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205231703118_AlterandoTabelasNovamente1.cs" />
+    <Compile Include="Migrations\202205231703118_AlterandoTabelasNovamente1.designer.cs">
+      <DependentUpon>202205231703118_AlterandoTabelasNovamente1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205231712215_AlterandoTabelasNovamente2.cs" />
+    <Compile Include="Migrations\202205231712215_AlterandoTabelasNovamente2.designer.cs">
+      <DependentUpon>202205231712215_AlterandoTabelasNovamente2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Curso.cs" />
@@ -198,6 +217,18 @@
     <EmbeddedResource Include="Migrations\202205180259113_Tabelas.resx">
       <DependentUpon>202205180259113_Tabelas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231648125_AlterandoTabelas.resx">
+      <DependentUpon>202205231648125_AlterandoTabelas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231654253_AlterandoTabelasNovamente.resx">
+      <DependentUpon>202205231654253_AlterandoTabelasNovamente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231703118_AlterandoTabelasNovamente1.resx">
+      <DependentUpon>202205231703118_AlterandoTabelasNovamente1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231712215_AlterandoTabelasNovamente2.resx">
+      <DependentUpon>202205231712215_AlterandoTabelasNovamente2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -230,6 +261,7 @@
       <DependentUpon>FormRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Ensino.Models.Aluno.datasource" />
     <None Include="Properties\DataSources\Ensino.Models.Curso.datasource" />
     <None Include="Properties\DataSources\Ensino.Views.FormCurso.datasource" />
     <None Include="Properties\Settings.settings">

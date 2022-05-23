@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ensino.Models.Repositories;
+using Ensino.Models.Repositories.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,13 @@ namespace Ensino.Views
 {
     public partial class FAlunos : Form
     {
+        private readonly ICursoRepository _cursoRepository;
+        private readonly IAlunoRepository _alunoRepository;
         public FAlunos()
         {
             InitializeComponent();
+            _cursoRepository = new CursoRepository();
+            _alunoRepository = new AlunoRepository();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -32,9 +38,21 @@ namespace Ensino.Views
         private void FAlunos_Load(object sender, EventArgs e)
         {
             SendMessage(this.comboBoxCursoAluno.Handle, CB_SETCUEBANNER, 0, "Selecione um Curso");
+            ListarCursosComboBox();
         }
 
         private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListarCursosComboBox()
+        {
+            var cursosPorNome = _cursoRepository.Obter().OrderBy(c => c.Nome).Select(c => c.Nome);
+            comboBoxCursoAluno.DataSource = cursosPorNome;
+        }
+        
+        private void PegarDadosParaCadastro()
         {
 
         }

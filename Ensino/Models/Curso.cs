@@ -11,13 +11,11 @@ namespace Ensino.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(AllowEmptyStrings = true)]
         public string Nome { get; set; }
-        [Required]
+        [Required(AllowEmptyStrings = true)]
         public string Turno { get; set; }
-        [Required]
         public int QuantidadeAlunos { get; set; }
-        [Required]
         public int CargaHoraria { get; set; }
     }
 }

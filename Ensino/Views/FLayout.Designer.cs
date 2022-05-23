@@ -60,7 +60,7 @@
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(250, 571);
+            this.MenuVertical.Size = new System.Drawing.Size(250, 616);
             this.MenuVertical.TabIndex = 0;
             // 
             // btnPainelCursos
@@ -214,7 +214,7 @@
             this.painel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.painel.Location = new System.Drawing.Point(250, 45);
             this.painel.Name = "painel";
-            this.painel.Size = new System.Drawing.Size(871, 525);
+            this.painel.Size = new System.Drawing.Size(871, 563);
             this.painel.TabIndex = 2;
             this.painel.Paint += new System.Windows.Forms.PaintEventHandler(this.painel_Paint);
             // 
@@ -222,7 +222,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 571);
+            this.ClientSize = new System.Drawing.Size(1120, 616);
             this.Controls.Add(this.painel);
             this.Controls.Add(this.BarraTitulo);
             this.Controls.Add(this.MenuVertical);

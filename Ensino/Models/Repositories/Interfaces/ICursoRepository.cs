@@ -8,7 +8,7 @@ namespace Ensino.Models.Repositories.Interfaces
 {
     public interface ICursoRepository
     {
-        Task<List<Curso>> Obter();
+        List<Curso> Obter();
         Curso ObterPorId(int id);
         Curso Cadastrar(Curso aluno);
         Curso Alterar(Curso cursoAtual, Curso cursoNovo);

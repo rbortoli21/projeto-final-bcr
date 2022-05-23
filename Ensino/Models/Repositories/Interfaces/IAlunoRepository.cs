@@ -11,7 +11,7 @@ namespace Ensino.Models.Repositories.Interfaces
         List<Aluno> Obter();
         Aluno ObterPorId(int id);
         Aluno Cadastrar(Aluno aluno);
-        void Alterar();
-        void Deletar(Aluno aluno);
+        Aluno Alterar(Aluno alunoAtual, Aluno alunoNovo);
+        Aluno Deletar(Aluno aluno);
     }
 }
