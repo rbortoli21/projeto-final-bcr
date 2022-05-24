@@ -28,6 +28,16 @@ namespace Ensino.Views
         {
             dgvAlunos.DataSource = _alunoRepository.Obter();
             dgvAlunos.Refresh();
+            if (ObterIdDoDataGridView(dgvAlunos) != 0)
+            {
+                btnEditarAluno.Enabled = true;
+                btnDeletarAluno.Enabled = true;
+            }
+            else
+            {
+                btnEditarAluno.Enabled = false;
+                btnDeletarAluno.Enabled = false;
+            }
         }
 
         private void LimparCampos()
@@ -40,6 +50,15 @@ namespace Ensino.Views
                     if (!string.IsNullOrEmpty(txtBox.Text))
                         txtBox.Text = String.Empty;
                 }
+                if (control is MaskedTextBox)
+                {
+                    var maskedTextBox = control as MaskedTextBox;
+                    if (!string.IsNullOrEmpty(maskedTextBox.Text))
+                    {
+                        maskedTextBox.Text = string.Empty;
+                    }
+                }
+
             }
         }
 
@@ -56,7 +75,7 @@ namespace Ensino.Views
             aluno.TurnoCurso = comboBoxTurnoCursoAluno.Text;
             var matricula = new Random();
             aluno.Matricula = matricula.Next(10000000).ToString();
-            
+
             if (_alunoRepository.Obter().Where(c => c.Matricula == matricula.ToString()).Any())
                 aluno.Matricula = matricula.Next(10000000).ToString();
         }
@@ -134,7 +153,7 @@ namespace Ensino.Views
             LimparCampos();
         }
 
-        
+
         //Edição
         private void btnEditarAluno_Click(object sender, EventArgs e)
         {
@@ -213,17 +232,21 @@ namespace Ensino.Views
             if (telefone.Text.Trim().Replace(" ", "").Length < 17)
                 throw new DataException("O campo Telefone deve possuir 11 caracteres.");
         }
-    
+
         //Obter id do aluno para editar/deletar
         private int ObterIdDoDataGridView(DataGridView dgv)
         {
-            var cells = dgv.CurrentRow.Cells;
-            foreach (DataGridViewCell cell in cells)
+            if (dgv.Rows.Count != 0)
             {
-                if(dgv.Columns[cell.ColumnIndex].HeaderText == "Id")
-                    return Convert.ToInt32(dgv.CurrentRow.Cells[cell.ColumnIndex].Value);
+                var cells = dgv.CurrentRow.Cells;
+                foreach (DataGridViewCell cell in cells)
+                {
+                    if (dgv.Columns[cell.ColumnIndex].HeaderText == "Id")
+                        return Convert.ToInt32(dgv.CurrentRow.Cells[cell.ColumnIndex].Value);
+                }
             }
             return Convert.ToInt32(null);
+
         }
 
     }
