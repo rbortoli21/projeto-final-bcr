@@ -44,6 +44,7 @@
             this.btnDeletarCurso = new System.Windows.Forms.Button();
             this.btnCancelarCurso = new System.Windows.Forms.Button();
             this.btnEditarCurso = new System.Windows.Forms.Button();
+            this.btnImprimirRelatorio = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -260,6 +261,26 @@
             this.btnEditarCurso.UseVisualStyleBackColor = false;
             this.btnEditarCurso.Click += new System.EventHandler(this.btnEditarCurso_Click);
             // 
+            // btnImprimirRelatorio
+            // 
+            this.btnImprimirRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimirRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnImprimirRelatorio.FlatAppearance.BorderSize = 0;
+            this.btnImprimirRelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnImprimirRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirRelatorio.ForeColor = System.Drawing.Color.White;
+            this.btnImprimirRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimirRelatorio.Location = new System.Drawing.Point(437, 516);
+            this.btnImprimirRelatorio.Name = "btnImprimirRelatorio";
+            this.btnImprimirRelatorio.Size = new System.Drawing.Size(115, 35);
+            this.btnImprimirRelatorio.TabIndex = 63;
+            this.btnImprimirRelatorio.Text = "RELATÓRIO";
+            this.btnImprimirRelatorio.UseVisualStyleBackColor = false;
+            this.btnImprimirRelatorio.Click += new System.EventHandler(this.btnImprimirRelatorio_Click);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -310,6 +331,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(871, 563);
+            this.Controls.Add(this.btnImprimirRelatorio);
             this.Controls.Add(this.btnEditarCurso);
             this.Controls.Add(this.btnCancelarCurso);
             this.Controls.Add(this.btnDeletarCurso);
@@ -354,5 +376,6 @@
         private System.Windows.Forms.Button btnCancelarCurso;
         private System.Windows.Forms.Button btnEditarCurso;
         public System.Windows.Forms.DataGridView dgvListarCursos;
+        private System.Windows.Forms.Button btnImprimirRelatorio;
     }
 }

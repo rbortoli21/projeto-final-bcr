@@ -353,11 +353,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>CursosRelatorio</DataSetName>
+        <DataSetName>CursoRelatorio</DataSetName>
         <Top>0.17639cm</Top>
         <Left>0.29104cm</Left>
         <Height>1.25292cm</Height>
-        <Width>15.58396cm</Width>
+        <Width>15.58395cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -472,7 +472,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="CursosRelatorio">
+    <DataSet Name="CursoRelatorio">
       <Query>
         <DataSourceName>EnsinoModels</DataSourceName>
         <CommandText>/* Local Query */</CommandText>

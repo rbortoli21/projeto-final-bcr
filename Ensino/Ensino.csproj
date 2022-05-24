@@ -136,12 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\DataContext.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202205180218355_Inicial.cs" />
     <Compile Include="Migrations\202205180218355_Inicial.designer.cs">
       <DependentUpon>202205180218355_Inicial.cs</DependentUpon>
@@ -212,21 +206,12 @@
     <Compile Include="Views\FLayout.Designer.cs">
       <DependentUpon>FLayout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormCurso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\FormCurso.Designer.cs">
-      <DependentUpon>FormCurso.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\FormRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\FormRelatorio.Designer.cs">
       <DependentUpon>FormRelatorio.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205180218355_Inicial.resx">
       <DependentUpon>202205180218355_Inicial.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,9 +257,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FLayout.resx">
       <DependentUpon>FLayout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormCurso.resx">
-      <DependentUpon>FormCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormRelatorio.resx">
       <DependentUpon>FormRelatorio.cs</DependentUpon>

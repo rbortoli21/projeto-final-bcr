@@ -66,6 +66,7 @@
             this.comboBoxTurnoCursoAluno = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnImprimirRelatorio = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).BeginInit();
@@ -515,12 +516,33 @@
             // 
             this.alunoBindingSource.DataSource = typeof(Ensino.Models.Aluno);
             // 
+            // btnImprimirRelatorio
+            // 
+            this.btnImprimirRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimirRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnImprimirRelatorio.Enabled = false;
+            this.btnImprimirRelatorio.FlatAppearance.BorderSize = 0;
+            this.btnImprimirRelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnImprimirRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirRelatorio.ForeColor = System.Drawing.Color.White;
+            this.btnImprimirRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimirRelatorio.Location = new System.Drawing.Point(437, 514);
+            this.btnImprimirRelatorio.Name = "btnImprimirRelatorio";
+            this.btnImprimirRelatorio.Size = new System.Drawing.Size(115, 35);
+            this.btnImprimirRelatorio.TabIndex = 62;
+            this.btnImprimirRelatorio.Text = "RELATÓRIO";
+            this.btnImprimirRelatorio.UseVisualStyleBackColor = false;
+            // 
             // FAlunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(871, 563);
+            this.Controls.Add(this.btnImprimirRelatorio);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBoxTurnoCursoAluno);
             this.Controls.Add(this.label7);
@@ -590,5 +612,6 @@
         private System.Windows.Forms.ComboBox comboBoxTurnoCursoAluno;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn TurnoCurso;
+        private System.Windows.Forms.Button btnImprimirRelatorio;
     }
 }

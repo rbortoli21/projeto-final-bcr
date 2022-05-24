@@ -13,8 +13,8 @@ namespace Ensino.Views
 {
     public partial class FormRelatorio : Form
     {
-        List<Curso> dt = new List<Curso>();
-        public FormRelatorio(List<Curso> dt)
+        List<object> dt = new List<object>();
+        public FormRelatorio(List<object> dt)
         {
             InitializeComponent();
             this.dt = dt;
@@ -22,8 +22,9 @@ namespace Ensino.Views
 
         private void FormRelatorio_Load(object sender, EventArgs e)
         {
+            dt.Add(new Curso());
             reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("CursosRelatorio", dt));
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource($"{typeof(object)}Relatorio", dt));
             this.reportViewer1.RefreshReport();
         }
 

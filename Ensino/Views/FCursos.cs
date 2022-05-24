@@ -173,5 +173,18 @@ namespace Ensino.Views
                 numericUpDownCargaHoraria.Value = decimal.Zero;
             }
         }
+
+        private void btnImprimirRelatorio_Click(object sender, EventArgs e)
+        {
+            List<object> dt = (List<object>)dgvListarCursos.DataSource;
+            foreach (var d in dt)
+            {
+                Console.WriteLine(d);
+            }
+            using (var form = new FormRelatorio(dt))
+            {
+                form.ShowDialog();
+            }
+        }
     }
 }

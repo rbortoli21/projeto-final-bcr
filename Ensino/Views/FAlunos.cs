@@ -58,7 +58,6 @@ namespace Ensino.Views
                         maskedTextBox.Text = string.Empty;
                     }
                 }
-
             }
         }
 

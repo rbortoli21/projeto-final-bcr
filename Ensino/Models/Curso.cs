@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ensino.Models
 {
-    public class Curso
+    public class Curso : Object
     {
         [Key]
         public int Id { get; set; }
