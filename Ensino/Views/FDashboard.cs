@@ -32,20 +32,12 @@ namespace Ensino.Views
             using (var form = new FAlunos())
             {
                 var alunos = form._alunoRepository.Obter().Count();
-                quantidadeAlunos.Text = alunos.ToString();
-                if (alunos == 1)
-                    quantidadeAlunos.Text += " Aluno";
-                else
-                    quantidadeAlunos.Text += " Alunos";
+                alunosQtd.Text = alunos.ToString();
             }
             using (var form = new FCursos())
             {
                 var cursos = form._cursoRepository.Obter().Count();
-                quantidadeCursos.Text = cursos.ToString();
-                if (cursos == 1)
-                    quantidadeCursos.Text += " Curso";
-                else
-                    quantidadeCursos.Text += " Cursos";
+                cursosQtd.Text = cursos.ToString();
             }
         }
 
@@ -55,6 +47,11 @@ namespace Ensino.Views
         }
 
         private void quantidadeCursos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

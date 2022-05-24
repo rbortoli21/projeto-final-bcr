@@ -39,6 +39,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Extensions.Microsoft.DependencyInjection, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.Extensions.Microsoft.DependencyInjection.4.0.1\lib\netstandard2.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -53,6 +59,9 @@
     </Reference>
     <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -98,6 +107,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
@@ -144,25 +154,17 @@
     <Compile Include="Migrations\202205231648125_AlterandoTabelas.designer.cs">
       <DependentUpon>202205231648125_AlterandoTabelas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205231654253_AlterandoTabelasNovamente.cs" />
-    <Compile Include="Migrations\202205231654253_AlterandoTabelasNovamente.designer.cs">
-      <DependentUpon>202205231654253_AlterandoTabelasNovamente.cs</DependentUpon>
+    <Compile Include="Migrations\202205240150397_AdicionandoNomeCursoAoAluno.cs" />
+    <Compile Include="Migrations\202205240150397_AdicionandoNomeCursoAoAluno.designer.cs">
+      <DependentUpon>202205240150397_AdicionandoNomeCursoAoAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205231703118_AlterandoTabelasNovamente1.cs" />
-    <Compile Include="Migrations\202205231703118_AlterandoTabelasNovamente1.designer.cs">
-      <DependentUpon>202205231703118_AlterandoTabelasNovamente1.cs</DependentUpon>
+    <Compile Include="Migrations\202205240305592_Teste.cs" />
+    <Compile Include="Migrations\202205240305592_Teste.designer.cs">
+      <DependentUpon>202205240305592_Teste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202205231712215_AlterandoTabelasNovamente2.cs" />
-    <Compile Include="Migrations\202205231712215_AlterandoTabelasNovamente2.designer.cs">
-      <DependentUpon>202205231712215_AlterandoTabelasNovamente2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205231827463_AlterandoTabelasNovamente3.cs" />
-    <Compile Include="Migrations\202205231827463_AlterandoTabelasNovamente3.designer.cs">
-      <DependentUpon>202205231827463_AlterandoTabelasNovamente3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205232026116_AlterandoTabelasNovamente4.cs" />
-    <Compile Include="Migrations\202205232026116_AlterandoTabelasNovamente4.designer.cs">
-      <DependentUpon>202205232026116_AlterandoTabelasNovamente4.cs</DependentUpon>
+    <Compile Include="Migrations\202205240328161_AdicionandoTurnoCursoAoAluno.cs" />
+    <Compile Include="Migrations\202205240328161_AdicionandoTurnoCursoAoAluno.designer.cs">
+      <DependentUpon>202205240328161_AdicionandoTurnoCursoAoAluno.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
@@ -234,20 +236,14 @@
     <EmbeddedResource Include="Migrations\202205231648125_AlterandoTabelas.resx">
       <DependentUpon>202205231648125_AlterandoTabelas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205231654253_AlterandoTabelasNovamente.resx">
-      <DependentUpon>202205231654253_AlterandoTabelasNovamente.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205240150397_AdicionandoNomeCursoAoAluno.resx">
+      <DependentUpon>202205240150397_AdicionandoNomeCursoAoAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205231703118_AlterandoTabelasNovamente1.resx">
-      <DependentUpon>202205231703118_AlterandoTabelasNovamente1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205240305592_Teste.resx">
+      <DependentUpon>202205240305592_Teste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205231712215_AlterandoTabelasNovamente2.resx">
-      <DependentUpon>202205231712215_AlterandoTabelasNovamente2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205231827463_AlterandoTabelasNovamente3.resx">
-      <DependentUpon>202205231827463_AlterandoTabelasNovamente3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205232026116_AlterandoTabelasNovamente4.resx">
-      <DependentUpon>202205232026116_AlterandoTabelasNovamente4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205240328161_AdicionandoTurnoCursoAoAluno.resx">
+      <DependentUpon>202205240328161_AdicionandoTurnoCursoAoAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -315,6 +311,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

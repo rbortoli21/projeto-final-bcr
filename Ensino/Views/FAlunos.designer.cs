@@ -38,14 +38,12 @@
             this.txtBoxResponsavelAluno = new System.Windows.Forms.TextBox();
             this.txtBoxEnderecoAluno = new System.Windows.Forms.TextBox();
             this.comboBoxCursoAluno = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.maskedTextBoxTelefoneAluno = new System.Windows.Forms.MaskedTextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.dgvAlunos = new System.Windows.Forms.DataGridView();
             this.NomeCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditarAluno = new System.Windows.Forms.Button();
@@ -53,6 +51,10 @@
             this.btnDeletarAluno = new System.Windows.Forms.Button();
             this.txtBoxCPF = new System.Windows.Forms.MaskedTextBox();
             this.txtBoxCPFAluno = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxTurnoCursoAluno = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +65,7 @@
             this.enderecoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alunoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.TurnoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).BeginInit();
@@ -106,10 +109,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxEmailAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEmailAluno.Location = new System.Drawing.Point(506, 161);
+            this.txtBoxEmailAluno.Location = new System.Drawing.Point(506, 220);
             this.txtBoxEmailAluno.Name = "txtBoxEmailAluno";
-            this.txtBoxEmailAluno.Size = new System.Drawing.Size(195, 24);
-            this.txtBoxEmailAluno.TabIndex = 8;
+            this.txtBoxEmailAluno.Size = new System.Drawing.Size(263, 24);
+            this.txtBoxEmailAluno.TabIndex = 7;
             // 
             // txtBoxResponsavelAluno
             // 
@@ -120,7 +123,7 @@
             this.txtBoxResponsavelAluno.Location = new System.Drawing.Point(72, 161);
             this.txtBoxResponsavelAluno.Name = "txtBoxResponsavelAluno";
             this.txtBoxResponsavelAluno.Size = new System.Drawing.Size(195, 24);
-            this.txtBoxResponsavelAluno.TabIndex = 5;
+            this.txtBoxResponsavelAluno.TabIndex = 4;
             // 
             // txtBoxEnderecoAluno
             // 
@@ -131,7 +134,7 @@
             this.txtBoxEnderecoAluno.Location = new System.Drawing.Point(72, 220);
             this.txtBoxEnderecoAluno.Name = "txtBoxEnderecoAluno";
             this.txtBoxEnderecoAluno.Size = new System.Drawing.Size(409, 24);
-            this.txtBoxEnderecoAluno.TabIndex = 7;
+            this.txtBoxEnderecoAluno.TabIndex = 6;
             // 
             // comboBoxCursoAluno
             // 
@@ -145,21 +148,7 @@
             this.comboBoxCursoAluno.Name = "comboBoxCursoAluno";
             this.comboBoxCursoAluno.Size = new System.Drawing.Size(263, 24);
             this.comboBoxCursoAluno.TabIndex = 3;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(68, 76);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(123, 20);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "Nome Completo";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
+            this.comboBoxCursoAluno.SelectedValueChanged += new System.EventHandler(this.comboBoxCursoAluno_SelectedValueChanged);
             // 
             // label2
             // 
@@ -169,7 +158,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(502, 138);
+            this.label2.Location = new System.Drawing.Point(502, 197);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 20);
             this.label2.TabIndex = 40;
@@ -241,22 +230,7 @@
             this.maskedTextBoxTelefoneAluno.Mask = "+55 (00) 00000-0000";
             this.maskedTextBoxTelefoneAluno.Name = "maskedTextBoxTelefoneAluno";
             this.maskedTextBoxTelefoneAluno.Size = new System.Drawing.Size(195, 24);
-            this.maskedTextBoxTelefoneAluno.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(66, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(255, 31);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "Cadastro de Aluno";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            this.maskedTextBoxTelefoneAluno.TabIndex = 5;
             // 
             // dgvAlunos
             // 
@@ -289,7 +263,8 @@
             this.responsavelDataGridViewTextBoxColumn,
             this.matriculaDataGridViewTextBoxColumn,
             this.enderecoDataGridViewTextBoxColumn,
-            this.NomeCurso});
+            this.NomeCurso,
+            this.TurnoCurso});
             this.dgvAlunos.DataSource = this.alunoBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -306,7 +281,7 @@
             this.dgvAlunos.ReadOnly = true;
             this.dgvAlunos.RowHeadersVisible = false;
             this.dgvAlunos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAlunos.Size = new System.Drawing.Size(672, 237);
+            this.dgvAlunos.Size = new System.Drawing.Size(742, 237);
             this.dgvAlunos.TabIndex = 47;
             // 
             // NomeCurso
@@ -315,7 +290,7 @@
             this.NomeCurso.HeaderText = "Curso";
             this.NomeCurso.Name = "NomeCurso";
             this.NomeCurso.ReadOnly = true;
-            this.NomeCurso.Width = 66;
+            this.NomeCurso.Width = 65;
             // 
             // btnEditarAluno
             // 
@@ -387,7 +362,7 @@
             this.txtBoxCPF.Mask = "000,000,000-00";
             this.txtBoxCPF.Name = "txtBoxCPF";
             this.txtBoxCPF.Size = new System.Drawing.Size(195, 24);
-            this.txtBoxCPF.TabIndex = 4;
+            this.txtBoxCPF.TabIndex = 2;
             // 
             // txtBoxCPFAluno
             // 
@@ -403,13 +378,68 @@
             this.txtBoxCPFAluno.TabIndex = 57;
             this.txtBoxCPFAluno.Text = "CPF";
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(66, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(255, 31);
+            this.label1.TabIndex = 58;
+            this.label1.Text = "Cadastro de Aluno";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(68, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(123, 20);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "Nome Completo";
+            // 
+            // comboBoxTurnoCursoAluno
+            // 
+            this.comboBoxTurnoCursoAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxTurnoCursoAluno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTurnoCursoAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboBoxTurnoCursoAluno.FormattingEnabled = true;
+            this.comboBoxTurnoCursoAluno.Location = new System.Drawing.Point(506, 161);
+            this.comboBoxTurnoCursoAluno.Name = "comboBoxTurnoCursoAluno";
+            this.comboBoxTurnoCursoAluno.Size = new System.Drawing.Size(263, 24);
+            this.comboBoxTurnoCursoAluno.TabIndex = 9;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.Location = new System.Drawing.Point(502, 137);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 20);
+            this.label8.TabIndex = 61;
+            this.label8.Text = "Turno:";
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 42;
+            this.idDataGridViewTextBoxColumn.Width = 41;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -417,7 +447,7 @@
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 68;
+            this.nomeDataGridViewTextBoxColumn.Width = 67;
             // 
             // cPFDataGridViewTextBoxColumn
             // 
@@ -425,7 +455,7 @@
             this.cPFDataGridViewTextBoxColumn.HeaderText = "CPF";
             this.cPFDataGridViewTextBoxColumn.Name = "cPFDataGridViewTextBoxColumn";
             this.cPFDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cPFDataGridViewTextBoxColumn.Width = 57;
+            this.cPFDataGridViewTextBoxColumn.Width = 56;
             // 
             // emailDataGridViewTextBoxColumn
             // 
@@ -433,7 +463,7 @@
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 65;
+            this.emailDataGridViewTextBoxColumn.Width = 64;
             // 
             // telefoneDataGridViewTextBoxColumn
             // 
@@ -441,7 +471,7 @@
             this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
             this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
             this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefoneDataGridViewTextBoxColumn.Width = 85;
+            this.telefoneDataGridViewTextBoxColumn.Width = 84;
             // 
             // responsavelDataGridViewTextBoxColumn
             // 
@@ -449,7 +479,7 @@
             this.responsavelDataGridViewTextBoxColumn.HeaderText = "Responsavel";
             this.responsavelDataGridViewTextBoxColumn.Name = "responsavelDataGridViewTextBoxColumn";
             this.responsavelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.responsavelDataGridViewTextBoxColumn.Width = 112;
+            this.responsavelDataGridViewTextBoxColumn.Width = 111;
             // 
             // matriculaDataGridViewTextBoxColumn
             // 
@@ -457,7 +487,7 @@
             this.matriculaDataGridViewTextBoxColumn.HeaderText = "Matricula";
             this.matriculaDataGridViewTextBoxColumn.Name = "matriculaDataGridViewTextBoxColumn";
             this.matriculaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.matriculaDataGridViewTextBoxColumn.Width = 85;
+            this.matriculaDataGridViewTextBoxColumn.Width = 84;
             // 
             // enderecoDataGridViewTextBoxColumn
             // 
@@ -465,7 +495,7 @@
             this.enderecoDataGridViewTextBoxColumn.HeaderText = "Endereco";
             this.enderecoDataGridViewTextBoxColumn.Name = "enderecoDataGridViewTextBoxColumn";
             this.enderecoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enderecoDataGridViewTextBoxColumn.Width = 90;
+            this.enderecoDataGridViewTextBoxColumn.Width = 89;
             // 
             // alunoBindingSource1
             // 
@@ -475,26 +505,36 @@
             // 
             this.alunoBindingSource.DataSource = typeof(Ensino.Models.Aluno);
             // 
+            // TurnoCurso
+            // 
+            this.TurnoCurso.DataPropertyName = "TurnoCurso";
+            this.TurnoCurso.HeaderText = "Turno";
+            this.TurnoCurso.Name = "TurnoCurso";
+            this.TurnoCurso.ReadOnly = true;
+            this.TurnoCurso.Width = 65;
+            // 
             // FAlunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(871, 563);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.comboBoxTurnoCursoAluno);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBoxCPFAluno);
             this.Controls.Add(this.txtBoxCPF);
             this.Controls.Add(this.btnEditarAluno);
             this.Controls.Add(this.btnCancelarAluno);
             this.Controls.Add(this.btnDeletarAluno);
             this.Controls.Add(this.dgvAlunos);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.maskedTextBoxTelefoneAluno);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.comboBoxCursoAluno);
             this.Controls.Add(this.txtBoxEnderecoAluno);
             this.Controls.Add(this.txtBoxResponsavelAluno);
@@ -520,14 +560,12 @@
         private System.Windows.Forms.TextBox txtBoxResponsavelAluno;
         private System.Windows.Forms.TextBox txtBoxEnderecoAluno;
         private System.Windows.Forms.ComboBox comboBoxCursoAluno;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxTelefoneAluno;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvAlunos;
         private System.Windows.Forms.Button btnEditarAluno;
         private System.Windows.Forms.Button btnCancelarAluno;
@@ -545,5 +583,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn matriculaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn enderecoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCurso;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBoxTurnoCursoAluno;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TurnoCurso;
     }
 }

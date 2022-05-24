@@ -1,7 +1,9 @@
-﻿using Ensino.Data;
+﻿using AutoMapper;
+using Ensino.Data;
 using Ensino.Models.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,16 +13,17 @@ namespace Ensino.Models.Repositories
     public class AlunoRepository : IAlunoRepository
     {
         private DataContext _dbContext;
-        public AlunoRepository() => _dbContext = new DataContext();
-        
+        public AlunoRepository()
+        {
+            _dbContext = new DataContext();
+        }
+
         public Aluno Alterar(Aluno alunoAtual, Aluno alunoNovo)
         {
             alunoAtual.Nome = alunoNovo.Nome;
-            alunoAtual.CPF = alunoNovo.CPF;
             alunoAtual.Curso = alunoNovo.Curso;
             alunoAtual.Email = alunoNovo.Email;
             alunoAtual.Endereco = alunoNovo.Endereco;
-            alunoAtual.Matricula = alunoNovo.Matricula;
             alunoAtual.Telefone = alunoNovo.Telefone;
             alunoAtual.Responsavel = alunoNovo.Responsavel;
             alunoAtual.NomeCurso = alunoNovo.NomeCurso;
@@ -50,7 +53,7 @@ namespace Ensino.Models.Repositories
                 _dbContext.SaveChanges();
             }
             return aluno;
-        } 
+        }
 
         public List<Aluno> Obter()
         => _dbContext.Alunos.ToList();

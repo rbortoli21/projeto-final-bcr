@@ -7,13 +7,13 @@ namespace Ensino.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class AlterandoTabelasNovamente : IMigrationMetadata
+    public sealed partial class AdicionandoTurnoCursoAoAluno : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AlterandoTabelasNovamente));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AdicionandoTurnoCursoAoAluno));
         
         string IMigrationMetadata.Id
         {
-            get { return "202205231654253_AlterandoTabelasNovamente"; }
+            get { return "202205240328161_AdicionandoTurnoCursoAoAluno"; }
         }
         
         string IMigrationMetadata.Source

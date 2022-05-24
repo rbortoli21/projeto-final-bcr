@@ -11,22 +11,15 @@ namespace Ensino.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required(AllowEmptyStrings = true)]
         public string Nome { get; set; }
-        [Required(AllowEmptyStrings = true)]
-        public string NomeCurso { get; set; }
         public string CPF { get; set; }
-        [Required(AllowEmptyStrings = true)]
-        public string Email { get; set; }
-        [Required(AllowEmptyStrings = true)]
+        public string NomeCurso { get; set; }
+        public string TurnoCurso { get; set; }
         public string Telefone { get; set; }
-        [Required(AllowEmptyStrings = true)]
-        public string Responsavel { get; set; }
-        [Required(AllowEmptyStrings = true)]
+        public string Email { get; set; }
         public string Matricula { get; set; }
-        [Required(AllowEmptyStrings = true)]
-        public string Endereco { get; set; }
-        [Required]
+        public string Responsavel { get; set; }
         public Curso Curso { get; set; }
+        public string Endereco { get; set; }
     }
 }

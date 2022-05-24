@@ -9,7 +9,6 @@
         {
             DropForeignKey("dbo.Aluno", "Curso_Id", "dbo.Curso");
             DropIndex("dbo.Aluno", new[] { "Curso_Id" });
-            AddColumn("dbo.Aluno", "CPF", c => c.String());
             AlterColumn("dbo.Aluno", "Nome", c => c.String());
             AlterColumn("dbo.Aluno", "Email", c => c.String());
             AlterColumn("dbo.Aluno", "Telefone", c => c.String());
@@ -36,7 +35,6 @@
             AlterColumn("dbo.Aluno", "Telefone", c => c.String(nullable: false));
             AlterColumn("dbo.Aluno", "Email", c => c.String(nullable: false));
             AlterColumn("dbo.Aluno", "Nome", c => c.String(nullable: false));
-            DropColumn("dbo.Aluno", "CPF");
             CreateIndex("dbo.Aluno", "Curso_Id");
             AddForeignKey("dbo.Aluno", "Curso_Id", "dbo.Curso", "Id", cascadeDelete: true);
         }

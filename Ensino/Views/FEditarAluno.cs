@@ -19,23 +19,39 @@ namespace Ensino.Views
             InitializeComponent();
             this.aluno = aluno;
         }
+        public void VerificarSeHaCamposVazios()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is TextBox)
+                {
+                    var txtBox = control as TextBox;
+                    if (string.IsNullOrEmpty(txtBox.Text))
+                        throw new ArgumentNullException();
+                }
+            }
+        }
 
         private void FEditarAluno_Load(object sender, EventArgs e)
         {
+            txtBoxMatriculaAluno.Enabled = false;
+            txtBoxCPF.Enabled = false;
             if (!string.IsNullOrEmpty(aluno.Nome))
             {
                 txtBoxNomeAluno.Text = aluno.Nome;
                 txtBoxCPF.Text = aluno.CPF;
-                txtBoxCPF.Enabled = false;
                 txtBoxEnderecoAluno.Text = aluno.Endereco;
                 txtBoxMatriculaAluno.Text = aluno.Matricula;
-                txtBoxMatriculaAluno.Enabled = false;
                 txtBoxResponsavelAluno.Text = aluno.Responsavel;
                 using(var form = new FAlunos())
+                {
                     form.ListarCursosComboBox(comboBoxCursoAluno);
+                }
+                comboBoxTurnoCursoAluno.SelectedItem = aluno.TurnoCurso;
                 comboBoxCursoAluno.SelectedItem = aluno.NomeCurso;
                 txtBoxEmailAluno.Text = aluno.Email;
                 maskedTextBoxTelefoneAluno.Text = aluno.Telefone;
+                
             }
         }
 
@@ -47,6 +63,14 @@ namespace Ensino.Views
         private void btnCancelarAluno_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void comboBoxCursoAluno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (var form = new FAlunos())
+            {
+                form.ListarTurnosComboBox(comboBoxTurnoCursoAluno, comboBoxCursoAluno);
+            }
         }
     }
 }
