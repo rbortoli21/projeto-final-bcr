@@ -150,7 +150,6 @@ C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\bin\Debug\
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FormRelatorio.resources
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\RdlCompile.cache
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\RdlCompile.compiled
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\bin\Debug\SqlServerTypes\x64\msvcr120.dll
@@ -293,3 +292,5 @@ C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\bin\Debug\
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.AdicionandoNomeCursoAoAluno.resources
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.Teste.resources
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.AdicionandoTurnoCursoAoAluno.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Relatorios.FRelatorioAluno.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Relatorios.FRelatorioCurso.resources

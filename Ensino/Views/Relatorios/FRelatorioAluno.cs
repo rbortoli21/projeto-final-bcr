@@ -9,22 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Ensino.Views
+namespace Ensino.Views.Relatorios
 {
-    public partial class FormRelatorio : Form
+    public partial class FRelatorioAluno : Form
     {
-        List<object> dt = new List<object>();
-        public FormRelatorio(List<object> dt)
+        List<Aluno> dt = new List<Aluno>();
+        public FRelatorioAluno(List<Aluno> dt)
         {
             InitializeComponent();
             this.dt = dt;
         }
 
-        private void FormRelatorio_Load(object sender, EventArgs e)
+        private void FRelatorioAluno_Load(object sender, EventArgs e)
         {
-            dt.Add(new Curso());
             reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource($"{typeof(object)}Relatorio", dt));
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("AlunoRelatorio", dt));
             this.reportViewer1.RefreshReport();
         }
 

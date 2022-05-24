@@ -2,6 +2,7 @@
 using Ensino.Models;
 using Ensino.Models.Repositories;
 using Ensino.Models.Repositories.Interfaces;
+using Ensino.Views.Relatorios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -176,12 +177,8 @@ namespace Ensino.Views
 
         private void btnImprimirRelatorio_Click(object sender, EventArgs e)
         {
-            List<object> dt = (List<object>)dgvListarCursos.DataSource;
-            foreach (var d in dt)
-            {
-                Console.WriteLine(d);
-            }
-            using (var form = new FormRelatorio(dt))
+            List<Curso> dt = (List<Curso>)dgvListarCursos.DataSource;
+            using (var form = new FRelatorioCurso(dt))
             {
                 form.ShowDialog();
             }

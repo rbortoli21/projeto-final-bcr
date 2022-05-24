@@ -1,7 +1,7 @@
 ﻿
-namespace Ensino.Views
+namespace Ensino.Views.Relatorios
 {
-    partial class FormRelatorio
+    partial class FRelatorioCurso
     {
         /// <summary>
         /// Required designer variable.
@@ -27,38 +27,42 @@ namespace Ensino.Views
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        public void InitializeComponent()
+        private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.CursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.CursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CursoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "CursoRelatorio";
+            reportDataSource1.Value = this.CursoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Ensino.Relatorios.RelatorioCursos.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(858, 588);
+            this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // CursoBindingSource
             // 
             this.CursoBindingSource.DataSource = typeof(Ensino.Models.Curso);
             // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Ensino.Relatorios.RelatorioCursos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // FormRelatorio
+            // FRelatorioCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(858, 588);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "FormRelatorio";
-            this.Text = "FormRelatorio";
-            this.Load += new System.EventHandler(this.FormRelatorio_Load);
+            this.Name = "FRelatorioCurso";
+            this.Text = "FRelatorioCurso";
+            this.Load += new System.EventHandler(this.FRelatorioCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CursoBindingSource)).EndInit();
             this.ResumeLayout(false);
 

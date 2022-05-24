@@ -53,7 +53,7 @@
             // 
             // MenuVertical
             // 
-            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(50)))), ((int)(((byte)(54)))));
+            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
             this.MenuVertical.Controls.Add(this.btnPainelCursos);
             this.MenuVertical.Controls.Add(this.btnDashboard);
             this.MenuVertical.Controls.Add(this.btnprod);
