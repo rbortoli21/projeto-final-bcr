@@ -81,7 +81,7 @@ namespace Ensino.Views
                 {
                     var txtBox = control as TextBox;
                     if (string.IsNullOrEmpty(txtBox.Text))
-                        throw new ArgumentNullException();
+                        throw new ArgumentNullException("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
                 }
             }
         }
@@ -105,17 +105,22 @@ namespace Ensino.Views
             {
                 PegarDadosParaCadastro(aluno);
                 VerificarSeHaCamposVazios();
+                LimitarCpfETelefone(txtBoxCPF, maskedTextBoxTelefoneAluno);
                 _alunoRepository.Cadastrar(aluno);
             }
-            catch (ArgumentNullException)
+            catch (DataException ex)
             {
-                MessageBox.Show("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
-
+                MessageBox.Show(ex.Message);
                 return;
             }
-            catch (DuplicateWaitObjectException)
+            catch (ArgumentNullException ex)
             {
-                MessageBox.Show($"O aluno de CPF \"{aluno.CPF}\" já está cadastrado.");
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            catch (DuplicateWaitObjectException ex)
+            {
+                MessageBox.Show(ex.Message);
                 return;
             }
             catch (Exception)
@@ -133,7 +138,7 @@ namespace Ensino.Views
         //Edição
         private void btnEditarAluno_Click(object sender, EventArgs e)
         {
-            var id = Convert.ToInt32(dgvAlunos.CurrentRow.Cells[0].Value);
+            var id = ObterIdDoDataGridView(dgvAlunos); ;
             var aluno = _alunoRepository.ObterPorId(id);
             using (var form = new FEditarAluno(aluno))
             {
@@ -155,11 +160,6 @@ namespace Ensino.Views
                         form.VerificarSeHaCamposVazios();
                         _alunoRepository.Alterar(aluno, aluno_n);
                     }
-                    catch (DuplicateWaitObjectException)
-                    {
-                        MessageBox.Show($"O aluno de CPF \"{aluno.CPF}\" já está cadastrado.");
-                        return;
-                    }
                     catch (Exception)
                     {
                         MessageBox.Show($"O aluno \"{aluno.Nome}\" não pôde ser alterado, verifique os dados e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -174,7 +174,7 @@ namespace Ensino.Views
         //Deleção
         private void btnDeletarAluno_Click(object sender, EventArgs e)
         {
-            var id = Convert.ToInt32(dgvAlunos.CurrentRow.Cells[0].Value);
+            var id = ObterIdDoDataGridView(dgvAlunos);
             var aluno = _alunoRepository.ObterPorId(id);
             try
             {
@@ -204,5 +204,27 @@ namespace Ensino.Views
         {
             ListarTurnosComboBox(comboBoxTurnoCursoAluno, comboBoxCursoAluno);
         }
+
+        //Limitar CPF
+        private void LimitarCpfETelefone(MaskedTextBox cpf, MaskedTextBox telefone)
+        {
+            if (cpf.Text.Trim().Replace(" ", "").Length < 14)
+                throw new DataException("O campo CPF deve possuir 11 caracteres.");
+            if (telefone.Text.Trim().Replace(" ", "").Length < 17)
+                throw new DataException("O campo Telefone deve possuir 11 caracteres.");
+        }
+    
+        //Obter id do aluno para editar/deletar
+        private int ObterIdDoDataGridView(DataGridView dgv)
+        {
+            var cells = dgv.CurrentRow.Cells;
+            foreach (DataGridViewCell cell in cells)
+            {
+                if(dgv.Columns[cell.ColumnIndex].HeaderText == "Id")
+                    return Convert.ToInt32(dgv.CurrentRow.Cells[cell.ColumnIndex].Value);
+            }
+            return Convert.ToInt32(null);
+        }
+
     }
 }

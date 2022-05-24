@@ -36,7 +36,7 @@ namespace Ensino.Models.Repositories
         public Aluno Cadastrar(Aluno aluno)
         {
             if (_dbContext.Alunos.Where(a => a.CPF == aluno.CPF).Any())
-                throw new DuplicateWaitObjectException();
+                throw new DuplicateWaitObjectException($"O aluno de CPF \"{aluno.CPF}\" já está cadastrado.");
             else
             {
                 _dbContext.Alunos.Add(aluno);

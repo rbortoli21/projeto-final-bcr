@@ -16,17 +16,6 @@ namespace Ensino.Views
         {
             InitializeComponent();
         }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FDashboard_Load(object sender, EventArgs e)
         {
             using (var form = new FAlunos())
@@ -41,19 +30,5 @@ namespace Ensino.Views
             }
         }
 
-        private void quantidadeAlunos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void quantidadeCursos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
