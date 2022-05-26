@@ -21,7 +21,7 @@ namespace Ensino.Views
         {
             if (MenuVertical.Width == 250)
             {
-                MenuVertical.Width = 70;
+                MenuVertical.Width = 50;
             }
             else
                 MenuVertical.Width = 250;

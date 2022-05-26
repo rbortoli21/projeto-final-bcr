@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCursos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalvarCurso = new System.Windows.Forms.Button();
             this.txtBoxNomeCurso = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -42,16 +42,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvListarCursos = new System.Windows.Forms.DataGridView();
-            this.btnDeletarCurso = new System.Windows.Forms.Button();
-            this.btnCancelarCurso = new System.Windows.Forms.Button();
-            this.btnEditarCurso = new System.Windows.Forms.Button();
-            this.btnImprimirRelatorio = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeAlunosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cargaHorariaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDeletarCurso = new System.Windows.Forms.Button();
+            this.btnCancelarCurso = new System.Windows.Forms.Button();
+            this.btnEditarCurso = new System.Windows.Forms.Button();
+            this.btnImprimirRelatorio = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCargaHoraria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
@@ -59,7 +59,7 @@
             // 
             // btnSalvarCurso
             // 
-            this.btnSalvarCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSalvarCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.btnSalvarCurso.FlatAppearance.BorderSize = 0;
             this.btnSalvarCurso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnSalvarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -173,14 +173,14 @@
             this.dgvListarCursos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListarCursos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvListarCursos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListarCursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListarCursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListarCursos.ColumnHeadersHeight = 30;
             this.dgvListarCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvListarCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -190,14 +190,14 @@
             this.quantidadeAlunosDataGridViewTextBoxColumn,
             this.cargaHorariaDataGridViewTextBoxColumn});
             this.dgvListarCursos.DataSource = this.cursoBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListarCursos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListarCursos.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvListarCursos.EnableHeadersVisualStyles = false;
             this.dgvListarCursos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvListarCursos.Location = new System.Drawing.Point(72, 211);
@@ -210,82 +210,11 @@
             this.dgvListarCursos.TabIndex = 48;
             this.dgvListarCursos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListarCursos_CellContentClick);
             // 
-            // btnDeletarCurso
-            // 
-            this.btnDeletarCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnDeletarCurso.FlatAppearance.BorderSize = 0;
-            this.btnDeletarCurso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnDeletarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeletarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletarCurso.ForeColor = System.Drawing.Color.White;
-            this.btnDeletarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeletarCurso.Location = new System.Drawing.Point(195, 516);
-            this.btnDeletarCurso.Name = "btnDeletarCurso";
-            this.btnDeletarCurso.Size = new System.Drawing.Size(115, 35);
-            this.btnDeletarCurso.TabIndex = 50;
-            this.btnDeletarCurso.Text = "DELETAR";
-            this.btnDeletarCurso.UseVisualStyleBackColor = false;
-            this.btnDeletarCurso.Click += new System.EventHandler(this.btnDeletarCurso_Click);
-            // 
-            // btnCancelarCurso
-            // 
-            this.btnCancelarCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnCancelarCurso.FlatAppearance.BorderSize = 0;
-            this.btnCancelarCurso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnCancelarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelarCurso.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarCurso.Location = new System.Drawing.Point(72, 516);
-            this.btnCancelarCurso.Name = "btnCancelarCurso";
-            this.btnCancelarCurso.Size = new System.Drawing.Size(115, 35);
-            this.btnCancelarCurso.TabIndex = 51;
-            this.btnCancelarCurso.Text = "CANCELAR";
-            this.btnCancelarCurso.UseVisualStyleBackColor = false;
-            this.btnCancelarCurso.Click += new System.EventHandler(this.btnCancelarCurso_Click);
-            // 
-            // btnEditarCurso
-            // 
-            this.btnEditarCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnEditarCurso.FlatAppearance.BorderSize = 0;
-            this.btnEditarCurso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnEditarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarCurso.ForeColor = System.Drawing.Color.White;
-            this.btnEditarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCurso.Location = new System.Drawing.Point(316, 516);
-            this.btnEditarCurso.Name = "btnEditarCurso";
-            this.btnEditarCurso.Size = new System.Drawing.Size(115, 35);
-            this.btnEditarCurso.TabIndex = 52;
-            this.btnEditarCurso.Text = "EDITAR";
-            this.btnEditarCurso.UseVisualStyleBackColor = false;
-            this.btnEditarCurso.Click += new System.EventHandler(this.btnEditarCurso_Click);
-            // 
-            // btnImprimirRelatorio
-            // 
-            this.btnImprimirRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnImprimirRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.btnImprimirRelatorio.FlatAppearance.BorderSize = 0;
-            this.btnImprimirRelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnImprimirRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimirRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimirRelatorio.ForeColor = System.Drawing.Color.White;
-            this.btnImprimirRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimirRelatorio.Location = new System.Drawing.Point(437, 516);
-            this.btnImprimirRelatorio.Name = "btnImprimirRelatorio";
-            this.btnImprimirRelatorio.Size = new System.Drawing.Size(115, 35);
-            this.btnImprimirRelatorio.TabIndex = 63;
-            this.btnImprimirRelatorio.Text = "RELATÓRIO";
-            this.btnImprimirRelatorio.UseVisualStyleBackColor = false;
-            this.btnImprimirRelatorio.Click += new System.EventHandler(this.btnImprimirRelatorio_Click);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
@@ -326,6 +255,77 @@
             // cursoBindingSource
             // 
             this.cursoBindingSource.DataSource = typeof(Ensino.Models.Curso);
+            // 
+            // btnDeletarCurso
+            // 
+            this.btnDeletarCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.btnDeletarCurso.FlatAppearance.BorderSize = 0;
+            this.btnDeletarCurso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnDeletarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeletarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletarCurso.ForeColor = System.Drawing.Color.White;
+            this.btnDeletarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeletarCurso.Location = new System.Drawing.Point(195, 516);
+            this.btnDeletarCurso.Name = "btnDeletarCurso";
+            this.btnDeletarCurso.Size = new System.Drawing.Size(115, 35);
+            this.btnDeletarCurso.TabIndex = 50;
+            this.btnDeletarCurso.Text = "DELETAR";
+            this.btnDeletarCurso.UseVisualStyleBackColor = false;
+            this.btnDeletarCurso.Click += new System.EventHandler(this.btnDeletarCurso_Click);
+            // 
+            // btnCancelarCurso
+            // 
+            this.btnCancelarCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.btnCancelarCurso.FlatAppearance.BorderSize = 0;
+            this.btnCancelarCurso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCancelarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCurso.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelarCurso.Location = new System.Drawing.Point(72, 516);
+            this.btnCancelarCurso.Name = "btnCancelarCurso";
+            this.btnCancelarCurso.Size = new System.Drawing.Size(115, 35);
+            this.btnCancelarCurso.TabIndex = 51;
+            this.btnCancelarCurso.Text = "CANCELAR";
+            this.btnCancelarCurso.UseVisualStyleBackColor = false;
+            this.btnCancelarCurso.Click += new System.EventHandler(this.btnCancelarCurso_Click);
+            // 
+            // btnEditarCurso
+            // 
+            this.btnEditarCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.btnEditarCurso.FlatAppearance.BorderSize = 0;
+            this.btnEditarCurso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnEditarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCurso.ForeColor = System.Drawing.Color.White;
+            this.btnEditarCurso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarCurso.Location = new System.Drawing.Point(316, 516);
+            this.btnEditarCurso.Name = "btnEditarCurso";
+            this.btnEditarCurso.Size = new System.Drawing.Size(115, 35);
+            this.btnEditarCurso.TabIndex = 52;
+            this.btnEditarCurso.Text = "EDITAR";
+            this.btnEditarCurso.UseVisualStyleBackColor = false;
+            this.btnEditarCurso.Click += new System.EventHandler(this.btnEditarCurso_Click);
+            // 
+            // btnImprimirRelatorio
+            // 
+            this.btnImprimirRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimirRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.btnImprimirRelatorio.FlatAppearance.BorderSize = 0;
+            this.btnImprimirRelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnImprimirRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimirRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimirRelatorio.ForeColor = System.Drawing.Color.White;
+            this.btnImprimirRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimirRelatorio.Location = new System.Drawing.Point(437, 516);
+            this.btnImprimirRelatorio.Name = "btnImprimirRelatorio";
+            this.btnImprimirRelatorio.Size = new System.Drawing.Size(115, 35);
+            this.btnImprimirRelatorio.TabIndex = 63;
+            this.btnImprimirRelatorio.Text = "RELATÓRIO";
+            this.btnImprimirRelatorio.UseVisualStyleBackColor = false;
+            this.btnImprimirRelatorio.Click += new System.EventHandler(this.btnImprimirRelatorio_Click);
             // 
             // FCursos
             // 

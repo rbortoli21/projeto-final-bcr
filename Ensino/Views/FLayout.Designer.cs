@@ -41,6 +41,9 @@
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.painel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
@@ -54,6 +57,9 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.MenuVertical.Controls.Add(this.button3);
+            this.MenuVertical.Controls.Add(this.button2);
+            this.MenuVertical.Controls.Add(this.button1);
             this.MenuVertical.Controls.Add(this.btnPainelCursos);
             this.MenuVertical.Controls.Add(this.btnDashboard);
             this.MenuVertical.Controls.Add(this.btnprod);
@@ -72,9 +78,9 @@
             this.btnPainelCursos.ForeColor = System.Drawing.Color.White;
             this.btnPainelCursos.Image = ((System.Drawing.Image)(resources.GetObject("btnPainelCursos.Image")));
             this.btnPainelCursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPainelCursos.Location = new System.Drawing.Point(1, 172);
+            this.btnPainelCursos.Location = new System.Drawing.Point(0, 163);
             this.btnPainelCursos.Name = "btnPainelCursos";
-            this.btnPainelCursos.Size = new System.Drawing.Size(250, 40);
+            this.btnPainelCursos.Size = new System.Drawing.Size(250, 53);
             this.btnPainelCursos.TabIndex = 19;
             this.btnPainelCursos.Text = "Cursos";
             this.btnPainelCursos.UseVisualStyleBackColor = true;
@@ -106,9 +112,9 @@
             this.btnprod.ForeColor = System.Drawing.Color.White;
             this.btnprod.Image = ((System.Drawing.Image)(resources.GetObject("btnprod.Image")));
             this.btnprod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnprod.Location = new System.Drawing.Point(0, 126);
+            this.btnprod.Location = new System.Drawing.Point(0, 104);
             this.btnprod.Name = "btnprod";
-            this.btnprod.Size = new System.Drawing.Size(250, 40);
+            this.btnprod.Size = new System.Drawing.Size(250, 53);
             this.btnprod.TabIndex = 1;
             this.btnprod.Text = "Alunos";
             this.btnprod.UseVisualStyleBackColor = true;
@@ -218,6 +224,54 @@
             this.painel.TabIndex = 2;
             this.painel.Paint += new System.Windows.Forms.PaintEventHandler(this.painel_Paint);
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 222);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(250, 53);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Turmas";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 281);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(250, 53);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "Matérias";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(0, 340);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(250, 53);
+            this.button3.TabIndex = 22;
+            this.button3.Text = "Professores";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // FLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,6 +312,9 @@
         private System.Windows.Forms.Button btnDashboard;
         private System.Windows.Forms.Button btnPainelCursos;
         private System.Windows.Forms.PictureBox iconMinimize;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
