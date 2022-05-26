@@ -239,7 +239,6 @@
     <Compile Include="Views\FLayout.Designer.cs">
       <DependentUpon>FLayout.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FMaterias.cs" />
     <Compile Include="Views\Materia\FEditarMateria.cs">
       <SubType>Form</SubType>
     </Compile>

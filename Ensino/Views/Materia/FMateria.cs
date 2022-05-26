@@ -77,15 +77,14 @@ namespace Ensino.Views.Materia
                 {
                     var txtBox = control as TextBox;
                     if (string.IsNullOrEmpty(txtBox.Text))
-                        throw new ArgumentNullException("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
+                        throw new ArgumentNullException();
                 }
                 if(control is ComboBox)
                 {
                     var cbBox = control as ComboBox;
                     if (string.IsNullOrEmpty(cbBox.Text))
                     {
-                        Console.WriteLine("deu ruim");
-                        throw new ArgumentNullException("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
+                        throw new ArgumentNullException();
                     }
                 }
             }
@@ -155,9 +154,9 @@ namespace Ensino.Views.Materia
                 MessageBox.Show(ex.Message);
                 return;
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
                 return;
             }
             catch (DuplicateWaitObjectException ex)
@@ -167,7 +166,6 @@ namespace Ensino.Views.Materia
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 MessageBox.Show($"A matéria não pôde ser cadastrada, verifique os campos e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }

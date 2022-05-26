@@ -26,24 +26,38 @@ namespace Ensino.Views.Turma
             _alunoRepository = new AlunoRepository();
         }
 
+        public void VerificarSeHaCamposVazios()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control is ComboBox)
+                {
+                    var cbBox = control as ComboBox;
+                    if (string.IsNullOrEmpty(cbBox.Text))
+                        throw new ArgumentNullException();
+                }
+            }
+        }
+
         private void PegarDadosParaCadastro(Models.Turma turma)
         {
+            VerificarSeHaCamposVazios();
             turma.Curso = _cursoRepository.Obter().FirstOrDefault(c => c.Nome == comboBoxCurso.Text);
             turma.NomeCurso = turma.Curso.Nome;
             turma.TurnoCurso = _cursoRepository.Obter().FirstOrDefault(c => c.Turno == comboBoxTurno.Text).Turno;
-            turma.QtdAlunos = _alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id).Count();
         }
 
-        private void ListarQuantidadeAlunos(List<Models.Turma> alunos)
+        private void ListarQuantidadeAlunos(List<Models.Turma> turmas)
         {
-
+            foreach(var turma in turmas)
+                turma.QtdAlunos = _alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id).Count();
+            
         }
 
         private void AtualizarGrid()
         {
             dgvTurmas.DataSource = _turmaRepository.Obter();
-
-            //ListarQuantidadeAlunos(_turmaRepository.Obter());
+            ListarQuantidadeAlunos(_turmaRepository.Obter());
             dgvTurmas.Refresh();
         }
 
@@ -55,14 +69,18 @@ namespace Ensino.Views.Turma
                 PegarDadosParaCadastro(turma);
                 _turmaRepository.Cadastrar(turma);
             }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
+                return;
+            }
             catch (DuplicateWaitObjectException ex)
             {
                 MessageBox.Show(ex.Message);
                 return;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
                 MessageBox.Show($"Turma não pôde ser cadastrada, verifique os campos e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }

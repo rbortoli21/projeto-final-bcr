@@ -75,6 +75,7 @@ namespace Ensino.Views
 
         private void PegarDadosParaCadastro(Aluno aluno)
         {
+            VerificarSeHaCamposVazios();
             aluno.Nome = txtBoxNomeAluno.Text;
             aluno.Responsavel = txtBoxResponsavelAluno.Text;
             aluno.Endereco = txtBoxEnderecoAluno.Text;
@@ -112,7 +113,7 @@ namespace Ensino.Views
                 {
                     var txtBox = control as TextBox;
                     if (string.IsNullOrEmpty(txtBox.Text))
-                        throw new ArgumentNullException("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
+                        throw new ArgumentNullException();
                 }
             }
         }
@@ -134,8 +135,7 @@ namespace Ensino.Views
             var aluno = new Aluno();
             try
             {
-                PegarDadosParaCadastro(aluno);
-                VerificarSeHaCamposVazios();
+                PegarDadosParaCadastro(aluno);   
                 LimitarCpfETelefone(txtBoxCPF, maskedTextBoxTelefoneAluno);
                 alunoRepository.Cadastrar(aluno);
             }
@@ -144,9 +144,9 @@ namespace Ensino.Views
                 MessageBox.Show(ex.Message);
                 return;
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
                 return;
             }
             catch (DuplicateWaitObjectException ex)

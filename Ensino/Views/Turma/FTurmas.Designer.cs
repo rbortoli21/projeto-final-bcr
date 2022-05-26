@@ -37,16 +37,16 @@
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.dgvTurmas = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxTurno = new System.Windows.Forms.ComboBox();
-            this.comboBoxCurso = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turnoCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtdAlunosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turmaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxTurno = new System.Windows.Forms.ComboBox();
+            this.comboBoxCurso = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurmas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -149,6 +149,44 @@
             this.dgvTurmas.Size = new System.Drawing.Size(551, 286);
             this.dgvTurmas.TabIndex = 69;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 42;
+            // 
+            // nomeCursoDataGridViewTextBoxColumn
+            // 
+            this.nomeCursoDataGridViewTextBoxColumn.DataPropertyName = "NomeCurso";
+            this.nomeCursoDataGridViewTextBoxColumn.HeaderText = "Curso";
+            this.nomeCursoDataGridViewTextBoxColumn.Name = "nomeCursoDataGridViewTextBoxColumn";
+            this.nomeCursoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeCursoDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // turnoCursoDataGridViewTextBoxColumn
+            // 
+            this.turnoCursoDataGridViewTextBoxColumn.DataPropertyName = "TurnoCurso";
+            this.turnoCursoDataGridViewTextBoxColumn.HeaderText = "Turno";
+            this.turnoCursoDataGridViewTextBoxColumn.Name = "turnoCursoDataGridViewTextBoxColumn";
+            this.turnoCursoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.turnoCursoDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // qtdAlunosDataGridViewTextBoxColumn
+            // 
+            this.qtdAlunosDataGridViewTextBoxColumn.DataPropertyName = "QtdAlunos";
+            this.qtdAlunosDataGridViewTextBoxColumn.HeaderText = "QtdAlunos";
+            this.qtdAlunosDataGridViewTextBoxColumn.Name = "qtdAlunosDataGridViewTextBoxColumn";
+            this.qtdAlunosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.qtdAlunosDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // turmaBindingSource
+            // 
+            this.turmaBindingSource.DataSource = typeof(Ensino.Models.Turma);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -214,44 +252,6 @@
             this.label6.Size = new System.Drawing.Size(65, 20);
             this.label6.TabIndex = 73;
             this.label6.Text = "Curso: *";
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 41;
-            // 
-            // nomeCursoDataGridViewTextBoxColumn
-            // 
-            this.nomeCursoDataGridViewTextBoxColumn.DataPropertyName = "NomeCurso";
-            this.nomeCursoDataGridViewTextBoxColumn.HeaderText = "Curso";
-            this.nomeCursoDataGridViewTextBoxColumn.Name = "nomeCursoDataGridViewTextBoxColumn";
-            this.nomeCursoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeCursoDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // turnoCursoDataGridViewTextBoxColumn
-            // 
-            this.turnoCursoDataGridViewTextBoxColumn.DataPropertyName = "TurnoCurso";
-            this.turnoCursoDataGridViewTextBoxColumn.HeaderText = "Turno";
-            this.turnoCursoDataGridViewTextBoxColumn.Name = "turnoCursoDataGridViewTextBoxColumn";
-            this.turnoCursoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.turnoCursoDataGridViewTextBoxColumn.Width = 65;
-            // 
-            // qtdAlunosDataGridViewTextBoxColumn
-            // 
-            this.qtdAlunosDataGridViewTextBoxColumn.DataPropertyName = "QtdAlunos";
-            this.qtdAlunosDataGridViewTextBoxColumn.HeaderText = "QtdAlunos";
-            this.qtdAlunosDataGridViewTextBoxColumn.Name = "qtdAlunosDataGridViewTextBoxColumn";
-            this.qtdAlunosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.qtdAlunosDataGridViewTextBoxColumn.Width = 92;
-            // 
-            // turmaBindingSource
-            // 
-            this.turmaBindingSource.DataSource = typeof(Ensino.Models.Turma);
             // 
             // FTurmas
             // 

@@ -30,36 +30,34 @@ namespace Ensino.Views
         {
             dgvListarCursos.DataSource = cursoRepository.Obter();
             dgvListarCursos.Refresh();
+            if (ObterIdDoDataGridView(dgvListarCursos) != 0)
+            {
+                btnEditar.Enabled = true;
+                btnDeletar.Enabled = true;
+            }
+            else
+            {
+                btnEditar.Enabled = false;
+                btnDeletar.Enabled = false;
+            }
         }
 
-        private void txtBoxNomeCurso_TextChanged(object sender, EventArgs e)
+        private void ListarQuantidadeAlunos(List<Models.Curso> cursos)
         {
-
+            foreach (var curso in cursos)
+                curso.QuantidadeAlunos = alunoRepository.Obter().Where(a => a.Curso_Id == curso.Id).Count();
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
         private const int CB_SETCUEBANNER = 0x1703;
 
         [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
         private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam);
         private void FCursos_Load(object sender, EventArgs e)
         {
+            
             AtualizarGrid();
+            ListarQuantidadeAlunos(cursoRepository.Obter());
             SendMessage(this.comboBoxTurnoCurso.Handle, CB_SETCUEBANNER, 0, "Selecione um Turno");
-        }
-
-
-        //Pegar dados e colocar nos boxes
-        private void dgvListarCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
         }
 
         //Cadastro
@@ -181,6 +179,20 @@ namespace Ensino.Views
             {
                 form.ShowDialog();
             }
+        }
+        private int ObterIdDoDataGridView(DataGridView dgv)
+        {
+            if (dgv.Rows.Count != 0)
+            {
+                var cells = dgv.CurrentRow.Cells;
+                foreach (DataGridViewCell cell in cells)
+                {
+                    if (dgv.Columns[cell.ColumnIndex].HeaderText == "Id")
+                        return Convert.ToInt32(dgv.CurrentRow.Cells[cell.ColumnIndex].Value);
+                }
+            }
+            return Convert.ToInt32(null);
+
         }
     }
 }
