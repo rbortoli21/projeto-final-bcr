@@ -19,8 +19,8 @@ namespace Ensino.Models
         public string Email { get; set; }
         public string Matricula { get; set; }
         public string Responsavel { get; set; }
-        public Curso Curso { get; set; }
-        public Turma Turma { get; set; }
+        public int Curso_Id { get; set; }
+        public int Turma_Id { get; set; }
         public string Endereco { get; set; }
     }
 }

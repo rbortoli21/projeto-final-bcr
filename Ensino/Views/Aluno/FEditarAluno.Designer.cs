@@ -304,6 +304,7 @@ namespace Ensino.Views
             this.Controls.Add(this.txtBoxMatriculaAluno);
             this.Controls.Add(this.txtBoxEmailAluno);
             this.Controls.Add(this.txtBoxNomeAluno);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FEditarAluno";
             this.Text = "FEditarAluno";
             this.Load += new System.EventHandler(this.FEditarAluno_Load);

@@ -97,7 +97,7 @@
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(669, 516);
+            this.btnSalvar.Location = new System.Drawing.Point(679, 516);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(180, 35);
             this.btnSalvar.TabIndex = 64;
@@ -146,7 +146,7 @@
             this.dgvTurmas.ReadOnly = true;
             this.dgvTurmas.RowHeadersVisible = false;
             this.dgvTurmas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTurmas.Size = new System.Drawing.Size(511, 286);
+            this.dgvTurmas.Size = new System.Drawing.Size(551, 286);
             this.dgvTurmas.TabIndex = 69;
             // 
             // label7

@@ -10,9 +10,10 @@ namespace Ensino.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public Curso Curso { get; set; }
+        public int Curso_Id { get; set; }
         public string NomeCurso { get; set; }
-        public Professor Professor { get; set; }
+        public string NomeTurno { get; set; }
+        public int Professor_Id { get; set; }
         public string NomeProfessor { get; set; }
     }
 }

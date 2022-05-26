@@ -22,7 +22,8 @@ namespace Ensino.Models.Repositories
         {
             alunoAtual.Nome = alunoNovo.Nome;
             alunoAtual.Email = alunoNovo.Email;
-            alunoAtual.Curso = _dbContext.Cursos.FirstOrDefault(c => c.Id == alunoNovo.Curso.Id);
+            alunoAtual.Curso_Id = _dbContext.Cursos.FirstOrDefault(c => c.Id == alunoNovo.Curso_Id).Id;
+            alunoAtual.Turma_Id = _dbContext.Turmas.FirstOrDefault(c => c.Id == alunoNovo.Turma_Id).Id;
             alunoAtual.Endereco = alunoNovo.Endereco;
             alunoAtual.Telefone = alunoNovo.Telefone;
             alunoAtual.Responsavel = alunoNovo.Responsavel;
@@ -38,7 +39,6 @@ namespace Ensino.Models.Repositories
         {
             if (_dbContext.Alunos.Where(a => a.CPF == aluno.CPF).Any())
                 throw new DuplicateWaitObjectException($"Aluno já está cadastrado.");
-            aluno.Curso = _dbContext.Cursos.FirstOrDefault(c => c.Id == aluno.Curso.Id);
             _dbContext.Alunos.Add(aluno);
             _dbContext.SaveChanges();
 

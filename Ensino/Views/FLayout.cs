@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Ensino.Views.Turma;
+using Ensino.Views.Professor;
+using Ensino.Views.Materia;
 
 namespace Ensino.Views
 {
@@ -86,14 +88,19 @@ namespace Ensino.Views
             AbrirFormulario(new FDashboard());
         }
 
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FDashboard());
-        }
-
         private void painel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void iconMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Normal;
+            iconrestaurar.Visible = true;
+            iconMinimize.Visible = false;
+        }
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FDashboard());
         }
 
         private void btnPainelCursos_Click(object sender, EventArgs e)
@@ -101,16 +108,19 @@ namespace Ensino.Views
             AbrirFormulario(new FCursos());
         }
 
-        private void iconMinimize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Normal;
-            iconrestaurar.Visible = true;
-            iconMinimize.Visible = false;
-        }
-
         private void btnTurmas_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FTurmas());
+        }
+
+        private void abrirProfessor_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FProfessor());
+        }
+
+        private void btnMaterias_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FMateria());
         }
     }
 }

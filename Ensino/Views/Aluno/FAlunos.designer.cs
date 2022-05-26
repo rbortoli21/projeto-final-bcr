@@ -68,6 +68,7 @@
             this.enderecoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TurnoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Turma_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).BeginInit();
@@ -266,7 +267,8 @@
             this.matriculaDataGridViewTextBoxColumn,
             this.enderecoDataGridViewTextBoxColumn,
             this.NomeCurso,
-            this.TurnoCurso});
+            this.TurnoCurso,
+            this.Turma_Id});
             this.dgvAlunos.DataSource = this.alunoBindingSource1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -539,6 +541,14 @@
             this.TurnoCurso.ReadOnly = true;
             this.TurnoCurso.Width = 65;
             // 
+            // Turma_Id
+            // 
+            this.Turma_Id.DataPropertyName = "Turma_Id";
+            this.Turma_Id.HeaderText = "Turma";
+            this.Turma_Id.Name = "Turma_Id";
+            this.Turma_Id.ReadOnly = true;
+            this.Turma_Id.Width = 69;
+            // 
             // FAlunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -616,5 +626,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn enderecoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn TurnoCurso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Turma_Id;
     }
 }

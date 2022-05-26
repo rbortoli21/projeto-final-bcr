@@ -30,9 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FLayout));
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.btnPainelCursos = new System.Windows.Forms.Button();
+            this.btnProfessor = new System.Windows.Forms.Button();
+            this.btnMaterias = new System.Windows.Forms.Button();
+            this.btnTurmas = new System.Windows.Forms.Button();
+            this.btnCursos = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
-            this.btnprod = new System.Windows.Forms.Button();
+            this.btnAlunos = new System.Windows.Forms.Button();
             this.BarraTitulo = new System.Windows.Forms.Panel();
             this.iconMinimize = new System.Windows.Forms.PictureBox();
             this.iconMinizar = new System.Windows.Forms.PictureBox();
@@ -41,9 +44,6 @@
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.painel = new System.Windows.Forms.Panel();
-            this.btnTurmas = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
@@ -57,34 +57,85 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
-            this.MenuVertical.Controls.Add(this.button3);
-            this.MenuVertical.Controls.Add(this.button2);
+            this.MenuVertical.Controls.Add(this.btnProfessor);
+            this.MenuVertical.Controls.Add(this.btnMaterias);
             this.MenuVertical.Controls.Add(this.btnTurmas);
-            this.MenuVertical.Controls.Add(this.btnPainelCursos);
+            this.MenuVertical.Controls.Add(this.btnCursos);
             this.MenuVertical.Controls.Add(this.btnDashboard);
-            this.MenuVertical.Controls.Add(this.btnprod);
+            this.MenuVertical.Controls.Add(this.btnAlunos);
             this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuVertical.Location = new System.Drawing.Point(0, 0);
             this.MenuVertical.Name = "MenuVertical";
             this.MenuVertical.Size = new System.Drawing.Size(250, 616);
             this.MenuVertical.TabIndex = 0;
             // 
-            // btnPainelCursos
+            // btnProfessor
             // 
-            this.btnPainelCursos.FlatAppearance.BorderSize = 0;
-            this.btnPainelCursos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnPainelCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPainelCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPainelCursos.ForeColor = System.Drawing.Color.White;
-            this.btnPainelCursos.Image = ((System.Drawing.Image)(resources.GetObject("btnPainelCursos.Image")));
-            this.btnPainelCursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPainelCursos.Location = new System.Drawing.Point(0, 163);
-            this.btnPainelCursos.Name = "btnPainelCursos";
-            this.btnPainelCursos.Size = new System.Drawing.Size(250, 53);
-            this.btnPainelCursos.TabIndex = 19;
-            this.btnPainelCursos.Text = "Cursos";
-            this.btnPainelCursos.UseVisualStyleBackColor = true;
-            this.btnPainelCursos.Click += new System.EventHandler(this.btnPainelCursos_Click);
+            this.btnProfessor.FlatAppearance.BorderSize = 0;
+            this.btnProfessor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfessor.ForeColor = System.Drawing.Color.White;
+            this.btnProfessor.Image = ((System.Drawing.Image)(resources.GetObject("btnProfessor.Image")));
+            this.btnProfessor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProfessor.Location = new System.Drawing.Point(0, 340);
+            this.btnProfessor.Name = "btnProfessor";
+            this.btnProfessor.Size = new System.Drawing.Size(250, 53);
+            this.btnProfessor.TabIndex = 22;
+            this.btnProfessor.Text = "Professores";
+            this.btnProfessor.UseVisualStyleBackColor = true;
+            this.btnProfessor.Click += new System.EventHandler(this.abrirProfessor_Click);
+            // 
+            // btnMaterias
+            // 
+            this.btnMaterias.FlatAppearance.BorderSize = 0;
+            this.btnMaterias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnMaterias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaterias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaterias.ForeColor = System.Drawing.Color.White;
+            this.btnMaterias.Image = ((System.Drawing.Image)(resources.GetObject("btnMaterias.Image")));
+            this.btnMaterias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaterias.Location = new System.Drawing.Point(0, 281);
+            this.btnMaterias.Name = "btnMaterias";
+            this.btnMaterias.Size = new System.Drawing.Size(250, 53);
+            this.btnMaterias.TabIndex = 21;
+            this.btnMaterias.Text = "Matérias";
+            this.btnMaterias.UseVisualStyleBackColor = true;
+            this.btnMaterias.Click += new System.EventHandler(this.btnMaterias_Click);
+            // 
+            // btnTurmas
+            // 
+            this.btnTurmas.FlatAppearance.BorderSize = 0;
+            this.btnTurmas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnTurmas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTurmas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTurmas.ForeColor = System.Drawing.Color.White;
+            this.btnTurmas.Image = ((System.Drawing.Image)(resources.GetObject("btnTurmas.Image")));
+            this.btnTurmas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTurmas.Location = new System.Drawing.Point(0, 222);
+            this.btnTurmas.Name = "btnTurmas";
+            this.btnTurmas.Size = new System.Drawing.Size(250, 53);
+            this.btnTurmas.TabIndex = 20;
+            this.btnTurmas.Text = "Turmas";
+            this.btnTurmas.UseVisualStyleBackColor = true;
+            this.btnTurmas.Click += new System.EventHandler(this.btnTurmas_Click);
+            // 
+            // btnCursos
+            // 
+            this.btnCursos.FlatAppearance.BorderSize = 0;
+            this.btnCursos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCursos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCursos.ForeColor = System.Drawing.Color.White;
+            this.btnCursos.Image = ((System.Drawing.Image)(resources.GetObject("btnCursos.Image")));
+            this.btnCursos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCursos.Location = new System.Drawing.Point(0, 163);
+            this.btnCursos.Name = "btnCursos";
+            this.btnCursos.Size = new System.Drawing.Size(250, 53);
+            this.btnCursos.TabIndex = 19;
+            this.btnCursos.Text = "Cursos";
+            this.btnCursos.UseVisualStyleBackColor = true;
+            this.btnCursos.Click += new System.EventHandler(this.btnPainelCursos_Click);
             // 
             // btnDashboard
             // 
@@ -103,22 +154,22 @@
             this.btnDashboard.UseVisualStyleBackColor = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // btnprod
+            // btnAlunos
             // 
-            this.btnprod.FlatAppearance.BorderSize = 0;
-            this.btnprod.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnprod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnprod.ForeColor = System.Drawing.Color.White;
-            this.btnprod.Image = ((System.Drawing.Image)(resources.GetObject("btnprod.Image")));
-            this.btnprod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnprod.Location = new System.Drawing.Point(0, 104);
-            this.btnprod.Name = "btnprod";
-            this.btnprod.Size = new System.Drawing.Size(250, 53);
-            this.btnprod.TabIndex = 1;
-            this.btnprod.Text = "Alunos";
-            this.btnprod.UseVisualStyleBackColor = true;
-            this.btnprod.Click += new System.EventHandler(this.btnprod_Click);
+            this.btnAlunos.FlatAppearance.BorderSize = 0;
+            this.btnAlunos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnAlunos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlunos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlunos.ForeColor = System.Drawing.Color.White;
+            this.btnAlunos.Image = ((System.Drawing.Image)(resources.GetObject("btnAlunos.Image")));
+            this.btnAlunos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlunos.Location = new System.Drawing.Point(0, 104);
+            this.btnAlunos.Name = "btnAlunos";
+            this.btnAlunos.Size = new System.Drawing.Size(250, 53);
+            this.btnAlunos.TabIndex = 1;
+            this.btnAlunos.Text = "Alunos";
+            this.btnAlunos.UseVisualStyleBackColor = true;
+            this.btnAlunos.Click += new System.EventHandler(this.btnprod_Click);
             // 
             // BarraTitulo
             // 
@@ -224,55 +275,6 @@
             this.painel.TabIndex = 2;
             this.painel.Paint += new System.Windows.Forms.PaintEventHandler(this.painel_Paint);
             // 
-            // btnTurmas
-            // 
-            this.btnTurmas.FlatAppearance.BorderSize = 0;
-            this.btnTurmas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnTurmas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTurmas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTurmas.ForeColor = System.Drawing.Color.White;
-            this.btnTurmas.Image = ((System.Drawing.Image)(resources.GetObject("btnTurmas.Image")));
-            this.btnTurmas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTurmas.Location = new System.Drawing.Point(0, 222);
-            this.btnTurmas.Name = "btnTurmas";
-            this.btnTurmas.Size = new System.Drawing.Size(250, 53);
-            this.btnTurmas.TabIndex = 20;
-            this.btnTurmas.Text = "Turmas";
-            this.btnTurmas.UseVisualStyleBackColor = true;
-            this.btnTurmas.Click += new System.EventHandler(this.btnTurmas_Click);
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 281);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 53);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Matérias";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 340);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(250, 53);
-            this.button3.TabIndex = 22;
-            this.button3.Text = "Professores";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // FLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,12 +311,12 @@
         private System.Windows.Forms.PictureBox iconrestaurar;
         private System.Windows.Forms.PictureBox iconmaximizar;
         private System.Windows.Forms.PictureBox iconFechar;
-        private System.Windows.Forms.Button btnprod;
+        private System.Windows.Forms.Button btnAlunos;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Button btnPainelCursos;
+        private System.Windows.Forms.Button btnCursos;
         private System.Windows.Forms.PictureBox iconMinimize;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnProfessor;
+        private System.Windows.Forms.Button btnMaterias;
         private System.Windows.Forms.Button btnTurmas;
     }
 }

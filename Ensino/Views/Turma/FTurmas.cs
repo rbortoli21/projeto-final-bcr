@@ -17,11 +17,13 @@ namespace Ensino.Views.Turma
     {
         private readonly ITurmaRepository _turmaRepository;
         private readonly ICursoRepository _cursoRepository;
+        private readonly IAlunoRepository _alunoRepository;
         public FTurmas()
         {
             InitializeComponent();
             _turmaRepository = new TurmaRepository();
             _cursoRepository = new CursoRepository();
+            _alunoRepository = new AlunoRepository();
         }
 
         private void PegarDadosParaCadastro(Models.Turma turma)
@@ -29,11 +31,19 @@ namespace Ensino.Views.Turma
             turma.Curso = _cursoRepository.Obter().FirstOrDefault(c => c.Nome == comboBoxCurso.Text);
             turma.NomeCurso = turma.Curso.Nome;
             turma.TurnoCurso = turma.Curso.Turno;
+            turma.QtdAlunos = _alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id).Count();
+        }
+
+        private void ListarQuantidadeAlunos(List<Models.Turma> alunos)
+        {
+
         }
 
         private void AtualizarGrid()
         {
             dgvTurmas.DataSource = _turmaRepository.Obter();
+
+            //ListarQuantidadeAlunos(_turmaRepository.Obter());
             dgvTurmas.Refresh();
         }
 
@@ -84,7 +94,7 @@ namespace Ensino.Views.Turma
         private void FTurmas_Load(object sender, EventArgs e)
         {
             AtualizarGrid();
-            comboBoxCurso.DataSource = _cursoRepository.Obter().OrderBy(c => c.Nome).Select(c => c.Nome).Distinct().ToList(); 
+            comboBoxCurso.DataSource = _cursoRepository.Obter().OrderBy(c => c.Nome).Select(c => c.Nome).Distinct().ToList();
         }
 
         private void comboBoxCurso_SelectedValueChanged(object sender, EventArgs e)

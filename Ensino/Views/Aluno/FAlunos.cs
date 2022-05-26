@@ -18,11 +18,13 @@ namespace Ensino.Views
     {
         private readonly ICursoRepository cursoRepository;
         public readonly IAlunoRepository alunoRepository;
+        public readonly ITurmaRepository turmaRepository;
         public FAlunos()
         {
             InitializeComponent();
             cursoRepository = new CursoRepository();
             alunoRepository = new AlunoRepository();
+            turmaRepository = new TurmaRepository();
         }
         //Funções criadas {
         public void AtualizarGrid()
@@ -62,6 +64,15 @@ namespace Ensino.Views
             }
         }
 
+        public int GerarTurmaAleatoria()
+        {
+            var turmas = turmaRepository.Obter().Select(t => t.Id).ToList();
+            var random = new Random();
+            int index = turmas[random.Next(turmas.Count)];
+
+            return index;
+        }
+
         private void PegarDadosParaCadastro(Aluno aluno)
         {
             aluno.Nome = txtBoxNomeAluno.Text;
@@ -69,10 +80,11 @@ namespace Ensino.Views
             aluno.Endereco = txtBoxEnderecoAluno.Text;
             aluno.CPF = txtBoxCPF.Text;
             aluno.Email = txtBoxEmailAluno.Text;
-            aluno.Curso = cursoRepository.Obter().Where(c => c.Nome == comboBoxCursoAluno.Text).FirstOrDefault();
-            aluno.NomeCurso = aluno.Curso.Nome;
+            aluno.NomeCurso = cursoRepository.Obter().Where(c => c.Nome == comboBoxCursoAluno.Text).FirstOrDefault().Nome;
+            aluno.Curso_Id = cursoRepository.Obter().Where(c => c.Nome == comboBoxCursoAluno.Text).FirstOrDefault().Id;
+            aluno.Turma_Id = GerarTurmaAleatoria();
             aluno.Telefone = maskedTextBoxTelefoneAluno.Text;
-            aluno.TurnoCurso = comboBoxTurnoCursoAluno.Text;
+            aluno.TurnoCurso = cursoRepository.Obter().Where(c => c.Turno == comboBoxTurnoCursoAluno.Text).FirstOrDefault().Turno;
             var matricula = new Random();
             aluno.Matricula = matricula.Next(10000000).ToString();
 
@@ -172,7 +184,7 @@ namespace Ensino.Views
                             Telefone = form.maskedTextBoxTelefoneAluno.Text,
                             Email = form.txtBoxEmailAluno.Text,
                             Responsavel = form.txtBoxResponsavelAluno.Text,
-                            Curso = cursoRepository.Obter().Where(c => c.Nome == form.comboBoxCursoAluno.Text).FirstOrDefault(),
+                            Curso_Id = cursoRepository.Obter().Where(c => c.Nome == form.comboBoxCursoAluno.Text).FirstOrDefault().Id,
                             NomeCurso = form.comboBoxCursoAluno.Text,
                             TurnoCurso = form.comboBoxTurnoCursoAluno.Text,
                         };

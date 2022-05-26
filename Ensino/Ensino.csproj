@@ -168,6 +168,22 @@
     <Compile Include="Migrations\202205260138341_AdicionandoNovasEntidades_2.designer.cs">
       <DependentUpon>202205260138341_AdicionandoNovasEntidades_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205261151471_MundançasNoBanco.cs" />
+    <Compile Include="Migrations\202205261151471_MundançasNoBanco.designer.cs">
+      <DependentUpon>202205261151471_MundançasNoBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205261320025_MundançasNoBanco1.cs" />
+    <Compile Include="Migrations\202205261320025_MundançasNoBanco1.designer.cs">
+      <DependentUpon>202205261320025_MundançasNoBanco1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205261411585_MundançasNoBanco11.cs" />
+    <Compile Include="Migrations\202205261411585_MundançasNoBanco11.designer.cs">
+      <DependentUpon>202205261411585_MundançasNoBanco11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205261429476_MundançasNoBanco2.cs" />
+    <Compile Include="Migrations\202205261429476_MundançasNoBanco2.designer.cs">
+      <DependentUpon>202205261429476_MundançasNoBanco2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Curso.cs" />
@@ -177,7 +193,11 @@
     <Compile Include="Models\Repositories\CursoRepository.cs" />
     <Compile Include="Models\Repositories\Interfaces\IAlunoRepository.cs" />
     <Compile Include="Models\Repositories\Interfaces\ICursoRepository.cs" />
+    <Compile Include="Models\Repositories\Interfaces\IMateriaRepository.cs" />
+    <Compile Include="Models\Repositories\Interfaces\IProfessorRepository.cs" />
     <Compile Include="Models\Repositories\Interfaces\ITurmaRepository.cs" />
+    <Compile Include="Models\Repositories\MateriaRepository.cs" />
+    <Compile Include="Models\Repositories\ProfessorRepository.cs" />
     <Compile Include="Models\Repositories\TurmaRepository.cs" />
     <Compile Include="Models\Turma.cs" />
     <Compile Include="Program.cs" />
@@ -218,6 +238,25 @@
     </Compile>
     <Compile Include="Views\FLayout.Designer.cs">
       <DependentUpon>FLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FMaterias.cs" />
+    <Compile Include="Views\Materia\FMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Materia\FMateria.Designer.cs">
+      <DependentUpon>FMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Professor\FEditarProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Professor\FEditarProfessor.Designer.cs">
+      <DependentUpon>FEditarProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Professor\FProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Professor\FProfessor.Designer.cs">
+      <DependentUpon>FProfessor.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Relatorios\FRelatorioAluno.cs">
       <SubType>Form</SubType>
@@ -261,6 +300,18 @@
     <EmbeddedResource Include="Migrations\202205260138341_AdicionandoNovasEntidades_2.resx">
       <DependentUpon>202205260138341_AdicionandoNovasEntidades_2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261151471_MundançasNoBanco.resx">
+      <DependentUpon>202205261151471_MundançasNoBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261320025_MundançasNoBanco1.resx">
+      <DependentUpon>202205261320025_MundançasNoBanco1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261411585_MundançasNoBanco11.resx">
+      <DependentUpon>202205261411585_MundançasNoBanco11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261429476_MundançasNoBanco2.resx">
+      <DependentUpon>202205261429476_MundançasNoBanco2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -290,6 +341,15 @@
     <EmbeddedResource Include="Views\FLayout.resx">
       <DependentUpon>FLayout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Materia\FMateria.resx">
+      <DependentUpon>FMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Professor\FEditarProfessor.resx">
+      <DependentUpon>FEditarProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Professor\FProfessor.resx">
+      <DependentUpon>FProfessor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Relatorios\FRelatorioAluno.resx">
       <DependentUpon>FRelatorioAluno.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +362,8 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Ensino.Models.Aluno.datasource" />
     <None Include="Properties\DataSources\Ensino.Models.Curso.datasource" />
+    <None Include="Properties\DataSources\Ensino.Models.Materia.datasource" />
+    <None Include="Properties\DataSources\Ensino.Models.Professor.datasource" />
     <None Include="Properties\DataSources\Ensino.Models.Turma.datasource" />
     <None Include="Properties\DataSources\Ensino.Views.FormCurso.datasource" />
     <None Include="Properties\Settings.settings">
