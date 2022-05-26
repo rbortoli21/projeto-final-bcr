@@ -20,12 +20,12 @@ namespace Ensino.Views
         {
             using (var form = new FAlunos())
             {
-                var alunos = form._alunoRepository.Obter().Count();
+                var alunos = form.alunoRepository.Obter().Count();
                 alunosQtd.Text = alunos.ToString();
             }
             using (var form = new FCursos())
             {
-                var cursos = form._cursoRepository.Obter().Count();
+                var cursos = form.cursoRepository.Obter().Count();
                 cursosQtd.Text = cursos.ToString();
             }
         }

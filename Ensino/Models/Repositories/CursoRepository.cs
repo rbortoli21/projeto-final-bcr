@@ -21,6 +21,7 @@ namespace Ensino.Models.Repositories
             cursoAtual.Nome = cursoNovo.Nome;
             cursoAtual.Turno = cursoNovo.Turno;
             cursoAtual.CargaHoraria = cursoNovo.CargaHoraria;
+            cursoAtual.QuantidadeAlunos = _dbContext.Alunos.ToList().Where(a => a.NomeCurso == cursoNovo.Nome).Where(a => a.TurnoCurso == cursoNovo.Turno).Count();
             _dbContext.SaveChanges();
             return cursoAtual;
         }

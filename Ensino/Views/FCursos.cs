@@ -17,16 +17,18 @@ namespace Ensino.Views
 {
     public partial class FCursos : Form
     {
-        public readonly ICursoRepository _cursoRepository;
+        public readonly ICursoRepository cursoRepository;
+        public readonly IAlunoRepository alunoRepository;
         public FCursos()
         {
             InitializeComponent();
-            _cursoRepository = new CursoRepository();
+            cursoRepository = new CursoRepository();
+            alunoRepository = new AlunoRepository();
         }
 
         public void AtualizarGrid()
         {
-            dgvListarCursos.DataSource = _cursoRepository.Obter();
+            dgvListarCursos.DataSource = cursoRepository.Obter();
             dgvListarCursos.Refresh();
         }
 
@@ -50,16 +52,14 @@ namespace Ensino.Views
         private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam);
         private void FCursos_Load(object sender, EventArgs e)
         {
+            AtualizarGrid();
             SendMessage(this.comboBoxTurnoCurso.Handle, CB_SETCUEBANNER, 0, "Selecione um Turno");
-            dgvListarCursos.DataSource = _cursoRepository.Obter();
         }
 
 
         //Pegar dados e colocar nos boxes
         private void dgvListarCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var id = Convert.ToInt32(dgvListarCursos.CurrentRow.Cells[0].Value);
-            var curso = _cursoRepository.ObterPorId(id);
         }
 
         //Cadastro
@@ -69,7 +69,7 @@ namespace Ensino.Views
             try
             {
                 PegarDadosParaCadastro(curso);
-                _cursoRepository.Cadastrar(curso);
+                cursoRepository.Cadastrar(curso);
             }
             catch (ArgumentNullException)
             {
@@ -99,14 +99,12 @@ namespace Ensino.Views
             if (string.IsNullOrEmpty(curso.Nome) || string.IsNullOrEmpty(curso.Turno))
                 throw new ArgumentNullException();
             curso.CargaHoraria = (int)numericUpDownCargaHoraria.Value;
-            using (var db = new DataContext())
-                curso.QuantidadeAlunos = db.Alunos.Where(aluno => aluno.Curso.Id == curso.Id).Count();
         }
         //Edição
         private void btnEditarCurso_Click(object sender, EventArgs e)
         {
             var id = Convert.ToInt32(dgvListarCursos.CurrentRow.Cells[0].Value);
-            var curso = _cursoRepository.ObterPorId(id);
+            var curso = cursoRepository.ObterPorId(id);
             using (var form = new FEditarCurso(curso))
             {
                 if (form.ShowDialog() == DialogResult.OK)
@@ -119,15 +117,16 @@ namespace Ensino.Views
                             Turno = form.comboBoxTurnoCurso.Text,
                             CargaHoraria = (int)form.numericUpDownCargaHoraria.Value
                         };
-                        _cursoRepository.Alterar(curso, curso_n);
+                        cursoRepository.Alterar(curso, curso_n);
                     }
                     catch (DuplicateWaitObjectException)
                     {
                         MessageBox.Show($"O curso \"{curso.Nome}\" já está cadastrado neste Turno, para poder cadastrá-lo novamente, altere o turno.");
                         return;
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
+                        MessageBox.Show(ex.Message);
                         MessageBox.Show($"O curso \"{curso.Nome}\" não pôde ser alterado, verifique os dados e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
@@ -141,10 +140,10 @@ namespace Ensino.Views
         private void btnDeletarCurso_Click(object sender, EventArgs e)
         {
             var id = Convert.ToInt32(dgvListarCursos.CurrentRow.Cells[0].Value);
-            var curso = _cursoRepository.ObterPorId(id);
+            var curso = cursoRepository.ObterPorId(id);
             try
             {
-                _cursoRepository.Deletar(curso);
+                cursoRepository.Deletar(curso);
             }
             catch (Exception ex)
             {

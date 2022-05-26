@@ -78,11 +78,11 @@ namespace Ensino.Views
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            AbrirFormulario(new FDashboard());
             using (var form = new FCursos())
                 form.AtualizarGrid();
             using (var form = new FAlunos())
                 form.AtualizarGrid();
+            AbrirFormulario(new FDashboard());
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

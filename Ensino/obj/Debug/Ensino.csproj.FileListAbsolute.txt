@@ -242,7 +242,6 @@ C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\bin\Debug\zh-CHS
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.csproj.AssemblyReference.cache
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.csproj.SuggestedBindingRedirects.cache
-C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Form1.resources
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.Inicial.resources
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.Tabelas.resources
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Properties.Resources.resources
@@ -250,8 +249,6 @@ C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FCursos.resources
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FDashboard.resources
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FLayout.resources
-C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FormCurso.resources
-C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.FormRelatorio.resources
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.csproj.GenerateResource.cache
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.csproj.CoreCompileInputs.cache
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.csproj.CopyComplete
@@ -294,3 +291,5 @@ C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.AdicionandoTurnoCursoAoAluno.resources
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Relatorios.FRelatorioAluno.resources
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Relatorios.FRelatorioCurso.resources
+C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Relatorios.FRelatorioAluno.resources
+C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Relatorios.FRelatorioCurso.resources

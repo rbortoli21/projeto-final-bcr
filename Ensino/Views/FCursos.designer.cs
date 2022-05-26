@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCursos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalvarCurso = new System.Windows.Forms.Button();
             this.txtBoxNomeCurso = new System.Windows.Forms.TextBox();
@@ -171,7 +172,6 @@
             this.dgvListarCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListarCursos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListarCursos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvListarCursos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvListarCursos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -190,14 +190,14 @@
             this.quantidadeAlunosDataGridViewTextBoxColumn,
             this.cargaHorariaDataGridViewTextBoxColumn});
             this.dgvListarCursos.DataSource = this.cursoBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListarCursos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListarCursos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvListarCursos.EnableHeadersVisualStyles = false;
             this.dgvListarCursos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvListarCursos.Location = new System.Drawing.Point(72, 211);
@@ -284,10 +284,12 @@
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 42;
+            this.idDataGridViewTextBoxColumn.Width = 41;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -295,7 +297,7 @@
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 68;
+            this.nomeDataGridViewTextBoxColumn.Width = 67;
             // 
             // turnoDataGridViewTextBoxColumn
             // 
@@ -303,7 +305,7 @@
             this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
             this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
             this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.turnoDataGridViewTextBoxColumn.Width = 66;
+            this.turnoDataGridViewTextBoxColumn.Width = 65;
             // 
             // quantidadeAlunosDataGridViewTextBoxColumn
             // 
@@ -311,7 +313,7 @@
             this.quantidadeAlunosDataGridViewTextBoxColumn.HeaderText = "QuantidadeAlunos";
             this.quantidadeAlunosDataGridViewTextBoxColumn.Name = "quantidadeAlunosDataGridViewTextBoxColumn";
             this.quantidadeAlunosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantidadeAlunosDataGridViewTextBoxColumn.Width = 142;
+            this.quantidadeAlunosDataGridViewTextBoxColumn.Width = 141;
             // 
             // cargaHorariaDataGridViewTextBoxColumn
             // 
@@ -319,7 +321,7 @@
             this.cargaHorariaDataGridViewTextBoxColumn.HeaderText = "CargaHoraria";
             this.cargaHorariaDataGridViewTextBoxColumn.Name = "cargaHorariaDataGridViewTextBoxColumn";
             this.cargaHorariaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cargaHorariaDataGridViewTextBoxColumn.Width = 113;
+            this.cargaHorariaDataGridViewTextBoxColumn.Width = 112;
             // 
             // cursoBindingSource
             // 
@@ -366,16 +368,16 @@
         private System.Windows.Forms.NumericUpDown numericUpDownCargaHoraria;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeAlunosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cargaHorariaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource cursoBindingSource;
         private System.Windows.Forms.Button btnDeletarCurso;
         private System.Windows.Forms.Button btnCancelarCurso;
         private System.Windows.Forms.Button btnEditarCurso;
         public System.Windows.Forms.DataGridView dgvListarCursos;
         private System.Windows.Forms.Button btnImprimirRelatorio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn turnoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeAlunosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cargaHorariaDataGridViewTextBoxColumn;
     }
 }

@@ -21,12 +21,13 @@ namespace Ensino.Models.Repositories
         public Aluno Alterar(Aluno alunoAtual, Aluno alunoNovo)
         {
             alunoAtual.Nome = alunoNovo.Nome;
-            alunoAtual.Curso = alunoNovo.Curso;
             alunoAtual.Email = alunoNovo.Email;
+            alunoAtual.Curso = _dbContext.Cursos.FirstOrDefault(c => c.Id == alunoNovo.Curso.Id);
             alunoAtual.Endereco = alunoNovo.Endereco;
             alunoAtual.Telefone = alunoNovo.Telefone;
             alunoAtual.Responsavel = alunoNovo.Responsavel;
             alunoAtual.NomeCurso = alunoNovo.NomeCurso;
+            alunoAtual.TurnoCurso = alunoNovo.TurnoCurso;
 
             _dbContext.SaveChanges();
 
@@ -36,12 +37,11 @@ namespace Ensino.Models.Repositories
         public Aluno Cadastrar(Aluno aluno)
         {
             if (_dbContext.Alunos.Where(a => a.CPF == aluno.CPF).Any())
-                throw new DuplicateWaitObjectException($"O aluno de CPF \"{aluno.CPF}\" já está cadastrado.");
-            else
-            {
-                _dbContext.Alunos.Add(aluno);
-                _dbContext.SaveChanges();
-            }
+                throw new DuplicateWaitObjectException($"Aluno já está cadastrado.");
+            aluno.Curso = _dbContext.Cursos.FirstOrDefault(c => c.Id == aluno.Curso.Id);
+            _dbContext.Alunos.Add(aluno);
+            _dbContext.SaveChanges();
+
             return aluno;
         }
 

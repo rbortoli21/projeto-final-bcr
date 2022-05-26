@@ -16,18 +16,18 @@ namespace Ensino.Views
 {
     public partial class FAlunos : Form
     {
-        private readonly ICursoRepository _cursoRepository;
-        public readonly IAlunoRepository _alunoRepository;
+        private readonly ICursoRepository cursoRepository;
+        public readonly IAlunoRepository alunoRepository;
         public FAlunos()
         {
             InitializeComponent();
-            _cursoRepository = new CursoRepository();
-            _alunoRepository = new AlunoRepository();
+            cursoRepository = new CursoRepository();
+            alunoRepository = new AlunoRepository();
         }
         //Funções criadas {
         public void AtualizarGrid()
         {
-            dgvAlunos.DataSource = _alunoRepository.Obter();
+            dgvAlunos.DataSource = alunoRepository.Obter();
             dgvAlunos.Refresh();
             if (ObterIdDoDataGridView(dgvAlunos) != 0)
             {
@@ -68,27 +68,27 @@ namespace Ensino.Views
             aluno.Responsavel = txtBoxResponsavelAluno.Text;
             aluno.Endereco = txtBoxEnderecoAluno.Text;
             aluno.CPF = txtBoxCPF.Text;
-            aluno.Curso = _cursoRepository.Obter().Where(c => c.Nome == comboBoxCursoAluno.Text).FirstOrDefault();
             aluno.Email = txtBoxEmailAluno.Text;
+            aluno.Curso = cursoRepository.Obter().Where(c => c.Nome == comboBoxCursoAluno.Text).FirstOrDefault();
             aluno.NomeCurso = aluno.Curso.Nome;
             aluno.Telefone = maskedTextBoxTelefoneAluno.Text;
             aluno.TurnoCurso = comboBoxTurnoCursoAluno.Text;
             var matricula = new Random();
             aluno.Matricula = matricula.Next(10000000).ToString();
 
-            if (_alunoRepository.Obter().Where(c => c.Matricula == matricula.ToString()).Any())
+            if (alunoRepository.Obter().Where(c => c.Matricula == matricula.ToString()).Any())
                 aluno.Matricula = matricula.Next(10000000).ToString();
         }
         public void ListarCursosComboBox(ComboBox comboBox)
         {
-            var cursosPorNome = _cursoRepository.Obter().OrderBy(c => c.Nome).Select(c => c.Nome).Distinct().ToList();
+            var cursosPorNome = cursoRepository.Obter().OrderBy(c => c.Nome).Select(c => c.Nome).Distinct().ToList();
             comboBox.DataSource = cursosPorNome;
         }
 
         public void ListarTurnosComboBox(ComboBox comboBox, ComboBox selecionado)
         {
             var cursoSelecionado = selecionado.Text;
-            var turnosPorCurso = _cursoRepository.Obter().Where(c => c.Nome == cursoSelecionado).Select(c => c.Turno).Distinct().ToList();
+            var turnosPorCurso = cursoRepository.Obter().Where(c => c.Nome == cursoSelecionado).Select(c => c.Turno).Distinct().ToList();
             comboBox.DataSource = turnosPorCurso;
         }
 
@@ -125,7 +125,7 @@ namespace Ensino.Views
                 PegarDadosParaCadastro(aluno);
                 VerificarSeHaCamposVazios();
                 LimitarCpfETelefone(txtBoxCPF, maskedTextBoxTelefoneAluno);
-                _alunoRepository.Cadastrar(aluno);
+                alunoRepository.Cadastrar(aluno);
             }
             catch (DataException ex)
             {
@@ -142,13 +142,13 @@ namespace Ensino.Views
                 MessageBox.Show(ex.Message);
                 return;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 MessageBox.Show($"O aluno \"{aluno.Nome}\" não pôde ser cadastrado, verifique os campos e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                AtualizarGrid();
                 return;
             }
-            MessageBox.Show($"O aluno \"{aluno.Nome}\" foi cadastrado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Aluno cadastrado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AtualizarGrid();
             LimparCampos();
         }
@@ -158,7 +158,7 @@ namespace Ensino.Views
         private void btnEditarAluno_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvAlunos); ;
-            var aluno = _alunoRepository.ObterPorId(id);
+            var aluno = alunoRepository.ObterPorId(id);
             using (var form = new FEditarAluno(aluno))
             {
                 if (form.ShowDialog() == DialogResult.OK)
@@ -172,12 +172,12 @@ namespace Ensino.Views
                             Telefone = form.maskedTextBoxTelefoneAluno.Text,
                             Email = form.txtBoxEmailAluno.Text,
                             Responsavel = form.txtBoxResponsavelAluno.Text,
-                            Curso = _cursoRepository.Obter().Where(c => c.Nome == form.comboBoxCursoAluno.Text).FirstOrDefault(),
+                            Curso = cursoRepository.Obter().Where(c => c.Nome == form.comboBoxCursoAluno.Text).FirstOrDefault(),
                             NomeCurso = form.comboBoxCursoAluno.Text,
-                            TurnoCurso = form.comboBoxCursoAluno.Text,
+                            TurnoCurso = form.comboBoxTurnoCursoAluno.Text,
                         };
                         form.VerificarSeHaCamposVazios();
-                        _alunoRepository.Alterar(aluno, aluno_n);
+                        alunoRepository.Alterar(aluno, aluno_n);
                     }
                     catch (Exception)
                     {
@@ -194,13 +194,13 @@ namespace Ensino.Views
         private void btnDeletarAluno_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvAlunos);
-            var aluno = _alunoRepository.ObterPorId(id);
+            var aluno = alunoRepository.ObterPorId(id);
             try
             {
                 var res = MessageBox.Show("Tem certeza que deseja deletar esse aluno? Este aluno será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (res != DialogResult.OK)
                     return;
-                _alunoRepository.Deletar(aluno);
+                alunoRepository.Deletar(aluno);
             }
             catch (Exception ex)
             {
