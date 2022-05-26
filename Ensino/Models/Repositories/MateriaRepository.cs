@@ -17,14 +17,20 @@ namespace Ensino.Models.Repositories
         }
         public Materia Alterar(Materia materiaAtual, Materia materiaNova)
         {
-            if (_dbContext.Materias.Where(m => m.Nome == materiaNova.Nome).Where(m => m.Curso_Id == materiaNova.Curso_Id).Any())
+            if (_dbContext.Materias.Where(m => m.Nome == materiaNova.Nome && m.Curso_Id == materiaNova.Curso_Id).Any())
+            {
+                Console.WriteLine("eXCESSAO DO DJANHO");
                 throw new DuplicateWaitObjectException();
+                
+            }
             materiaAtual.Nome = materiaNova.Nome;
             materiaAtual.NomeProfessor = materiaNova.NomeProfessor;
             materiaAtual.Professor_Id = materiaNova.Professor_Id;
             materiaAtual.NomeCurso = materiaNova.NomeCurso;
             materiaAtual.Curso_Id = materiaNova.Curso_Id;
             materiaAtual.NomeTurno = materiaNova.NomeTurno;
+
+            _dbContext.SaveChanges();
 
             return materiaAtual;
         }

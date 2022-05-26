@@ -303,3 +303,14 @@ C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Professor.FProfessor.resources
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.MundançasNoBanco11.resources
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.MundançasNoBanco2.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.AdicionandoNovasEntidades.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.AdicionandoNovasEntidades_2.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.MundançasNoBanco.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.MundançasNoBanco1.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.MundançasNoBanco11.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.MundançasNoBanco2.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Materia.FMateria.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Professor.FEditarProfessor.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Professor.FProfessor.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Turma.FTurmas.resources
+C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Materia.FEditarMateria.resources

@@ -38,9 +38,9 @@ namespace Ensino.Views.Materia
             comboBox.DataSource = turnosPorCurso;
         }
 
-        public void ListarProfessoresComboBox(ComboBox comboBox)
+        public void ListarProfessoresComboBox(ComboBox comboBox, ComboBox texto)
         {
-
+            comboBox.DataSource = professorRepository.Obter().Where(p => p.Turno == texto.Text).Select(p => p.Nome).ToList();
         }
 
         private void AtualizarGrid()
@@ -61,13 +61,13 @@ namespace Ensino.Views.Materia
 
         private void PegarDadosParaCadastro(Models.Materia materia)
         {
+            VerificarSeHaCamposVazios();
             materia.Nome = txtBoxNome.Text;
-            materia.NomeProfessor = txtBoxNome.Text;
+            materia.NomeProfessor = comboBoxProfessor.Text;
             materia.NomeCurso = cursoRepository.Obter().Where(c => c.Nome == comboBoxCurso.Text).FirstOrDefault().Nome; 
             materia.NomeTurno = cursoRepository.Obter().Where(c => c.Turno == comboBoxTurno.Text).FirstOrDefault().Turno;
-            //materia.Professor_Id = professorRepository.Obter().Where(p => p.N);
-            //materia.Curso_Id = txtBoxNome.Text;
-
+            materia.Professor_Id = professorRepository.Obter().FirstOrDefault(p => p.Nome == materia.NomeProfessor).Id;
+            materia.Curso_Id= cursoRepository.Obter().FirstOrDefault(c => c.Nome == materia.NomeCurso).Id;
         }
         public void VerificarSeHaCamposVazios()
         {
@@ -78,6 +78,15 @@ namespace Ensino.Views.Materia
                     var txtBox = control as TextBox;
                     if (string.IsNullOrEmpty(txtBox.Text))
                         throw new ArgumentNullException("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
+                }
+                if(control is ComboBox)
+                {
+                    var cbBox = control as ComboBox;
+                    if (string.IsNullOrEmpty(cbBox.Text))
+                    {
+                        Console.WriteLine("deu ruim");
+                        throw new ArgumentNullException("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
+                    }
                 }
             }
         }
@@ -119,12 +128,112 @@ namespace Ensino.Views.Materia
         }
         private void FMateria_Load(object sender, EventArgs e)
         {
+            AtualizarGrid();
             ListarCursosComboBox(comboBoxCurso);
         }
 
         private void comboBoxCurso_SelectedValueChanged(object sender, EventArgs e)
         {
             ListarTurnosComboBox(comboBoxTurno, comboBoxCurso);
+        }
+
+        private void comboBoxTurno_SelectedValueChanged(object sender, EventArgs e)
+        {
+            ListarProfessoresComboBox(comboBoxProfessor, comboBoxTurno);
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            var materia = new Models.Materia();
+            try
+            {
+                PegarDadosParaCadastro(materia);
+                _materiaRepository.Cadastrar(materia);
+            }
+            catch (DataException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            catch (DuplicateWaitObjectException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show($"A matéria não pôde ser cadastrada, verifique os campos e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            MessageBox.Show($"Matéria cadastrada com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            AtualizarGrid();
+            LimparCampos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            var id = ObterIdDoDataGridView(dgvMaterias); ;
+            var materia = _materiaRepository.ObterPorId(id);
+            using (var form = new FEditarMateria(materia))
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        var materia_n = new Models.Materia
+                        {
+                            Nome = form.txtBoxNome.Text,
+                            NomeProfessor = form.comboBoxProfessor.Text,
+                            NomeTurno = form.comboBoxTurno.Text,
+                            NomeCurso = form.comboBoxCurso.Text,
+                            Curso_Id = cursoRepository.Obter().Where(c => c.Nome == form.comboBoxCurso.Text).FirstOrDefault().Id,
+                            Professor_Id = professorRepository.Obter().FirstOrDefault(p => p.Nome == form.comboBoxProfessor.Text).Id
+                    };
+                        form.VerificarSeHaCamposVazios();
+                        _materiaRepository.Alterar(materia, materia_n);
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show($"A matéria não pôde ser alterada, verifique os dados e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    MessageBox.Show($"A matéria foi alterada com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AtualizarGrid();
+                }
+            }
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            var id = ObterIdDoDataGridView(dgvMaterias);
+            var materia = _materiaRepository.ObterPorId(id);
+            try
+            {
+                var res = MessageBox.Show("Tem certeza que deseja deletar esse aluno? Este aluno será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (res != DialogResult.OK)
+                    return;
+                _materiaRepository.Deletar(materia);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                MessageBox.Show($"A matéria não pôde ser deletada, tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            MessageBox.Show($"A matéria foi deletada com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            AtualizarGrid();
+            LimparCampos();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
         }
     }
 }

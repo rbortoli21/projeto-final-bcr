@@ -64,9 +64,9 @@ namespace Ensino.Views
             }
         }
 
-        public int GerarTurmaAleatoria()
+        public int GerarTurmaAleatoria(Aluno aluno)
         {
-            var turmas = turmaRepository.Obter().Select(t => t.Id).ToList();
+            var turmas = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Select(t => t.Id).ToList();
             var random = new Random();
             int index = turmas[random.Next(turmas.Count)];
 
@@ -82,7 +82,7 @@ namespace Ensino.Views
             aluno.Email = txtBoxEmailAluno.Text;
             aluno.NomeCurso = cursoRepository.Obter().Where(c => c.Nome == comboBoxCursoAluno.Text).FirstOrDefault().Nome;
             aluno.Curso_Id = cursoRepository.Obter().Where(c => c.Nome == comboBoxCursoAluno.Text).FirstOrDefault().Id;
-            aluno.Turma_Id = GerarTurmaAleatoria();
+            aluno.Turma_Id = GerarTurmaAleatoria(aluno);
             aluno.Telefone = maskedTextBoxTelefoneAluno.Text;
             aluno.TurnoCurso = cursoRepository.Obter().Where(c => c.Turno == comboBoxTurnoCursoAluno.Text).FirstOrDefault().Turno;
             var matricula = new Random();

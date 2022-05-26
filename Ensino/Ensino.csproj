@@ -240,6 +240,12 @@
       <DependentUpon>FLayout.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FMaterias.cs" />
+    <Compile Include="Views\Materia\FEditarMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Materia\FEditarMateria.Designer.cs">
+      <DependentUpon>FEditarMateria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Materia\FMateria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FLayout.resx">
       <DependentUpon>FLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Materia\FEditarMateria.resx">
+      <DependentUpon>FEditarMateria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Materia\FMateria.resx">
       <DependentUpon>FMateria.cs</DependentUpon>

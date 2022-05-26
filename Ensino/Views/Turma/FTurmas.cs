@@ -30,7 +30,7 @@ namespace Ensino.Views.Turma
         {
             turma.Curso = _cursoRepository.Obter().FirstOrDefault(c => c.Nome == comboBoxCurso.Text);
             turma.NomeCurso = turma.Curso.Nome;
-            turma.TurnoCurso = turma.Curso.Turno;
+            turma.TurnoCurso = _cursoRepository.Obter().FirstOrDefault(c => c.Turno == comboBoxTurno.Text).Turno;
             turma.QtdAlunos = _alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id).Count();
         }
 

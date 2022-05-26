@@ -90,7 +90,7 @@ namespace Ensino.Views
 
         private void painel_Paint(object sender, PaintEventArgs e)
         {
-
+            //indice fora de intervalo
         }
         private void iconMinimize_Click(object sender, EventArgs e)
         {

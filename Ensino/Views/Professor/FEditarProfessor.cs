@@ -46,6 +46,7 @@ namespace Ensino.Views.Professor
                 txtBoxEndereco.Text = professor.Endereco;
                 txtBoxEmail.Text = professor.Email;
                 maskedTextBoxTelefone.Text = professor.Telefone;
+                comboBoxTurno.SelectedItem = professor.Turno;
             }
         }
 

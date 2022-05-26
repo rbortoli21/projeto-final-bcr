@@ -21,6 +21,7 @@ namespace Ensino.Models.Repositories
             professorAtual.Email = professorNovo.Email;
             professorAtual.Endereco = professorNovo.Endereco;
             professorAtual.Telefone = professorNovo.Telefone;
+            professorAtual.Turno = professorNovo.Turno;
 
             _dbContext.SaveChanges();
 

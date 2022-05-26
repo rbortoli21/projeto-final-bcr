@@ -42,6 +42,8 @@
             this.txtBoxEndereco = new System.Windows.Forms.TextBox();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.txtBoxNome = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxTurno = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -53,7 +55,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(12, 227);
+            this.btnCancelar.Location = new System.Drawing.Point(12, 262);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(115, 35);
             this.btnCancelar.TabIndex = 97;
@@ -71,7 +73,7 @@
             this.btnSalvar.ForeColor = System.Drawing.Color.White;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
             this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar.Location = new System.Drawing.Point(565, 227);
+            this.btnSalvar.Location = new System.Drawing.Point(565, 262);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(180, 35);
             this.btnSalvar.TabIndex = 96;
@@ -187,11 +189,45 @@
             this.txtBoxNome.Size = new System.Drawing.Size(195, 24);
             this.txtBoxNome.TabIndex = 79;
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(14, 198);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 20);
+            this.label3.TabIndex = 99;
+            this.label3.Text = "Turno: *";
+            // 
+            // comboBoxTurno
+            // 
+            this.comboBoxTurno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.comboBoxTurno.FormattingEnabled = true;
+            this.comboBoxTurno.Items.AddRange(new object[] {
+            "Integral",
+            "Matutino",
+            "Vespertino",
+            "Noturno"});
+            this.comboBoxTurno.Location = new System.Drawing.Point(18, 221);
+            this.comboBoxTurno.Name = "comboBoxTurno";
+            this.comboBoxTurno.Size = new System.Drawing.Size(263, 24);
+            this.comboBoxTurno.TabIndex = 98;
+            // 
             // FEditarProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 274);
+            this.ClientSize = new System.Drawing.Size(757, 309);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBoxTurno);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.txtBoxCPFAluno);
@@ -228,5 +264,7 @@
         public System.Windows.Forms.TextBox txtBoxEndereco;
         public System.Windows.Forms.TextBox txtBoxEmail;
         public System.Windows.Forms.TextBox txtBoxNome;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBoxTurno;
     }
 }
