@@ -14,6 +14,9 @@ namespace Ensino.Data
         public DataContext() : base("PgConexao") { }
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Professor> Professores { get; set; }
+        public DbSet<Materia> Materias { get; set; }
+        public DbSet<Turma> Turmas { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

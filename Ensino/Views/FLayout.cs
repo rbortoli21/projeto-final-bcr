@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Ensino.Views.Turma;
 
 namespace Ensino.Views
 {
@@ -105,6 +106,11 @@ namespace Ensino.Views
             WindowState = FormWindowState.Normal;
             iconrestaurar.Visible = true;
             iconMinimize.Visible = false;
+        }
+
+        private void btnTurmas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FTurmas());
         }
     }
 }

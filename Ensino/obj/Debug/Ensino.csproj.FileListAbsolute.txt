@@ -293,3 +293,6 @@ C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\
 C:\Users\UNIPAR\Desktop\projeto_final\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Relatorios.FRelatorioCurso.resources
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Relatorios.FRelatorioAluno.resources
 C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Relatorios.FRelatorioCurso.resources
+C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.AdicionandoNovasEntidades.resources
+C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Migrations.AdicionandoNovasEntidades_2.resources
+C:\Users\rafae\Documents\dotnet\Aliare\projeto-final-bcr\Ensino\obj\Debug\Ensino.Views.Turma.FTurmas.resources

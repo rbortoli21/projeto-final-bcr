@@ -20,6 +20,7 @@ namespace Ensino.Models
         public string Matricula { get; set; }
         public string Responsavel { get; set; }
         public Curso Curso { get; set; }
+        public Turma Turma { get; set; }
         public string Endereco { get; set; }
     }
 }

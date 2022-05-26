@@ -41,7 +41,7 @@
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.painel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTurmas = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
@@ -59,7 +59,7 @@
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
             this.MenuVertical.Controls.Add(this.button3);
             this.MenuVertical.Controls.Add(this.button2);
-            this.MenuVertical.Controls.Add(this.button1);
+            this.MenuVertical.Controls.Add(this.btnTurmas);
             this.MenuVertical.Controls.Add(this.btnPainelCursos);
             this.MenuVertical.Controls.Add(this.btnDashboard);
             this.MenuVertical.Controls.Add(this.btnprod);
@@ -224,21 +224,22 @@
             this.painel.TabIndex = 2;
             this.painel.Paint += new System.Windows.Forms.PaintEventHandler(this.painel_Paint);
             // 
-            // button1
+            // btnTurmas
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 222);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 53);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Turmas";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTurmas.FlatAppearance.BorderSize = 0;
+            this.btnTurmas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnTurmas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTurmas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTurmas.ForeColor = System.Drawing.Color.White;
+            this.btnTurmas.Image = ((System.Drawing.Image)(resources.GetObject("btnTurmas.Image")));
+            this.btnTurmas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTurmas.Location = new System.Drawing.Point(0, 222);
+            this.btnTurmas.Name = "btnTurmas";
+            this.btnTurmas.Size = new System.Drawing.Size(250, 53);
+            this.btnTurmas.TabIndex = 20;
+            this.btnTurmas.Text = "Turmas";
+            this.btnTurmas.UseVisualStyleBackColor = true;
+            this.btnTurmas.Click += new System.EventHandler(this.btnTurmas_Click);
             // 
             // button2
             // 
@@ -314,7 +315,7 @@
         private System.Windows.Forms.PictureBox iconMinimize;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTurmas;
     }
 }
 

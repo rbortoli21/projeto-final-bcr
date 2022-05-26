@@ -160,13 +160,26 @@
     <Compile Include="Migrations\202205240328161_AdicionandoTurnoCursoAoAluno.designer.cs">
       <DependentUpon>202205240328161_AdicionandoTurnoCursoAoAluno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205260136331_AdicionandoNovasEntidades.cs" />
+    <Compile Include="Migrations\202205260136331_AdicionandoNovasEntidades.designer.cs">
+      <DependentUpon>202205260136331_AdicionandoNovasEntidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205260138341_AdicionandoNovasEntidades_2.cs" />
+    <Compile Include="Migrations\202205260138341_AdicionandoNovasEntidades_2.designer.cs">
+      <DependentUpon>202205260138341_AdicionandoNovasEntidades_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Curso.cs" />
+    <Compile Include="Models\Materia.cs" />
+    <Compile Include="Models\Professor.cs" />
     <Compile Include="Models\Repositories\AlunoRepository.cs" />
     <Compile Include="Models\Repositories\CursoRepository.cs" />
     <Compile Include="Models\Repositories\Interfaces\IAlunoRepository.cs" />
     <Compile Include="Models\Repositories\Interfaces\ICursoRepository.cs" />
+    <Compile Include="Models\Repositories\Interfaces\ITurmaRepository.cs" />
+    <Compile Include="Models\Repositories\TurmaRepository.cs" />
+    <Compile Include="Models\Turma.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -218,6 +231,12 @@
     <Compile Include="Views\Relatorios\FRelatorioCurso.Designer.cs">
       <DependentUpon>FRelatorioCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Turma\FTurmas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Turma\FTurmas.Designer.cs">
+      <DependentUpon>FTurmas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\202205180218355_Inicial.resx">
       <DependentUpon>202205180218355_Inicial.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +254,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205240328161_AdicionandoTurnoCursoAoAluno.resx">
       <DependentUpon>202205240328161_AdicionandoTurnoCursoAoAluno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205260136331_AdicionandoNovasEntidades.resx">
+      <DependentUpon>202205260136331_AdicionandoNovasEntidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205260138341_AdicionandoNovasEntidades_2.resx">
+      <DependentUpon>202205260138341_AdicionandoNovasEntidades_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -271,9 +296,13 @@
     <EmbeddedResource Include="Views\Relatorios\FRelatorioCurso.resx">
       <DependentUpon>FRelatorioCurso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Turma\FTurmas.resx">
+      <DependentUpon>FTurmas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Ensino.Models.Aluno.datasource" />
     <None Include="Properties\DataSources\Ensino.Models.Curso.datasource" />
+    <None Include="Properties\DataSources\Ensino.Models.Turma.datasource" />
     <None Include="Properties\DataSources\Ensino.Views.FormCurso.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
