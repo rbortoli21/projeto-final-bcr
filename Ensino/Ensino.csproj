@@ -279,6 +279,24 @@
     <Compile Include="Views\Relatorios\FRelatorioCurso.Designer.cs">
       <DependentUpon>FRelatorioCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Relatorios\FRelatorioMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\FRelatorioMateria.Designer.cs">
+      <DependentUpon>FRelatorioMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relatorios\FRelatorioProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\FRelatorioProfessor.Designer.cs">
+      <DependentUpon>FRelatorioProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Relatorios\FRelatorioTurma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Relatorios\FRelatorioTurma.Designer.cs">
+      <DependentUpon>FRelatorioTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Turma\FTurmas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,8 +351,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Relatorios\RelatorioAlunos.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelatorioAluno.rdlc" />
     <EmbeddedResource Include="Relatorios\RelatorioCursos.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelatorioMateria.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelatorioProfessor.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelatorioTurma.rdlc" />
     <EmbeddedResource Include="Views\Aluno\FAlunos.resx">
       <DependentUpon>FAlunos.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,6 +391,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Relatorios\FRelatorioCurso.resx">
       <DependentUpon>FRelatorioCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Relatorios\FRelatorioMateria.resx">
+      <DependentUpon>FRelatorioMateria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Relatorios\FRelatorioProfessor.resx">
+      <DependentUpon>FRelatorioProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Relatorios\FRelatorioTurma.resx">
+      <DependentUpon>FRelatorioTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Turma\FTurmas.resx">
       <DependentUpon>FTurmas.cs</DependentUpon>

@@ -176,9 +176,8 @@ namespace Ensino.Views
         {
             List<Curso> dt = (List<Curso>)dgvListarCursos.DataSource;
             using (var form = new FRelatorioCurso(dt))
-            {
                 form.ShowDialog();
-            }
+            
         }
         private int ObterIdDoDataGridView(DataGridView dgv)
         {

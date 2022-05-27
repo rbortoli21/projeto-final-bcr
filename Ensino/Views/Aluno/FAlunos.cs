@@ -281,9 +281,8 @@ namespace Ensino.Views
         {
             List<Aluno> dt = (List<Aluno>)dgvAlunos.DataSource;
             using (var form = new FRelatorioAluno(dt))
-            {
                 form.ShowDialog();
-            }
+            
         }
     }
 }

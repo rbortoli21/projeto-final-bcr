@@ -31,14 +31,21 @@ namespace Ensino.Views.Relatorios
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.CursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.AlunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AlunoBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // CursoBindingSource
+            // 
+            this.CursoBindingSource.DataSource = typeof(Ensino.Models.Curso);
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.DocumentMapWidth = 0;
             reportDataSource1.Name = "CursoRelatorio";
             reportDataSource1.Value = this.CursoBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
@@ -46,24 +53,26 @@ namespace Ensino.Views.Relatorios
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(858, 588);
+            this.reportViewer1.Size = new System.Drawing.Size(675, 588);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // CursoBindingSource
+            // AlunoBindingSource
             // 
-            this.CursoBindingSource.DataSource = typeof(Ensino.Models.Curso);
+            this.AlunoBindingSource.DataSource = typeof(Ensino.Models.Aluno);
             // 
             // FRelatorioCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 588);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(675, 588);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FRelatorioCurso";
-            this.Text = "FRelatorioCurso";
+            this.Text = "Relatório Curso";
             this.Load += new System.EventHandler(this.FRelatorioCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AlunoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -72,5 +81,6 @@ namespace Ensino.Views.Relatorios
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource CursoBindingSource;
+        private System.Windows.Forms.BindingSource AlunoBindingSource;
     }
 }

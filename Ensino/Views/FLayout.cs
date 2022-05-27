@@ -16,6 +16,7 @@ namespace Ensino.Views
 {
     public partial class FLayout : Form
     {
+        DateTime data;
         public FLayout()
         {
             InitializeComponent();
@@ -86,6 +87,7 @@ namespace Ensino.Views
             using (var form = new FAlunos())
                 form.AtualizarGrid();
             AbrirFormulario(new FDashboard());
+
         }
 
         private void painel_Paint(object sender, PaintEventArgs e)
@@ -120,6 +122,12 @@ namespace Ensino.Views
         private void btnMaterias_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FMateria());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            data = DateTime.Now;
+            textBox1.Text = data.ToLongTimeString();
         }
     }
 }

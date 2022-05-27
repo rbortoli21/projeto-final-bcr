@@ -69,6 +69,7 @@
             this.btnImprimirRelatorio.TabIndex = 68;
             this.btnImprimirRelatorio.Text = "RELATÓRIO";
             this.btnImprimirRelatorio.UseVisualStyleBackColor = false;
+            this.btnImprimirRelatorio.Click += new System.EventHandler(this.btnImprimirRelatorio_Click);
             // 
             // btnDeletar
             // 

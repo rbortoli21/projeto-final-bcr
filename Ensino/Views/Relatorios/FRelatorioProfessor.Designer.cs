@@ -1,7 +1,7 @@
 ﻿
 namespace Ensino.Views.Relatorios
 {
-    partial class FRelatorioAluno
+    partial class FRelatorioProfessor
     {
         /// <summary>
         /// Required designer variable.
@@ -32,39 +32,38 @@ namespace Ensino.Views.Relatorios
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.AlunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.AlunoBindingSource)).BeginInit();
+            this.ProfessorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ProfessorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.AlunoBindingSource;
+            this.reportViewer1.DocumentMapWidth = 0;
+            reportDataSource1.Name = "RelatorioProfessor";
+            reportDataSource1.Value = this.ProfessorBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Ensino.Relatorios.RelatorioAluno.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Ensino.Relatorios.RelatorioProfessor.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(809, 631);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.TabIndex = 1;
             // 
-            // AlunoBindingSource
+            // ProfessorBindingSource
             // 
-            this.AlunoBindingSource.DataSource = typeof(Ensino.Models.Aluno);
+            this.ProfessorBindingSource.DataSource = typeof(Ensino.Models.Professor);
             // 
-            // FRelatorioAluno
+            // FRelatorioProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 631);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "FRelatorioAluno";
-            this.Text = "Relatório Aluno";
-            this.Load += new System.EventHandler(this.FRelatorioAluno_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.AlunoBindingSource)).EndInit();
+            this.Name = "FRelatorioProfessor";
+            this.Text = "Relatório Professor";
+            this.Load += new System.EventHandler(this.FRelatorioProfessor_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ProfessorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -72,6 +71,6 @@ namespace Ensino.Views.Relatorios
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource AlunoBindingSource;
+        private System.Windows.Forms.BindingSource ProfessorBindingSource;
     }
 }

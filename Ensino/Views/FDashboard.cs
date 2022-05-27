@@ -38,7 +38,7 @@ namespace Ensino.Views
             }
             using (var form = new FMateria())
             {
-                var materias = form.cursoRepository.Obter().Count();
+                var materias = form.materiaRepository.Obter().Count();
                 textBoxQtdMateria.Text = materias.ToString();
             }
             using (var form = new FTurmas())
@@ -46,6 +46,7 @@ namespace Ensino.Views
                 var turmas = form.turmaRepository.Obter().Count();
                 textBoxQtdTurma.Text = turmas.ToString();
             }
+            
         }
 
         private void alunosQtd_Click(object sender, EventArgs e)

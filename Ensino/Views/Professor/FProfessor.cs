@@ -1,5 +1,6 @@
 ﻿using Ensino.Models.Repositories;
 using Ensino.Models.Repositories.Interfaces;
+using Ensino.Views.Relatorios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -215,6 +216,13 @@ namespace Ensino.Views.Professor
         {
             SendMessage(this.comboBoxTurno.Handle, CB_SETCUEBANNER, 0, "Selecione um Turno");
             AtualizarGrid();
+        }
+
+        private void btnImprimirRelatorio_Click(object sender, EventArgs e)
+        {
+            List<Models.Professor> professor = new List<Models.Professor>();
+            using (var form = new FRelatorioProfessor(professor))
+                form.ShowDialog();
         }
     }
 }

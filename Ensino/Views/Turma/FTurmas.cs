@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ensino.Views.Relatorios;
 
 namespace Ensino.Views.Turma
 {
@@ -133,5 +134,11 @@ namespace Ensino.Views.Turma
 
         }
 
+        private void btnImprimirRelatorio_Click(object sender, EventArgs e)
+        {
+            List<Models.Turma> turmas = new List<Models.Turma>();
+            using (var form = new FRelatorioTurma(turmas))
+                form.ShowDialog();
+        }
     }
 }

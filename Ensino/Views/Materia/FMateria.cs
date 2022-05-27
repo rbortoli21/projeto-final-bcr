@@ -1,5 +1,6 @@
 ﻿using Ensino.Models.Repositories;
 using Ensino.Models.Repositories.Interfaces;
+using Ensino.Views.Relatorios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -237,6 +238,15 @@ namespace Ensino.Views.Materia
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimparCampos();
+        }
+
+        private void btnImprimirRelatorio_Click(object sender, EventArgs e)
+        {
+            List<Models.Materia> materias = new List<Models.Materia>();
+            using(var form = new FRelatorioMateria(materias))
+                form.ShowDialog();
+            
+            
         }
     }
 }

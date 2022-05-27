@@ -1,5 +1,4 @@
-﻿using Ensino.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,24 +10,20 @@ using System.Windows.Forms;
 
 namespace Ensino.Views.Relatorios
 {
-    public partial class FRelatorioAluno : Form
+    public partial class FRelatorioTurma : Form
     {
-        List<Aluno> dt = new List<Aluno>();
-        public FRelatorioAluno(List<Aluno> dt)
+        List<Models.Turma> dt = new List<Models.Turma>();
+        public FRelatorioTurma(List<Models.Turma> dt)
         {
             InitializeComponent();
             this.dt = dt;
         }
 
-        private void FRelatorioAluno_Load(object sender, EventArgs e)
+        private void FRelatorioTurma_Load(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", dt));
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("RelatorioTurma", dt));
             this.reportViewer1.RefreshReport();
-        }
-
-        private void reportViewer1_Load(object sender, EventArgs e)
-        {
 
         }
     }
