@@ -15,13 +15,13 @@ namespace Ensino.Views.Turma
 {
     public partial class FTurmas : Form
     {
-        private readonly ITurmaRepository _turmaRepository;
+        public readonly ITurmaRepository turmaRepository;
         private readonly ICursoRepository _cursoRepository;
         private readonly IAlunoRepository _alunoRepository;
         public FTurmas()
         {
             InitializeComponent();
-            _turmaRepository = new TurmaRepository();
+            turmaRepository = new TurmaRepository();
             _cursoRepository = new CursoRepository();
             _alunoRepository = new AlunoRepository();
         }
@@ -42,22 +42,21 @@ namespace Ensino.Views.Turma
         private void PegarDadosParaCadastro(Models.Turma turma)
         {
             VerificarSeHaCamposVazios();
-            turma.Curso = _cursoRepository.Obter().FirstOrDefault(c => c.Nome == comboBoxCurso.Text);
-            turma.NomeCurso = turma.Curso.Nome;
+            turma.Curso_Id = _cursoRepository.Obter().FirstOrDefault(c => c.Nome == comboBoxCurso.Text).Id;
+            turma.NomeCurso = _cursoRepository.Obter().FirstOrDefault(c => c.Nome == comboBoxCurso.Text).Nome;
             turma.TurnoCurso = _cursoRepository.Obter().FirstOrDefault(c => c.Turno == comboBoxTurno.Text).Turno;
         }
 
         private void ListarQuantidadeAlunos(List<Models.Turma> turmas)
         {
             foreach(var turma in turmas)
-                turma.QtdAlunos = _alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id).Count();
-            
+                turma.QtdAlunos = _alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id).Count();   
         }
 
         private void AtualizarGrid()
         {
-            dgvTurmas.DataSource = _turmaRepository.Obter();
-            ListarQuantidadeAlunos(_turmaRepository.Obter());
+            dgvTurmas.DataSource = turmaRepository.Obter();
+            ListarQuantidadeAlunos(turmaRepository.Obter());
             dgvTurmas.Refresh();
         }
 
@@ -67,7 +66,7 @@ namespace Ensino.Views.Turma
             try
             {
                 PegarDadosParaCadastro(turma);
-                _turmaRepository.Cadastrar(turma);
+                turmaRepository.Cadastrar(turma);
             }
             catch (ArgumentNullException ex)
             {
@@ -91,13 +90,13 @@ namespace Ensino.Views.Turma
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvTurmas);
-            var turma = _turmaRepository.ObterPorId(id);
+            var turma = turmaRepository.ObterPorId(id);
             try
             {
                 var res = MessageBox.Show("Tem certeza que deseja deletar esse aluno? Este aluno será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (res != DialogResult.OK)
                     return;
-                _turmaRepository.Deletar(turma);
+                turmaRepository.Deletar(turma);
             }
             catch (Exception ex)
             {

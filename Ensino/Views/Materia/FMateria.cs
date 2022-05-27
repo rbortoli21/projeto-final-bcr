@@ -14,13 +14,13 @@ namespace Ensino.Views.Materia
 {
     public partial class FMateria : Form
     {
-        private readonly IMateriaRepository _materiaRepository;
+        public readonly IMateriaRepository materiaRepository;
         public readonly ICursoRepository cursoRepository;
         public readonly IProfessorRepository professorRepository;
         public FMateria()
         {
             InitializeComponent();
-            _materiaRepository = new MateriaRepository();
+            materiaRepository = new MateriaRepository();
             cursoRepository = new CursoRepository();
             professorRepository = new ProfessorRepository();
         }
@@ -45,7 +45,7 @@ namespace Ensino.Views.Materia
 
         private void AtualizarGrid()
         {
-            dgvMaterias.DataSource = _materiaRepository.Obter();
+            dgvMaterias.DataSource = materiaRepository.Obter();
             dgvMaterias.Refresh();
             if (ObterIdDoDataGridView(dgvMaterias) != 0)
             {
@@ -147,7 +147,7 @@ namespace Ensino.Views.Materia
             try
             {
                 PegarDadosParaCadastro(materia);
-                _materiaRepository.Cadastrar(materia);
+                materiaRepository.Cadastrar(materia);
             }
             catch (DataException ex)
             {
@@ -177,13 +177,14 @@ namespace Ensino.Views.Materia
         private void btnEditar_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvMaterias); ;
-            var materia = _materiaRepository.ObterPorId(id);
+            var materia = materiaRepository.ObterPorId(id);
             using (var form = new FEditarMateria(materia))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
+                        form.VerificarSeHaCamposVazios();
                         var materia_n = new Models.Materia
                         {
                             Nome = form.txtBoxNome.Text,
@@ -192,9 +193,13 @@ namespace Ensino.Views.Materia
                             NomeCurso = form.comboBoxCurso.Text,
                             Curso_Id = cursoRepository.Obter().Where(c => c.Nome == form.comboBoxCurso.Text).FirstOrDefault().Id,
                             Professor_Id = professorRepository.Obter().FirstOrDefault(p => p.Nome == form.comboBoxProfessor.Text).Id
-                    };
-                        form.VerificarSeHaCamposVazios();
-                        _materiaRepository.Alterar(materia, materia_n);
+                        };
+                        materiaRepository.Alterar(materia, materia_n);
+                    }
+                    catch (ArgumentNullException)
+                    {
+                        MessageBox.Show("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
+                        return;
                     }
                     catch (Exception)
                     {
@@ -210,13 +215,13 @@ namespace Ensino.Views.Materia
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvMaterias);
-            var materia = _materiaRepository.ObterPorId(id);
+            var materia = materiaRepository.ObterPorId(id);
             try
             {
                 var res = MessageBox.Show("Tem certeza que deseja deletar esse aluno? Este aluno será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (res != DialogResult.OK)
                     return;
-                _materiaRepository.Deletar(materia);
+                materiaRepository.Deletar(materia);
             }
             catch (Exception ex)
             {

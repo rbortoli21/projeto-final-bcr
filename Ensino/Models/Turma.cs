@@ -9,7 +9,7 @@ namespace Ensino.Models
     public class Turma
     {
         public int Id { get; set; }
-        public Curso Curso{ get; set; }
+        public int Curso_Id{ get; set; }
         public string NomeCurso{ get; set; }
         public string TurnoCurso { get; set; }
         public int QtdAlunos { get; set; }

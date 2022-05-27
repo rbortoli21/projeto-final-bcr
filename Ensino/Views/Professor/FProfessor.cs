@@ -14,16 +14,16 @@ namespace Ensino.Views.Professor
 {
     public partial class FProfessor : Form
     {
-        private readonly IProfessorRepository _professorRepository;
+        public readonly IProfessorRepository professorRepository;
         public FProfessor()
         {
             InitializeComponent();
-            _professorRepository = new ProfessorRepository();
+            professorRepository = new ProfessorRepository();
         }
 
         private void AtualizarGrid()
         {
-            dgvProfessor.DataSource = _professorRepository.Obter();
+            dgvProfessor.DataSource = professorRepository.Obter();
             dgvProfessor.Refresh();
             if (ObterIdDoDataGridView(dgvProfessor) != 0)
             {
@@ -116,7 +116,7 @@ namespace Ensino.Views.Professor
                 PegarDadosParaCadastro(professor);
                 VerificarSeHaCamposVazios();
                 LimitarCpfETelefone(txtBoxCPF, maskedTextBoxTelefone);
-                _professorRepository.Cadastrar(professor);
+                professorRepository.Cadastrar(professor);
             }
             catch (DataException ex)
             {
@@ -147,13 +147,14 @@ namespace Ensino.Views.Professor
         private void btnEditar_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvProfessor); ;
-            var professor = _professorRepository.ObterPorId(id);
+            var professor = professorRepository.ObterPorId(id);
             using (var form = new FEditarProfessor(professor))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     try
                     {
+                        form.VerificarSeHaCamposVazios();
                         var professor_n = new Models.Professor
                         {
                             Nome = form.txtBoxNome.Text,
@@ -161,8 +162,12 @@ namespace Ensino.Views.Professor
                             Telefone = form.maskedTextBoxTelefone.Text,
                             Email = form.txtBoxEmail.Text,
                         };
-                        form.VerificarSeHaCamposVazios();
-                        _professorRepository.Alterar(professor, professor_n);
+                        professorRepository.Alterar(professor, professor_n);
+                    }
+                    catch (ArgumentNullException)
+                    {
+                        MessageBox.Show("Todos os campos devem ser preenchidos, verifique-os e tente novamente");
+                        return;
                     }
                     catch (Exception)
                     {
@@ -178,13 +183,13 @@ namespace Ensino.Views.Professor
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvProfessor);
-            var professor = _professorRepository.ObterPorId(id);
+            var professor = professorRepository.ObterPorId(id);
             try
             {
                 var res = MessageBox.Show("Tem certeza que deseja deletar esse aluno? Este aluno será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (res != DialogResult.OK)
                     return;
-                _professorRepository.Deletar(professor);
+                professorRepository.Deletar(professor);
             }
             catch (Exception ex)
             {

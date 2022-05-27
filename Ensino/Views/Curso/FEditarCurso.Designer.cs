@@ -38,6 +38,7 @@ namespace Ensino.Views
             this.label15 = new System.Windows.Forms.Label();
             this.txtBoxNomeCurso = new System.Windows.Forms.TextBox();
             this.btnEditarCurso = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCargaHoraria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +92,6 @@ namespace Ensino.Views
             this.label1.Size = new System.Drawing.Size(54, 20);
             this.label1.TabIndex = 51;
             this.label1.Text = "Turno:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBoxTurnoCurso
             // 
@@ -107,7 +107,6 @@ namespace Ensino.Views
             this.comboBoxTurnoCurso.Name = "comboBoxTurnoCurso";
             this.comboBoxTurnoCurso.Size = new System.Drawing.Size(157, 24);
             this.comboBoxTurnoCurso.TabIndex = 50;
-            this.comboBoxTurnoCurso.SelectedIndexChanged += new System.EventHandler(this.comboBoxTurnoCurso_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -128,11 +127,10 @@ namespace Ensino.Views
             this.txtBoxNomeCurso.Name = "txtBoxNomeCurso";
             this.txtBoxNomeCurso.Size = new System.Drawing.Size(320, 24);
             this.txtBoxNomeCurso.TabIndex = 48;
-            this.txtBoxNomeCurso.TextChanged += new System.EventHandler(this.txtBoxNomeCurso_TextChanged);
             // 
             // btnEditarCurso
             // 
-            this.btnEditarCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnEditarCurso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.btnEditarCurso.FlatAppearance.BorderSize = 0;
             this.btnEditarCurso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnEditarCurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -148,12 +146,30 @@ namespace Ensino.Views
             this.btnEditarCurso.UseVisualStyleBackColor = false;
             this.btnEditarCurso.Click += new System.EventHandler(this.btnEditarCurso_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(12, 251);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(115, 35);
+            this.btnCancelar.TabIndex = 113;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FEditarCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(685, 298);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnEditarCurso);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
@@ -183,5 +199,6 @@ namespace Ensino.Views
         public System.Windows.Forms.NumericUpDown numericUpDownCargaHoraria;
         public System.Windows.Forms.ComboBox comboBoxTurnoCurso;
         public System.Windows.Forms.TextBox txtBoxNomeCurso;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

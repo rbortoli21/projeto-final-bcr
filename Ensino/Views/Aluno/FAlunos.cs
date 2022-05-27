@@ -69,8 +69,18 @@ namespace Ensino.Views
             var turmas = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Select(t => t.Id).ToList();
             var random = new Random();
             int index = turmas[random.Next(turmas.Count)];
-
+            
             return index;
+        }
+
+        public string GerarMatriculaAleatoria()
+        {
+            var random = new Random();
+            string matricula = random.Next(10000000).ToString(); ;
+            if (alunoRepository.Obter().Where(c => c.Matricula == matricula.ToString()).Any())
+                matricula = random.Next(10000000).ToString();
+
+            return matricula;
         }
 
         private void PegarDadosParaCadastro(Aluno aluno)
@@ -86,11 +96,7 @@ namespace Ensino.Views
             aluno.Turma_Id = GerarTurmaAleatoria(aluno);
             aluno.Telefone = maskedTextBoxTelefoneAluno.Text;
             aluno.TurnoCurso = cursoRepository.Obter().Where(c => c.Turno == comboBoxTurnoCursoAluno.Text).FirstOrDefault().Turno;
-            var matricula = new Random();
-            aluno.Matricula = matricula.Next(10000000).ToString();
-
-            if (alunoRepository.Obter().Where(c => c.Matricula == matricula.ToString()).Any())
-                aluno.Matricula = matricula.Next(10000000).ToString();
+            aluno.Matricula = GerarMatriculaAleatoria();
         }
         public void ListarCursosComboBox(ComboBox comboBox)
         {
@@ -135,9 +141,14 @@ namespace Ensino.Views
             var aluno = new Aluno();
             try
             {
-                PegarDadosParaCadastro(aluno);   
+                PegarDadosParaCadastro(aluno);
                 LimitarCpfETelefone(txtBoxCPF, maskedTextBoxTelefoneAluno);
                 alunoRepository.Cadastrar(aluno);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Você deve cadastrar uma turma para poder cadastrar um aluno.");
+                return;
             }
             catch (DataException ex)
             {
@@ -156,7 +167,6 @@ namespace Ensino.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 MessageBox.Show($"O aluno \"{aluno.Nome}\" não pôde ser cadastrado, verifique os campos e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -177,6 +187,7 @@ namespace Ensino.Views
                 {
                     try
                     {
+                        form.VerificarSeHaCamposVazios();
                         var aluno_n = new Aluno
                         {
                             Nome = form.txtBoxNomeAluno.Text,
@@ -185,11 +196,16 @@ namespace Ensino.Views
                             Email = form.txtBoxEmailAluno.Text,
                             Responsavel = form.txtBoxResponsavelAluno.Text,
                             Curso_Id = cursoRepository.Obter().Where(c => c.Nome == form.comboBoxCursoAluno.Text).FirstOrDefault().Id,
+                            Turma_Id = GerarTurmaAleatoria(alunoRepository.Obter().Where(c => c.Nome == form.txtBoxNomeAluno.Text).FirstOrDefault()),
                             NomeCurso = form.comboBoxCursoAluno.Text,
                             TurnoCurso = form.comboBoxTurnoCursoAluno.Text,
                         };
-                        form.VerificarSeHaCamposVazios();
                         alunoRepository.Alterar(aluno, aluno_n);
+                    }
+                    catch (ArgumentNullException)
+                    {
+                        MessageBox.Show("Todos os campos devem ser preenchidos, verifique-os e tente novamente");
+                        return;
                     }
                     catch (Exception)
                     {
@@ -260,7 +276,7 @@ namespace Ensino.Views
             return Convert.ToInt32(null);
 
         }
-
+        //Relatório
         private void btnImprimirRelatorio_Click(object sender, EventArgs e)
         {
             List<Aluno> dt = (List<Aluno>)dgvAlunos.DataSource;

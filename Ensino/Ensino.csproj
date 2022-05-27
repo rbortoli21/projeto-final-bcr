@@ -184,6 +184,10 @@
     <Compile Include="Migrations\202205261429476_MundançasNoBanco2.designer.cs">
       <DependentUpon>202205261429476_MundançasNoBanco2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205271238447_MudandoEntidadeTurma.cs" />
+    <Compile Include="Migrations\202205271238447_MudandoEntidadeTurma.designer.cs">
+      <DependentUpon>202205271238447_MudandoEntidadeTurma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Curso.cs" />
@@ -316,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205261429476_MundançasNoBanco2.resx">
       <DependentUpon>202205261429476_MundançasNoBanco2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205271238447_MudandoEntidadeTurma.resx">
+      <DependentUpon>202205271238447_MudandoEntidadeTurma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -224,7 +224,7 @@ namespace Ensino.Views
             // 
             // btnSalvarAluno
             // 
-            this.btnSalvarAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnSalvarAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.btnSalvarAluno.FlatAppearance.BorderSize = 0;
             this.btnSalvarAluno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnSalvarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -242,7 +242,7 @@ namespace Ensino.Views
             // 
             // btnCancelarAluno
             // 
-            this.btnCancelarAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.btnCancelarAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.btnCancelarAluno.FlatAppearance.BorderSize = 0;
             this.btnCancelarAluno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnCancelarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -23,7 +23,7 @@ namespace Ensino.Models.Repositories
             alunoAtual.Nome = alunoNovo.Nome;
             alunoAtual.Email = alunoNovo.Email;
             alunoAtual.Curso_Id = _dbContext.Cursos.FirstOrDefault(c => c.Id == alunoNovo.Curso_Id).Id;
-            alunoAtual.Turma_Id = _dbContext.Turmas.FirstOrDefault(c => c.Id == alunoNovo.Turma_Id).Id;
+            alunoAtual.Turma_Id = alunoNovo.Turma_Id;
             alunoAtual.Endereco = alunoNovo.Endereco;
             alunoAtual.Telefone = alunoNovo.Telefone;
             alunoAtual.Responsavel = alunoNovo.Responsavel;

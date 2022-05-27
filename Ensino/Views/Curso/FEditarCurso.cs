@@ -20,16 +20,6 @@ namespace Ensino.Views
             this.curso = curso;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxTurnoCurso_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnEditarCurso_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
@@ -44,9 +34,9 @@ namespace Ensino.Views
             }
         }
 
-        private void txtBoxNomeCurso_TextChanged(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

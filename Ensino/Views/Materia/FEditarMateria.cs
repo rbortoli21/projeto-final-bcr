@@ -27,13 +27,13 @@ namespace Ensino.Views.Materia
                 {
                     var txtBox = control as TextBox;
                     if (string.IsNullOrEmpty(txtBox.Text))
-                        throw new ArgumentNullException("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
+                        throw new ArgumentNullException();
                 }
                 if (control is ComboBox)
                 {
                     var cbBox = control as ComboBox;
                     if (string.IsNullOrEmpty(cbBox.Text))
-                        throw new ArgumentNullException("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
+                        throw new ArgumentNullException();
                 }
             }
         }

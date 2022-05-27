@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Ensino.Views.Materia;
+using Ensino.Views.Professor;
+using Ensino.Views.Turma;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,14 +24,33 @@ namespace Ensino.Views
             using (var form = new FAlunos())
             {
                 var alunos = form.alunoRepository.Obter().Count();
-                alunosQtd.Text = alunos.ToString();
+                textBoxQtdAlunos.Text = alunos.ToString();
             }
             using (var form = new FCursos())
             {
                 var cursos = form.cursoRepository.Obter().Count();
-                cursosQtd.Text = cursos.ToString();
+                textBoxQtdCurso.Text = cursos.ToString();
+            }
+            using (var form = new FProfessor())
+            {
+                var professores = form.professorRepository.Obter().Count();
+                textBoxQtdProfessor.Text = professores.ToString();
+            }
+            using (var form = new FMateria())
+            {
+                var materias = form.cursoRepository.Obter().Count();
+                textBoxQtdMateria.Text = materias.ToString();
+            }
+            using (var form = new FTurmas())
+            {
+                var turmas = form.turmaRepository.Obter().Count();
+                textBoxQtdTurma.Text = turmas.ToString();
             }
         }
 
+        private void alunosQtd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
