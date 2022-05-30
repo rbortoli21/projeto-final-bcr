@@ -242,7 +242,7 @@ namespace Ensino.Views.Materia
 
         private void btnImprimirRelatorio_Click(object sender, EventArgs e)
         {
-            List<Models.Materia> materias = new List<Models.Materia>();
+            List<Models.Materia> materias = (List<Models.Materia>)dgvMaterias.DataSource;
             using(var form = new FRelatorioMateria(materias))
                 form.ShowDialog();
             

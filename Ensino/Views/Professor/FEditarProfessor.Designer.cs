@@ -265,6 +265,6 @@
         public System.Windows.Forms.TextBox txtBoxEmail;
         public System.Windows.Forms.TextBox txtBoxNome;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBoxTurno;
+        public System.Windows.Forms.ComboBox comboBoxTurno;
     }
 }

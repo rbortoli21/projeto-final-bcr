@@ -30,29 +30,26 @@ namespace Ensino.Views.Relatorios
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ProfessorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.ProfessorBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ProfessorBindingSource
+            // 
+            this.ProfessorBindingSource.DataSource = typeof(Ensino.Models.Professor);
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.DocumentMapWidth = 0;
-            reportDataSource1.Name = "RelatorioProfessor";
-            reportDataSource1.Value = this.ProfessorBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Ensino.Relatorios.RelatorioProfessor.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 1;
-            // 
-            // ProfessorBindingSource
-            // 
-            this.ProfessorBindingSource.DataSource = typeof(Ensino.Models.Professor);
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // FRelatorioProfessor
             // 

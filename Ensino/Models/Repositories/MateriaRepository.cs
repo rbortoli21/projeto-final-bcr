@@ -37,7 +37,7 @@ namespace Ensino.Models.Repositories
 
         public Materia Cadastrar(Materia materia)
         {
-            if(_dbContext.Materias.Where(m => m.Nome == materia.Nome).Where(m => m.Curso_Id == materia.Curso_Id).Any())
+            if(_dbContext.Materias.Where(m => m.Nome == materia.Nome).Where(m => m.NomeTurno == materia.NomeTurno).Where(m => m.Curso_Id == materia.Curso_Id).Any())
                 throw new DuplicateWaitObjectException();
             _dbContext.Materias.Add(materia);
             _dbContext.SaveChanges();

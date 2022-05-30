@@ -31,10 +31,14 @@ namespace Ensino.Views.Relatorios
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.MateriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.MateriaBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // MateriaBindingSource
+            // 
+            this.MateriaBindingSource.DataSource = typeof(Ensino.Models.Materia);
             // 
             // reportViewer1
             // 
@@ -49,10 +53,7 @@ namespace Ensino.Views.Relatorios
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 1;
-            // 
-            // MateriaBindingSource
-            // 
-            this.MateriaBindingSource.DataSource = typeof(Ensino.Models.Materia);
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // FRelatorioMateria
             // 

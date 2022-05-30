@@ -136,7 +136,7 @@ namespace Ensino.Views.Turma
 
         private void btnImprimirRelatorio_Click(object sender, EventArgs e)
         {
-            List<Models.Turma> turmas = new List<Models.Turma>();
+            List<Models.Turma> turmas = (List<Models.Turma>)dgvTurmas.DataSource;
             using (var form = new FRelatorioTurma(turmas))
                 form.ShowDialog();
         }

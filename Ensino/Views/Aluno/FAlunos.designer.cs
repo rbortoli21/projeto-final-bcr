@@ -76,9 +76,7 @@
             // 
             // btnSalvarAluno
             // 
-            this.btnSalvarAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalvarAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSalvarAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.btnSalvarAluno.FlatAppearance.BorderSize = 0;
             this.btnSalvarAluno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -97,9 +95,6 @@
             // 
             // txtBoxNomeAluno
             // 
-            this.txtBoxNomeAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxNomeAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNomeAluno.Location = new System.Drawing.Point(72, 100);
             this.txtBoxNomeAluno.Name = "txtBoxNomeAluno";
@@ -108,9 +103,6 @@
             // 
             // txtBoxEmailAluno
             // 
-            this.txtBoxEmailAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxEmailAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEmailAluno.Location = new System.Drawing.Point(506, 220);
             this.txtBoxEmailAluno.Name = "txtBoxEmailAluno";
@@ -119,9 +111,6 @@
             // 
             // txtBoxResponsavelAluno
             // 
-            this.txtBoxResponsavelAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxResponsavelAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxResponsavelAluno.Location = new System.Drawing.Point(72, 161);
             this.txtBoxResponsavelAluno.Name = "txtBoxResponsavelAluno";
@@ -130,9 +119,6 @@
             // 
             // txtBoxEnderecoAluno
             // 
-            this.txtBoxEnderecoAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxEnderecoAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEnderecoAluno.Location = new System.Drawing.Point(72, 220);
             this.txtBoxEnderecoAluno.Name = "txtBoxEnderecoAluno";
@@ -141,9 +127,6 @@
             // 
             // comboBoxCursoAluno
             // 
-            this.comboBoxCursoAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxCursoAluno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCursoAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxCursoAluno.FormattingEnabled = true;
@@ -225,9 +208,6 @@
             // 
             // maskedTextBoxTelefoneAluno
             // 
-            this.maskedTextBoxTelefoneAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.maskedTextBoxTelefoneAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.maskedTextBoxTelefoneAluno.Location = new System.Drawing.Point(286, 161);
             this.maskedTextBoxTelefoneAluno.Mask = "+55 (00) 00000-0000";
@@ -281,6 +261,7 @@
             this.dgvAlunos.EnableHeadersVisualStyles = false;
             this.dgvAlunos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dgvAlunos.Location = new System.Drawing.Point(72, 262);
+            this.dgvAlunos.MultiSelect = false;
             this.dgvAlunos.Name = "dgvAlunos";
             this.dgvAlunos.ReadOnly = true;
             this.dgvAlunos.RowHeadersVisible = false;
@@ -314,9 +295,7 @@
             // 
             // btnEditarAluno
             // 
-            this.btnEditarAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditarAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEditarAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.btnEditarAluno.Enabled = false;
             this.btnEditarAluno.FlatAppearance.BorderSize = 0;
@@ -335,9 +314,7 @@
             // 
             // btnCancelarAluno
             // 
-            this.btnCancelarAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelarAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelarAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.btnCancelarAluno.FlatAppearance.BorderSize = 0;
             this.btnCancelarAluno.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -355,9 +332,7 @@
             // 
             // btnDeletarAluno
             // 
-            this.btnDeletarAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDeletarAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDeletarAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.btnDeletarAluno.Enabled = false;
             this.btnDeletarAluno.FlatAppearance.BorderSize = 0;
@@ -376,9 +351,6 @@
             // 
             // txtBoxCPF
             // 
-            this.txtBoxCPF.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtBoxCPF.Location = new System.Drawing.Point(286, 100);
             this.txtBoxCPF.Mask = "000,000,000-00";
@@ -430,9 +402,6 @@
             // 
             // comboBoxTurnoCursoAluno
             // 
-            this.comboBoxTurnoCursoAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxTurnoCursoAluno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTurnoCursoAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.comboBoxTurnoCursoAluno.FormattingEnabled = true;
@@ -457,9 +426,7 @@
             // 
             // btnImprimirRelatorio
             // 
-            this.btnImprimirRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnImprimirRelatorio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnImprimirRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(19)))), ((int)(((byte)(43)))));
             this.btnImprimirRelatorio.FlatAppearance.BorderSize = 0;
             this.btnImprimirRelatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));

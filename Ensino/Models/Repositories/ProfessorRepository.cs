@@ -30,7 +30,7 @@ namespace Ensino.Models.Repositories
 
         public Professor Cadastrar(Professor professor)
         {
-            if (_dbContext.Alunos.Where(a => a.CPF == professor.CPF).Any())
+            if (_dbContext.Professores.Where(a => a.CPF == professor.CPF).Any())
                 throw new DuplicateWaitObjectException($"Professor já está cadastrado.");
             _dbContext.Professores.Add(professor);
             _dbContext.SaveChanges();

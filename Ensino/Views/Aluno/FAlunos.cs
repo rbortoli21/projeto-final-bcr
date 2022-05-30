@@ -66,7 +66,12 @@ namespace Ensino.Views
 
         public int GerarTurmaAleatoria(Aluno aluno)
         {
-            var turmas = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Select(t => t.Id).ToList();
+            var turm = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Where(t => t.TurnoCurso == aluno.TurnoCurso).ToList();
+            foreach (var turma in turm)
+            {
+                Console.WriteLine(turma.NomeCurso);
+            }
+            var turmas = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Where(t => t.TurnoCurso == aluno.TurnoCurso).Select(t => t.Id).ToList();
             var random = new Random();
             int index = turmas[random.Next(turmas.Count)];
             

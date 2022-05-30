@@ -47,6 +47,8 @@ namespace Ensino.Views.Materia
                 {
                     form.ListarCursosComboBox(comboBoxCurso);
                 }
+                comboBoxCurso.SelectedItem = materia.NomeCurso;
+                comboBoxTurno.SelectedItem = materia.NomeTurno;
             }
         }
 

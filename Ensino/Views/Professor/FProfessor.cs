@@ -162,6 +162,7 @@ namespace Ensino.Views.Professor
                             Endereco = form.txtBoxEndereco.Text,
                             Telefone = form.maskedTextBoxTelefone.Text,
                             Email = form.txtBoxEmail.Text,
+                            Turno = form.comboBoxTurno.Text
                         };
                         professorRepository.Alterar(professor, professor_n);
                     }
@@ -187,7 +188,7 @@ namespace Ensino.Views.Professor
             var professor = professorRepository.ObterPorId(id);
             try
             {
-                var res = MessageBox.Show("Tem certeza que deseja deletar esse aluno? Este aluno será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                var res = MessageBox.Show("Tem certeza que deseja deletar esse professor? Este professor será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (res != DialogResult.OK)
                     return;
                 professorRepository.Deletar(professor);
@@ -220,7 +221,7 @@ namespace Ensino.Views.Professor
 
         private void btnImprimirRelatorio_Click(object sender, EventArgs e)
         {
-            List<Models.Professor> professor = new List<Models.Professor>();
+            List<Models.Professor> professor = (List<Models.Professor>)dgvProfessor.DataSource;
             using (var form = new FRelatorioProfessor(professor))
                 form.ShowDialog();
         }
