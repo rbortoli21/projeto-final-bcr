@@ -219,7 +219,7 @@ namespace Ensino.Views.Materia
             var materia = materiaRepository.ObterPorId(id);
             try
             {
-                var res = MessageBox.Show("Tem certeza que deseja deletar esse aluno? Este aluno será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                var res = MessageBox.Show("Tem certeza que deseja deletar essa matéria? Esta matéria será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (res != DialogResult.OK)
                     return;
                 materiaRepository.Deletar(materia);

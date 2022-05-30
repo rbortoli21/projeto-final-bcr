@@ -641,7 +641,23 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Data: 
+                          <Value>Data: </Value>
+                          <Style>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>SemiBold</FontWeight>
+                            <Color>White</Color>
+                          </Style>
+                        </TextRun>
+                        <TextRun>
+                          <Value>=Parameters!Data.Value</Value>
+                          <Style>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>SemiBold</FontWeight>
+                            <Color>White</Color>
+                          </Style>
+                        </TextRun>
+                        <TextRun>
+                          <Value xml:space="preserve">
 </Value>
                           <Style>
                             <FontSize>12pt</FontSize>
@@ -656,7 +672,7 @@
                   <Top>0.42898cm</Top>
                   <Left>2.45745cm</Left>
                   <Height>0.57354cm</Height>
-                  <Width>1.57396cm</Width>
+                  <Width>7.5cm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -674,7 +690,23 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Emitido as: 
+                          <Value>Emitido as: </Value>
+                          <Style>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>SemiBold</FontWeight>
+                            <Color>White</Color>
+                          </Style>
+                        </TextRun>
+                        <TextRun>
+                          <Value>=Parameters!Hora.Value</Value>
+                          <Style>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>SemiBold</FontWeight>
+                            <Color>White</Color>
+                          </Style>
+                        </TextRun>
+                        <TextRun>
+                          <Value xml:space="preserve">
 </Value>
                           <Style>
                             <FontSize>12pt</FontSize>
@@ -689,7 +721,7 @@
                   <Top>1.17891cm</Top>
                   <Left>2.45745cm</Left>
                   <Height>0.65292cm</Height>
-                  <Width>3.10854cm</Width>
+                  <Width>7.5cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>

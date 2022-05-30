@@ -547,7 +547,7 @@
             this.Controls.Add(this.btnSalvarAluno);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FAlunos";
-            this.Text = "Alunos";
+            this.Text = "s";
             this.Load += new System.EventHandler(this.FAlunos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).EndInit();

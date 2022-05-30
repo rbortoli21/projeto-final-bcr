@@ -23,8 +23,8 @@ namespace Ensino.Views.Relatorios
         {
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("RelatorioTurma", dt));
-            reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("Data", DateTime.Now.Date.ToString()));
-            reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("Hora", DateTime.Now.Hour.ToString()));
+            reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("Data", $"{DateTime.Now.Date.Day}/{DateTime.Now.Date.Month}/{DateTime.Now.Date.Year}"));
+            reportViewer1.LocalReport.SetParameters(new Microsoft.Reporting.WinForms.ReportParameter("Hora", $"{DateTime.Now.Hour}:{DateTime.Now.Minute}:{ DateTime.Now.Second}"));
             this.reportViewer1.RefreshReport();
 
         }

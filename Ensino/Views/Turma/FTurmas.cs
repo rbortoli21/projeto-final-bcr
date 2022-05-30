@@ -94,7 +94,7 @@ namespace Ensino.Views.Turma
             var turma = turmaRepository.ObterPorId(id);
             try
             {
-                var res = MessageBox.Show("Tem certeza que deseja deletar esse aluno? Este aluno será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                var res = MessageBox.Show("Tem certeza que deseja deletar essa turma? Esta turma será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (res != DialogResult.OK)
                     return;
                 turmaRepository.Deletar(turma);

@@ -56,7 +56,7 @@
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>4.80188cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -349,7 +349,7 @@
             <DataSetName>RelatorioTurma</DataSetName>
             <Top>0.93641cm</Top>
             <Height>1.2cm</Height>
-            <Width>10cm</Width>
+            <Width>12.30188cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -435,7 +435,23 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Data: 
+                          <Value>Data: </Value>
+                          <Style>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>SemiBold</FontWeight>
+                            <Color>White</Color>
+                          </Style>
+                        </TextRun>
+                        <TextRun>
+                          <Value>=Parameters!Data.Value</Value>
+                          <Style>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>SemiBold</FontWeight>
+                            <Color>White</Color>
+                          </Style>
+                        </TextRun>
+                        <TextRun>
+                          <Value xml:space="preserve">
 </Value>
                           <Style>
                             <FontSize>12pt</FontSize>
@@ -448,9 +464,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.40252cm</Top>
-                  <Left>2.48391cm</Left>
+                  <Left>0cm</Left>
                   <Height>0.57354cm</Height>
-                  <Width>1.57396cm</Width>
+                  <Width>5cm</Width>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -468,7 +484,23 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>Emitido as: 
+                          <Value>Emitido as: </Value>
+                          <Style>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>SemiBold</FontWeight>
+                            <Color>White</Color>
+                          </Style>
+                        </TextRun>
+                        <TextRun>
+                          <Value>=Parameters!Hora.Value</Value>
+                          <Style>
+                            <FontSize>12pt</FontSize>
+                            <FontWeight>SemiBold</FontWeight>
+                            <Color>White</Color>
+                          </Style>
+                        </TextRun>
+                        <TextRun>
+                          <Value xml:space="preserve">
 </Value>
                           <Style>
                             <FontSize>12pt</FontSize>
@@ -481,9 +513,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.15245cm</Top>
-                  <Left>2.48391cm</Left>
+                  <Left>0cm</Left>
                   <Height>0.65292cm</Height>
-                  <Width>3.10854cm</Width>
+                  <Width>5cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
                     <Border>

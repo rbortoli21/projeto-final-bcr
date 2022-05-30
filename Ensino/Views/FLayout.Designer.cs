@@ -38,13 +38,13 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnAlunos = new System.Windows.Forms.Button();
             this.BarraTitulo = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.iconMinimize = new System.Windows.Forms.PictureBox();
             this.iconMinizar = new System.Windows.Forms.PictureBox();
             this.iconrestaurar = new System.Windows.Forms.PictureBox();
             this.iconmaximizar = new System.Windows.Forms.PictureBox();
             this.iconFechar = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.painel = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MenuVertical.SuspendLayout();
@@ -191,20 +191,6 @@
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.textBox1.HideSelection = false;
-            this.textBox1.Location = new System.Drawing.Point(0, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(870, 31);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // iconMinimize
             // 
             this.iconMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -283,6 +269,24 @@
             this.btnMenu.TabIndex = 0;
             this.btnMenu.TabStop = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.textBox1.Location = new System.Drawing.Point(0, 6);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ShortcutsEnabled = false;
+            this.textBox1.Size = new System.Drawing.Size(870, 31);
+            this.textBox1.TabIndex = 6;
+            this.textBox1.Text = "Hora";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // painel
             // 

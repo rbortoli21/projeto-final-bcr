@@ -66,15 +66,11 @@ namespace Ensino.Views
 
         public int GerarTurmaAleatoria(Aluno aluno)
         {
-            var turm = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Where(t => t.TurnoCurso == aluno.TurnoCurso).ToList();
-            foreach (var turma in turm)
-            {
-                Console.WriteLine(turma.NomeCurso);
-            }
             var turmas = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Where(t => t.TurnoCurso == aluno.TurnoCurso).Select(t => t.Id).ToList();
             var random = new Random();
+
             int index = turmas[random.Next(turmas.Count)];
-            
+
             return index;
         }
 
@@ -98,10 +94,10 @@ namespace Ensino.Views
             aluno.Email = txtBoxEmailAluno.Text;
             aluno.NomeCurso = cursoRepository.Obter().Where(c => c.Nome == comboBoxCursoAluno.Text).FirstOrDefault().Nome;
             aluno.Curso_Id = cursoRepository.Obter().Where(c => c.Nome == comboBoxCursoAluno.Text).FirstOrDefault().Id;
-            aluno.Turma_Id = GerarTurmaAleatoria(aluno);
-            aluno.Telefone = maskedTextBoxTelefoneAluno.Text;
             aluno.TurnoCurso = cursoRepository.Obter().Where(c => c.Turno == comboBoxTurnoCursoAluno.Text).FirstOrDefault().Turno;
+            aluno.Telefone = maskedTextBoxTelefoneAluno.Text;
             aluno.Matricula = GerarMatriculaAleatoria();
+            aluno.Turma_Id = GerarTurmaAleatoria(aluno);
         }
         public void ListarCursosComboBox(ComboBox comboBox)
         {
@@ -150,8 +146,9 @@ namespace Ensino.Views
                 LimitarCpfETelefone(txtBoxCPF, maskedTextBoxTelefoneAluno);
                 alunoRepository.Cadastrar(aluno);
             }
-            catch (ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException ex)
             {
+                MessageBox.Show(ex.Message);
                 MessageBox.Show("Você deve cadastrar uma turma para poder cadastrar um aluno.");
                 return;
             }
@@ -201,15 +198,20 @@ namespace Ensino.Views
                             Email = form.txtBoxEmailAluno.Text,
                             Responsavel = form.txtBoxResponsavelAluno.Text,
                             Curso_Id = cursoRepository.Obter().Where(c => c.Nome == form.comboBoxCursoAluno.Text).FirstOrDefault().Id,
-                            Turma_Id = GerarTurmaAleatoria(alunoRepository.Obter().Where(c => c.Nome == form.txtBoxNomeAluno.Text).FirstOrDefault()),
                             NomeCurso = form.comboBoxCursoAluno.Text,
                             TurnoCurso = form.comboBoxTurnoCursoAluno.Text,
                         };
+                        aluno_n.Turma_Id = GerarTurmaAleatoria(aluno_n);
                         alunoRepository.Alterar(aluno, aluno_n);
                     }
                     catch (ArgumentNullException)
                     {
                         MessageBox.Show("Todos os campos devem ser preenchidos, verifique-os e tente novamente");
+                        return;
+                    }
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        MessageBox.Show("Você deve cadastrar uma turma para poder cadastrar um aluno.");
                         return;
                     }
                     catch (Exception)
@@ -287,7 +289,7 @@ namespace Ensino.Views
             List<Aluno> dt = (List<Aluno>)dgvAlunos.DataSource;
             using (var form = new FRelatorioAluno(dt))
                 form.ShowDialog();
-            
+
         }
     }
 }

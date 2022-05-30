@@ -29,6 +29,12 @@ namespace Ensino.Views
                     if (string.IsNullOrEmpty(txtBox.Text))
                         throw new ArgumentNullException();
                 }
+                if(control is MaskedTextBox)
+                {
+                    var txtBox = control as MaskedTextBox;
+                    if (!txtBox.MaskCompleted)
+                        throw new ArgumentNullException();
+                }
             }
         }
 
