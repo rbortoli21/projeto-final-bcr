@@ -15,11 +15,16 @@ namespace Ensino.Models.Repositories
         {
             _dbContext = new DataContext(); 
         }
+        public void ListarAlunos(Turma turma)
+        {
+            turma.QtdAlunos = _dbContext.Alunos.ToList().Where(a => a.Turma_Id == turma.Id).Count();
+            _dbContext.SaveChanges();
+        }
+
         public Turma Cadastrar(Turma turma)
         {
             if (_dbContext.Turmas.Where(t => t.Id == turma.Id).Any())
                 throw new DuplicateWaitObjectException($"Turma já está cadastrada.");
-
             _dbContext.Turmas.Add(turma);
             _dbContext.SaveChanges();
 

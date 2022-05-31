@@ -8,6 +8,7 @@ namespace Ensino.Models.Repositories.Interfaces
 {
     public interface ITurmaRepository
     {
+        void ListarAlunos(Turma turma);
         List<Turma> Obter();
         Turma ObterPorId(int id);
         Turma Cadastrar(Turma turma);

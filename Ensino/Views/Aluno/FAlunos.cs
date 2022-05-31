@@ -2,6 +2,7 @@
 using Ensino.Models.Repositories;
 using Ensino.Models.Repositories.Interfaces;
 using Ensino.Views.Relatorios;
+using Ensino.Views.Turma;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,20 +65,45 @@ namespace Ensino.Views
             }
         }
 
-        public int GerarTurmaAleatoria(Aluno aluno)
+        private Models.Turma CriarTurma(Aluno aluno)
         {
-            var turmas = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Where(t => t.TurnoCurso == aluno.TurnoCurso).Select(t => t.Id).ToList();
+            Models.Turma turma = new Models.Turma()
+            {
+                NomeCurso = aluno.NomeCurso,
+                TurnoCurso = aluno.TurnoCurso,
+                Curso_Id = aluno.Curso_Id
+            };
+            turmaRepository.Cadastrar(turma);
+            return turma;
+        }
+
+        public int GerarTurma(Aluno aluno)
+        {
+            var turmaJaCadastrada = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Where(t => t.TurnoCurso == aluno.TurnoCurso).ToList();
+            Models.Turma index;
             var random = new Random();
-
-            int index = turmas[random.Next(turmas.Count)];
-
-            return index;
+            if (turmaJaCadastrada.Count != 0)
+            {
+                index = turmaJaCadastrada[random.Next(turmaJaCadastrada.Count)];
+                var qtdAlunos = alunoRepository.Obter().Where(a => a.Turma_Id == index.Id).Count();
+                Console.WriteLine(index.NomeCurso);
+                Console.WriteLine(index.Id);
+                Console.WriteLine(qtdAlunos);
+                if (qtdAlunos >= 3)
+                {
+                    index = CriarTurma(aluno);
+                    return index.Id;
+                }
+                return index.Id;
+            }
+            index = CriarTurma(aluno);
+            return index.Id;
         }
 
         public string GerarMatriculaAleatoria()
         {
             var random = new Random();
-            string matricula = random.Next(10000000).ToString(); ;
+            string matricula = random.Next(10000000).ToString();
             if (alunoRepository.Obter().Where(c => c.Matricula == matricula.ToString()).Any())
                 matricula = random.Next(10000000).ToString();
 
@@ -97,7 +123,7 @@ namespace Ensino.Views
             aluno.TurnoCurso = cursoRepository.Obter().Where(c => c.Turno == comboBoxTurnoCursoAluno.Text).FirstOrDefault().Turno;
             aluno.Telefone = maskedTextBoxTelefoneAluno.Text;
             aluno.Matricula = GerarMatriculaAleatoria();
-            aluno.Turma_Id = GerarTurmaAleatoria(aluno);
+            aluno.Turma_Id = GerarTurma(aluno);
         }
         public void ListarCursosComboBox(ComboBox comboBox)
         {
@@ -201,7 +227,7 @@ namespace Ensino.Views
                             NomeCurso = form.comboBoxCursoAluno.Text,
                             TurnoCurso = form.comboBoxTurnoCursoAluno.Text,
                         };
-                        aluno_n.Turma_Id = GerarTurmaAleatoria(aluno_n);
+                        aluno_n.Turma_Id = GerarTurma(aluno_n);
                         alunoRepository.Alterar(aluno, aluno_n);
                     }
                     catch (ArgumentNullException)

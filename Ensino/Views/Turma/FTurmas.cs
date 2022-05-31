@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ensino.Views.Relatorios;
+using Ensino.Data;
 
 namespace Ensino.Views.Turma
 {
@@ -46,18 +47,19 @@ namespace Ensino.Views.Turma
             turma.Curso_Id = _cursoRepository.Obter().FirstOrDefault(c => c.Nome == comboBoxCurso.Text).Id;
             turma.NomeCurso = _cursoRepository.Obter().FirstOrDefault(c => c.Nome == comboBoxCurso.Text).Nome;
             turma.TurnoCurso = _cursoRepository.Obter().FirstOrDefault(c => c.Turno == comboBoxTurno.Text).Turno;
+            turma.QtdAlunos = _alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id).Count();
         }
 
-        private void ListarQuantidadeAlunos(List<Models.Turma> turmas)
+        public void ListarQuantidadeAlunos(List<Models.Turma> turmas)
         {
-            foreach(var turma in turmas)
-                turma.QtdAlunos = _alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id).Count();   
+            foreach (var turma in turmas)
+                turmaRepository.ListarAlunos(turma);       
         }
 
         private void AtualizarGrid()
         {
-            dgvTurmas.DataSource = turmaRepository.Obter();
             ListarQuantidadeAlunos(turmaRepository.Obter());
+            dgvTurmas.DataSource = turmaRepository.Obter();
             dgvTurmas.Refresh();
         }
 
