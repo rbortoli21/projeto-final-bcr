@@ -17,9 +17,9 @@ namespace Ensino.Views.Turma
 {
     public partial class FTurmas : Form
     {
-        public readonly ITurmaRepository turmaRepository;
-        private readonly ICursoRepository _cursoRepository;
-        private readonly IAlunoRepository _alunoRepository;
+        public readonly TurmaRepository turmaRepository;
+        private readonly CursoRepository _cursoRepository;
+        private readonly AlunoRepository _alunoRepository;
         public FTurmas()
         {
             InitializeComponent();
@@ -27,7 +27,6 @@ namespace Ensino.Views.Turma
             _cursoRepository = new CursoRepository();
             _alunoRepository = new AlunoRepository();
         }
-
         public void VerificarSeHaCamposVazios()
         {
             foreach (Control control in Controls)
@@ -40,7 +39,6 @@ namespace Ensino.Views.Turma
                 }
             }
         }
-
         private void PegarDadosParaCadastro(Models.Turma turma)
         {
             VerificarSeHaCamposVazios();
@@ -49,20 +47,17 @@ namespace Ensino.Views.Turma
             turma.TurnoCurso = _cursoRepository.Obter().FirstOrDefault(c => c.Turno == comboBoxTurno.Text).Turno;
             turma.QtdAlunos = _alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id).Count();
         }
-
         public void ListarQuantidadeAlunos(List<Models.Turma> turmas)
         {
             foreach (var turma in turmas)
-                turmaRepository.ListarAlunos(turma);       
+                turmaRepository.ListarAlunos(turma);
         }
-
-        private void AtualizarGrid()
+        public void AtualizarGrid()
         {
             ListarQuantidadeAlunos(turmaRepository.Obter());
             dgvTurmas.DataSource = turmaRepository.Obter();
             dgvTurmas.Refresh();
         }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             var turma = new Models.Turma();
@@ -71,7 +66,7 @@ namespace Ensino.Views.Turma
                 PegarDadosParaCadastro(turma);
                 turmaRepository.Cadastrar(turma);
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
                 MessageBox.Show("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
                 return;
@@ -89,7 +84,6 @@ namespace Ensino.Views.Turma
             MessageBox.Show($"Turma cadastrado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AtualizarGrid();
         }
-
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvTurmas);
@@ -110,17 +104,14 @@ namespace Ensino.Views.Turma
             MessageBox.Show($"A turma de {turma.NomeCurso}, no turno {turma.TurnoCurso} foi deletada com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AtualizarGrid();
         }
-
         private void FTurmas_Load(object sender, EventArgs e)
         {
             AtualizarGrid();
             comboBoxCurso.DataSource = _cursoRepository.Obter().OrderBy(c => c.Nome).Select(c => c.Nome).Distinct().ToList();
         }
-
         private void comboBoxCurso_SelectedValueChanged(object sender, EventArgs e)
-        {
-            comboBoxTurno.DataSource = _cursoRepository.Obter().Where(c => c.Nome == comboBoxCurso.Text).Select(c => c.Turno).Distinct().ToList();
-        }
+        => comboBoxTurno.DataSource = _cursoRepository.Obter().Where(c => c.Nome == comboBoxCurso.Text).Select(c => c.Turno).Distinct().ToList();
+
         private int ObterIdDoDataGridView(DataGridView dgv)
         {
             if (dgv.Rows.Count != 0)
@@ -133,14 +124,18 @@ namespace Ensino.Views.Turma
                 }
             }
             return Convert.ToInt32(null);
-
         }
-
         private void btnImprimirRelatorio_Click(object sender, EventArgs e)
         {
             List<Models.Turma> turmas = (List<Models.Turma>)dgvTurmas.DataSource;
             using (var form = new FRelatorioTurma(turmas))
                 form.ShowDialog();
+        }
+
+        private void textBoxPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            dgvTurmas.DataSource = turmaRepository.BuscaPorTexto(textBoxPesquisa);
+            dgvTurmas.Refresh();
         }
     }
 }

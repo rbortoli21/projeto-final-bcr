@@ -53,5 +53,10 @@ namespace Ensino.Views
         {
 
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -59,6 +59,8 @@
             this.comboBoxTurnoCursoAluno = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnImprimirRelatorio = new System.Windows.Forms.Button();
+            this.textBoxPesquisa = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,9 +71,11 @@
             this.enderecoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alunoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalvarAluno
@@ -85,7 +89,7 @@
             this.btnSalvarAluno.ForeColor = System.Drawing.Color.White;
             this.btnSalvarAluno.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvarAluno.Image")));
             this.btnSalvarAluno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvarAluno.Location = new System.Drawing.Point(679, 514);
+            this.btnSalvarAluno.Location = new System.Drawing.Point(745, 680);
             this.btnSalvarAluno.Name = "btnSalvarAluno";
             this.btnSalvarAluno.Size = new System.Drawing.Size(180, 35);
             this.btnSalvarAluno.TabIndex = 2;
@@ -260,13 +264,13 @@
             this.dgvAlunos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAlunos.EnableHeadersVisualStyles = false;
             this.dgvAlunos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvAlunos.Location = new System.Drawing.Point(72, 262);
+            this.dgvAlunos.Location = new System.Drawing.Point(72, 326);
             this.dgvAlunos.MultiSelect = false;
             this.dgvAlunos.Name = "dgvAlunos";
             this.dgvAlunos.ReadOnly = true;
             this.dgvAlunos.RowHeadersVisible = false;
             this.dgvAlunos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAlunos.Size = new System.Drawing.Size(742, 237);
+            this.dgvAlunos.Size = new System.Drawing.Size(808, 339);
             this.dgvAlunos.TabIndex = 47;
             // 
             // NomeCurso
@@ -304,7 +308,7 @@
             this.btnEditarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarAluno.ForeColor = System.Drawing.Color.White;
             this.btnEditarAluno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarAluno.Location = new System.Drawing.Point(316, 514);
+            this.btnEditarAluno.Location = new System.Drawing.Point(316, 680);
             this.btnEditarAluno.Name = "btnEditarAluno";
             this.btnEditarAluno.Size = new System.Drawing.Size(115, 35);
             this.btnEditarAluno.TabIndex = 55;
@@ -322,7 +326,7 @@
             this.btnCancelarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarAluno.ForeColor = System.Drawing.Color.White;
             this.btnCancelarAluno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarAluno.Location = new System.Drawing.Point(72, 514);
+            this.btnCancelarAluno.Location = new System.Drawing.Point(72, 680);
             this.btnCancelarAluno.Name = "btnCancelarAluno";
             this.btnCancelarAluno.Size = new System.Drawing.Size(115, 35);
             this.btnCancelarAluno.TabIndex = 54;
@@ -341,7 +345,7 @@
             this.btnDeletarAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletarAluno.ForeColor = System.Drawing.Color.White;
             this.btnDeletarAluno.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeletarAluno.Location = new System.Drawing.Point(195, 514);
+            this.btnDeletarAluno.Location = new System.Drawing.Point(195, 680);
             this.btnDeletarAluno.Name = "btnDeletarAluno";
             this.btnDeletarAluno.Size = new System.Drawing.Size(115, 35);
             this.btnDeletarAluno.TabIndex = 53;
@@ -434,13 +438,36 @@
             this.btnImprimirRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImprimirRelatorio.ForeColor = System.Drawing.Color.White;
             this.btnImprimirRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimirRelatorio.Location = new System.Drawing.Point(437, 514);
+            this.btnImprimirRelatorio.Location = new System.Drawing.Point(437, 680);
             this.btnImprimirRelatorio.Name = "btnImprimirRelatorio";
             this.btnImprimirRelatorio.Size = new System.Drawing.Size(115, 35);
             this.btnImprimirRelatorio.TabIndex = 62;
             this.btnImprimirRelatorio.Text = "RELATÓRIO";
             this.btnImprimirRelatorio.UseVisualStyleBackColor = false;
             this.btnImprimirRelatorio.Click += new System.EventHandler(this.btnImprimirRelatorio_Click);
+            // 
+            // textBoxPesquisa
+            // 
+            this.textBoxPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPesquisa.Location = new System.Drawing.Point(72, 296);
+            this.textBoxPesquisa.Name = "textBoxPesquisa";
+            this.textBoxPesquisa.Size = new System.Drawing.Size(263, 24);
+            this.textBoxPesquisa.TabIndex = 63;
+            this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(68, 273);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 20);
+            this.label11.TabIndex = 69;
+            this.label11.Text = "Pesquisa";
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -516,12 +543,24 @@
             // 
             this.alunoBindingSource.DataSource = typeof(Ensino.Models.Aluno);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(339, 296);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 64;
+            this.pictureBox1.TabStop = false;
+            // 
             // FAlunos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(871, 563);
+            this.ClientSize = new System.Drawing.Size(937, 729);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBoxPesquisa);
             this.Controls.Add(this.btnImprimirRelatorio);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBoxTurnoCursoAluno);
@@ -552,6 +591,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -594,5 +634,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn TurnoCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Turma_Id;
+        private System.Windows.Forms.TextBox textBoxPesquisa;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

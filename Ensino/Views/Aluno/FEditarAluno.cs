@@ -29,7 +29,7 @@ namespace Ensino.Views
                     if (string.IsNullOrEmpty(txtBox.Text))
                         throw new ArgumentNullException();
                 }
-                if(control is MaskedTextBox)
+                if (control is MaskedTextBox)
                 {
                     var txtBox = control as MaskedTextBox;
                     if (!txtBox.MaskCompleted)
@@ -49,7 +49,7 @@ namespace Ensino.Views
                 txtBoxEnderecoAluno.Text = aluno.Endereco;
                 txtBoxMatriculaAluno.Text = aluno.Matricula;
                 txtBoxResponsavelAluno.Text = aluno.Responsavel;
-                using(var form = new FAlunos())
+                using (var form = new FAlunos())
                 {
                     form.ListarCursosComboBox(comboBoxCursoAluno);
                 }
@@ -57,7 +57,7 @@ namespace Ensino.Views
                 comboBoxCursoAluno.SelectedItem = aluno.NomeCurso;
                 txtBoxEmailAluno.Text = aluno.Email;
                 maskedTextBoxTelefoneAluno.Text = aluno.Telefone;
-                
+
             }
         }
 

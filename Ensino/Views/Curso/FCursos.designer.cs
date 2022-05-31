@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FCursos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSalvarCurso = new System.Windows.Forms.Button();
             this.txtBoxNomeCurso = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -41,20 +41,24 @@
             this.numericUpDownCargaHoraria = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvListarCursos = new System.Windows.Forms.DataGridView();
-            this.btnDeletar = new System.Windows.Forms.Button();
-            this.btnCancelarCurso = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnImprimirRelatorio = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantidadeAlunosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cargaHorariaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnCancelarCurso = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnImprimirRelatorio = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCargaHoraria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalvarCurso
@@ -162,14 +166,14 @@
             this.dgvListarCursos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListarCursos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvListarCursos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListarCursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListarCursos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListarCursos.ColumnHeadersHeight = 30;
             this.dgvListarCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvListarCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -179,24 +183,70 @@
             this.quantidadeAlunosDataGridViewTextBoxColumn,
             this.cargaHorariaDataGridViewTextBoxColumn});
             this.dgvListarCursos.DataSource = this.cursoBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListarCursos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListarCursos.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvListarCursos.EnableHeadersVisualStyles = false;
             this.dgvListarCursos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvListarCursos.Location = new System.Drawing.Point(72, 211);
+            this.dgvListarCursos.Location = new System.Drawing.Point(72, 255);
             this.dgvListarCursos.MultiSelect = false;
             this.dgvListarCursos.Name = "dgvListarCursos";
             this.dgvListarCursos.ReadOnly = true;
             this.dgvListarCursos.RowHeadersVisible = false;
             this.dgvListarCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListarCursos.Size = new System.Drawing.Size(628, 286);
+            this.dgvListarCursos.Size = new System.Drawing.Size(628, 242);
             this.dgvListarCursos.TabIndex = 48;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 42;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // turnoDataGridViewTextBoxColumn
+            // 
+            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "Turno";
+            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
+            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
+            this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.turnoDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // quantidadeAlunosDataGridViewTextBoxColumn
+            // 
+            this.quantidadeAlunosDataGridViewTextBoxColumn.DataPropertyName = "QuantidadeAlunos";
+            this.quantidadeAlunosDataGridViewTextBoxColumn.HeaderText = "QuantidadeAlunos";
+            this.quantidadeAlunosDataGridViewTextBoxColumn.Name = "quantidadeAlunosDataGridViewTextBoxColumn";
+            this.quantidadeAlunosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.quantidadeAlunosDataGridViewTextBoxColumn.Width = 142;
+            // 
+            // cargaHorariaDataGridViewTextBoxColumn
+            // 
+            this.cargaHorariaDataGridViewTextBoxColumn.DataPropertyName = "CargaHoraria";
+            this.cargaHorariaDataGridViewTextBoxColumn.HeaderText = "CargaHoraria";
+            this.cargaHorariaDataGridViewTextBoxColumn.Name = "cargaHorariaDataGridViewTextBoxColumn";
+            this.cargaHorariaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cargaHorariaDataGridViewTextBoxColumn.Width = 113;
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataSource = typeof(Ensino.Models.Curso);
             // 
             // btnDeletar
             // 
@@ -283,51 +333,37 @@
             this.label3.TabIndex = 64;
             this.label3.Text = "Carga horária:";
             // 
-            // idDataGridViewTextBoxColumn
+            // label11
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 42;
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(68, 202);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 20);
+            this.label11.TabIndex = 72;
+            this.label11.Text = "Pesquisa";
             // 
-            // nomeDataGridViewTextBoxColumn
+            // pictureBox1
             // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 68;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(339, 225);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 71;
+            this.pictureBox1.TabStop = false;
             // 
-            // turnoDataGridViewTextBoxColumn
+            // textBoxPesquisa
             // 
-            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "Turno";
-            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
-            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
-            this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.turnoDataGridViewTextBoxColumn.Width = 66;
-            // 
-            // quantidadeAlunosDataGridViewTextBoxColumn
-            // 
-            this.quantidadeAlunosDataGridViewTextBoxColumn.DataPropertyName = "QuantidadeAlunos";
-            this.quantidadeAlunosDataGridViewTextBoxColumn.HeaderText = "QuantidadeAlunos";
-            this.quantidadeAlunosDataGridViewTextBoxColumn.Name = "quantidadeAlunosDataGridViewTextBoxColumn";
-            this.quantidadeAlunosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantidadeAlunosDataGridViewTextBoxColumn.Width = 142;
-            // 
-            // cargaHorariaDataGridViewTextBoxColumn
-            // 
-            this.cargaHorariaDataGridViewTextBoxColumn.DataPropertyName = "CargaHoraria";
-            this.cargaHorariaDataGridViewTextBoxColumn.HeaderText = "CargaHoraria";
-            this.cargaHorariaDataGridViewTextBoxColumn.Name = "cargaHorariaDataGridViewTextBoxColumn";
-            this.cargaHorariaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cargaHorariaDataGridViewTextBoxColumn.Width = 113;
-            // 
-            // cursoBindingSource
-            // 
-            this.cursoBindingSource.DataSource = typeof(Ensino.Models.Curso);
+            this.textBoxPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPesquisa.Location = new System.Drawing.Point(72, 225);
+            this.textBoxPesquisa.Name = "textBoxPesquisa";
+            this.textBoxPesquisa.Size = new System.Drawing.Size(263, 24);
+            this.textBoxPesquisa.TabIndex = 70;
+            this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
             // 
             // FCursos
             // 
@@ -335,6 +371,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(871, 563);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBoxPesquisa);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnImprimirRelatorio);
             this.Controls.Add(this.btnEditar);
@@ -355,6 +394,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCargaHoraria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarCursos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,5 +421,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidadeAlunosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cargaHorariaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBoxPesquisa;
     }
 }

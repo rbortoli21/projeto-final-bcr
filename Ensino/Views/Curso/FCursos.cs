@@ -17,15 +17,14 @@ namespace Ensino.Views
 {
     public partial class FCursos : Form
     {
-        public readonly ICursoRepository cursoRepository;
-        public readonly IAlunoRepository alunoRepository;
+        public readonly CursoRepository cursoRepository;
+        public readonly AlunoRepository alunoRepository;
         public FCursos()
         {
             InitializeComponent();
             cursoRepository = new CursoRepository();
             alunoRepository = new AlunoRepository();
         }
-
         public void AtualizarGrid()
         {
             dgvListarCursos.DataSource = cursoRepository.Obter();
@@ -41,20 +40,17 @@ namespace Ensino.Views
                 btnDeletar.Enabled = false;
             }
         }
-
         private void ListarQuantidadeAlunos(List<Models.Curso> cursos)
         {
             foreach (var curso in cursos)
                 curso.QuantidadeAlunos = alunoRepository.Obter().Where(a => a.Curso_Id == curso.Id).Count();
         }
-
         private const int CB_SETCUEBANNER = 0x1703;
 
         [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
         private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam);
         private void FCursos_Load(object sender, EventArgs e)
         {
-            
             AtualizarGrid();
             ListarQuantidadeAlunos(cursoRepository.Obter());
             SendMessage(this.comboBoxTurnoCurso.Handle, CB_SETCUEBANNER, 0, "Selecione um Turno");
@@ -89,7 +85,6 @@ namespace Ensino.Views
             AtualizarGrid();
             LimparCampos();
         }
-
         private void PegarDadosParaCadastro(Curso curso)
         {
             curso.Nome = txtBoxNomeCurso.Text;
@@ -133,7 +128,6 @@ namespace Ensino.Views
                 }
             }
         }
-
         //Deleção
         private void btnDeletarCurso_Click(object sender, EventArgs e)
         {
@@ -153,7 +147,6 @@ namespace Ensino.Views
             AtualizarGrid();
             LimparCampos();
         }
-
         private void btnCancelarCurso_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtBoxNomeCurso.Text))
@@ -162,7 +155,6 @@ namespace Ensino.Views
                 numericUpDownCargaHoraria.Value = decimal.Zero;
             }
         }
-
         private void LimparCampos()
         {
             if (!string.IsNullOrEmpty(txtBoxNomeCurso.Text))
@@ -171,13 +163,11 @@ namespace Ensino.Views
                 numericUpDownCargaHoraria.Value = decimal.Zero;
             }
         }
-
         private void btnImprimirRelatorio_Click(object sender, EventArgs e)
         {
             List<Curso> dt = (List<Curso>)dgvListarCursos.DataSource;
             using (var form = new FRelatorioCurso(dt))
                 form.ShowDialog();
-            
         }
         private int ObterIdDoDataGridView(DataGridView dgv)
         {
@@ -191,7 +181,12 @@ namespace Ensino.Views
                 }
             }
             return Convert.ToInt32(null);
+        }
 
+        private void textBoxPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            dgvListarCursos.DataSource = cursoRepository.BuscaPorTexto(textBoxPesquisa);
+            dgvListarCursos.Refresh();
         }
     }
 }

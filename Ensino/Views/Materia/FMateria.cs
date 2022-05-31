@@ -15,9 +15,9 @@ namespace Ensino.Views.Materia
 {
     public partial class FMateria : Form
     {
-        public readonly IMateriaRepository materiaRepository;
-        public readonly ICursoRepository cursoRepository;
-        public readonly IProfessorRepository professorRepository;
+        public readonly MateriaRepository materiaRepository;
+        public readonly CursoRepository cursoRepository;
+        public readonly ProfessorRepository professorRepository;
         public FMateria()
         {
             InitializeComponent();
@@ -25,7 +25,6 @@ namespace Ensino.Views.Materia
             cursoRepository = new CursoRepository();
             professorRepository = new ProfessorRepository();
         }
-
         public void ListarCursosComboBox(ComboBox comboBox)
         {
             var cursosPorNome = cursoRepository.Obter().OrderBy(c => c.Nome).Select(c => c.Nome).Distinct().ToList();
@@ -38,12 +37,8 @@ namespace Ensino.Views.Materia
             var turnosPorCurso = cursoRepository.Obter().Where(c => c.Nome == cursoSelecionado).Select(c => c.Turno).Distinct().ToList();
             comboBox.DataSource = turnosPorCurso;
         }
-
         public void ListarProfessoresComboBox(ComboBox comboBox, ComboBox texto)
-        {
-            comboBox.DataSource = professorRepository.Obter().Where(p => p.Turno == texto.Text).Select(p => p.Nome).ToList();
-        }
-
+        => comboBox.DataSource = professorRepository.Obter().Where(p => p.Turno == texto.Text).Select(p => p.Nome).ToList();
         private void AtualizarGrid()
         {
             dgvMaterias.DataSource = materiaRepository.Obter();
@@ -59,16 +54,15 @@ namespace Ensino.Views.Materia
                 btnDeletar.Enabled = false;
             }
         }
-
         private void PegarDadosParaCadastro(Models.Materia materia)
         {
             VerificarSeHaCamposVazios();
             materia.Nome = txtBoxNome.Text;
             materia.NomeProfessor = comboBoxProfessor.Text;
-            materia.NomeCurso = cursoRepository.Obter().Where(c => c.Nome == comboBoxCurso.Text).FirstOrDefault().Nome; 
+            materia.NomeCurso = cursoRepository.Obter().Where(c => c.Nome == comboBoxCurso.Text).FirstOrDefault().Nome;
             materia.NomeTurno = cursoRepository.Obter().Where(c => c.Turno == comboBoxTurno.Text).FirstOrDefault().Turno;
             materia.Professor_Id = professorRepository.Obter().FirstOrDefault(p => p.Nome == materia.NomeProfessor).Id;
-            materia.Curso_Id= cursoRepository.Obter().FirstOrDefault(c => c.Nome == materia.NomeCurso).Id;
+            materia.Curso_Id = cursoRepository.Obter().FirstOrDefault(c => c.Nome == materia.NomeCurso).Id;
         }
         public void VerificarSeHaCamposVazios()
         {
@@ -80,7 +74,7 @@ namespace Ensino.Views.Materia
                     if (string.IsNullOrEmpty(txtBox.Text))
                         throw new ArgumentNullException();
                 }
-                if(control is ComboBox)
+                if (control is ComboBox)
                 {
                     var cbBox = control as ComboBox;
                     if (string.IsNullOrEmpty(cbBox.Text))
@@ -90,7 +84,6 @@ namespace Ensino.Views.Materia
                 }
             }
         }
-
         private void LimparCampos()
         {
             foreach (Control control in Controls)
@@ -111,7 +104,6 @@ namespace Ensino.Views.Materia
                 }
             }
         }
-
         private int ObterIdDoDataGridView(DataGridView dgv)
         {
             if (dgv.Rows.Count != 0)
@@ -124,24 +116,16 @@ namespace Ensino.Views.Materia
                 }
             }
             return Convert.ToInt32(null);
-
         }
         private void FMateria_Load(object sender, EventArgs e)
         {
             AtualizarGrid();
             ListarCursosComboBox(comboBoxCurso);
         }
-
         private void comboBoxCurso_SelectedValueChanged(object sender, EventArgs e)
-        {
-            ListarTurnosComboBox(comboBoxTurno, comboBoxCurso);
-        }
-
+        => ListarTurnosComboBox(comboBoxTurno, comboBoxCurso);
         private void comboBoxTurno_SelectedValueChanged(object sender, EventArgs e)
-        {
-            ListarProfessoresComboBox(comboBoxProfessor, comboBoxTurno);
-        }
-
+        => ListarProfessoresComboBox(comboBoxProfessor, comboBoxTurno);
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             var materia = new Models.Materia();
@@ -174,7 +158,6 @@ namespace Ensino.Views.Materia
             AtualizarGrid();
             LimparCampos();
         }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvMaterias); ;
@@ -212,7 +195,6 @@ namespace Ensino.Views.Materia
                 }
             }
         }
-
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvMaterias);
@@ -234,19 +216,19 @@ namespace Ensino.Views.Materia
             AtualizarGrid();
             LimparCampos();
         }
-
         private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
+        => LimparCampos();
         private void btnImprimirRelatorio_Click(object sender, EventArgs e)
         {
             List<Models.Materia> materias = (List<Models.Materia>)dgvMaterias.DataSource;
-            using(var form = new FRelatorioMateria(materias))
+            using (var form = new FRelatorioMateria(materias))
                 form.ShowDialog();
-            
-            
+        }
+
+        private void textBoxPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            dgvMaterias.DataSource = materiaRepository.BuscaPorTexto(textBoxPesquisa);
+            dgvMaterias.Refresh();
         }
     }
 }

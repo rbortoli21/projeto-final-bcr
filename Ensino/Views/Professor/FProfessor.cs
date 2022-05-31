@@ -15,13 +15,12 @@ namespace Ensino.Views.Professor
 {
     public partial class FProfessor : Form
     {
-        public readonly IProfessorRepository professorRepository;
+        public readonly ProfessorRepository professorRepository;
         public FProfessor()
         {
             InitializeComponent();
             professorRepository = new ProfessorRepository();
         }
-
         private void AtualizarGrid()
         {
             dgvProfessor.DataSource = professorRepository.Obter();
@@ -37,7 +36,6 @@ namespace Ensino.Views.Professor
                 btnDeletar.Enabled = false;
             }
         }
-
         private void PegarDadosParaCadastro(Models.Professor professor)
         {
             professor.Nome = txtBoxNome.Text;
@@ -72,7 +70,6 @@ namespace Ensino.Views.Professor
             if (telefone.Text.Trim().Replace(" ", "").Length < 17)
                 throw new DataException("O campo Telefone deve possuir 11 caracteres.");
         }
-
         private void LimparCampos()
         {
             foreach (Control control in Controls)
@@ -93,7 +90,6 @@ namespace Ensino.Views.Professor
                 }
             }
         }
-
         private int ObterIdDoDataGridView(DataGridView dgv)
         {
             if (dgv.Rows.Count != 0)
@@ -108,7 +104,6 @@ namespace Ensino.Views.Professor
             return Convert.ToInt32(null);
 
         }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             var professor = new Models.Professor();
@@ -144,7 +139,6 @@ namespace Ensino.Views.Professor
             AtualizarGrid();
             LimparCampos();
         }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvProfessor); ;
@@ -181,7 +175,6 @@ namespace Ensino.Views.Professor
                 }
             }
         }
-
         private void btnDeletar_Click(object sender, EventArgs e)
         {
             var id = ObterIdDoDataGridView(dgvProfessor);
@@ -205,9 +198,7 @@ namespace Ensino.Views.Professor
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
+        => LimparCampos();
 
         //placeholder no turno
         private const int CB_SETCUEBANNER = 0x1703;
@@ -218,12 +209,17 @@ namespace Ensino.Views.Professor
             SendMessage(this.comboBoxTurno.Handle, CB_SETCUEBANNER, 0, "Selecione um Turno");
             AtualizarGrid();
         }
-
         private void btnImprimirRelatorio_Click(object sender, EventArgs e)
         {
             List<Models.Professor> professor = (List<Models.Professor>)dgvProfessor.DataSource;
             using (var form = new FRelatorioProfessor(professor))
                 form.ShowDialog();
+        }
+
+        private void textBoxPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            dgvProfessor.DataSource = professorRepository.BuscaPorTexto(textBoxPesquisa);
+            dgvProfessor.Refresh();
         }
     }
 }

@@ -195,11 +195,7 @@
     <Compile Include="Models\Professor.cs" />
     <Compile Include="Models\Repositories\AlunoRepository.cs" />
     <Compile Include="Models\Repositories\CursoRepository.cs" />
-    <Compile Include="Models\Repositories\Interfaces\IAlunoRepository.cs" />
-    <Compile Include="Models\Repositories\Interfaces\ICursoRepository.cs" />
-    <Compile Include="Models\Repositories\Interfaces\IMateriaRepository.cs" />
-    <Compile Include="Models\Repositories\Interfaces\IProfessorRepository.cs" />
-    <Compile Include="Models\Repositories\Interfaces\ITurmaRepository.cs" />
+    <Compile Include="Models\Repositories\Interfaces\IBaseRepository.cs" />
     <Compile Include="Models\Repositories\MateriaRepository.cs" />
     <Compile Include="Models\Repositories\ProfessorRepository.cs" />
     <Compile Include="Models\Repositories\TurmaRepository.cs" />

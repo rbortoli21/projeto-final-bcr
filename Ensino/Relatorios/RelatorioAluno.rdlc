@@ -84,7 +84,7 @@
                   <Width>1.07125cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.26729cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -96,7 +96,7 @@
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.81974cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -723,9 +723,9 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.60537cm</Top>
+            <Top>0.79058cm</Top>
             <Height>1.2cm</Height>
-            <Width>21.07125cm</Width>
+            <Width>23.15828cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -921,8 +921,8 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox22</rd:DefaultName>
-                  <Top>1.41703cm</Top>
-                  <Left>17.74787cm</Left>
+                  <Top>2.2134cm</Top>
+                  <Left>19.17661cm</Left>
                   <Height>0.67938cm</Height>
                   <Width>3.98167cm</Width>
                   <ZIndex>2</ZIndex>

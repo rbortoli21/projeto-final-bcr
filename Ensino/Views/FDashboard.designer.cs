@@ -53,6 +53,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxQtdProfessor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.turmaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.turmaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -76,8 +77,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
@@ -126,7 +128,7 @@
             this.textBoxQtdAlunos.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxQtdAlunos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxQtdAlunos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.textBoxQtdAlunos.Location = new System.Drawing.Point(-1, 137);
+            this.textBoxQtdAlunos.Location = new System.Drawing.Point(-1, 133);
             this.textBoxQtdAlunos.Name = "textBoxQtdAlunos";
             this.textBoxQtdAlunos.Size = new System.Drawing.Size(122, 19);
             this.textBoxQtdAlunos.TabIndex = 62;
@@ -136,7 +138,7 @@
             // 
             this.alunosQtd.AutoSize = true;
             this.alunosQtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alunosQtd.ForeColor = System.Drawing.Color.DarkCyan;
+            this.alunosQtd.ForeColor = System.Drawing.Color.Black;
             this.alunosQtd.Location = new System.Drawing.Point(30, 4);
             this.alunosQtd.Name = "alunosQtd";
             this.alunosQtd.Size = new System.Drawing.Size(59, 18);
@@ -179,7 +181,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(29, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 18);
@@ -233,7 +235,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(22, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 18);
@@ -265,7 +267,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(25, 4);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 18);
@@ -319,13 +321,23 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(12, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 18);
             this.label2.TabIndex = 64;
             this.label2.Text = "Professores";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.AutoSize = true;
+            this.panel3.Location = new System.Drawing.Point(75, 34);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(708, 164);
+            this.panel3.TabIndex = 64;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // turmaBindingSource1
             // 
@@ -356,6 +368,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel21);
+            this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FDashboard";
             this.Text = "InicioResumen";
@@ -380,6 +393,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -408,5 +422,6 @@
         private System.Windows.Forms.BindingSource turmaBindingSource1;
         private System.Windows.Forms.BindingSource turmaBindingSource;
         private System.Windows.Forms.BindingSource alunoBindingSource;
+        private System.Windows.Forms.Panel panel3;
     }
 }

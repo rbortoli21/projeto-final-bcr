@@ -29,15 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMateria));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnImprimirRelatorio = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnDeletar = new System.Windows.Forms.Button();
             this.dgvMaterias = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Turno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeProfessor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSalvar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,14 +54,12 @@
             this.comboBoxProfessor = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxTurno = new System.Windows.Forms.ComboBox();
-            this.Turno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeProfessor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materiaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnImprimirRelatorio
@@ -144,14 +148,14 @@
             this.dgvMaterias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvMaterias.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvMaterias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMaterias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMaterias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMaterias.ColumnHeadersHeight = 30;
             this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -161,24 +165,70 @@
             this.Turno,
             this.NomeProfessor});
             this.dgvMaterias.DataSource = this.materiaBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMaterias.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMaterias.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvMaterias.EnableHeadersVisualStyles = false;
             this.dgvMaterias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvMaterias.Location = new System.Drawing.Point(58, 203);
+            this.dgvMaterias.Location = new System.Drawing.Point(58, 258);
             this.dgvMaterias.MultiSelect = false;
             this.dgvMaterias.Name = "dgvMaterias";
             this.dgvMaterias.ReadOnly = true;
             this.dgvMaterias.RowHeadersVisible = false;
             this.dgvMaterias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMaterias.Size = new System.Drawing.Size(742, 264);
+            this.dgvMaterias.Size = new System.Drawing.Size(742, 245);
             this.dgvMaterias.TabIndex = 64;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 42;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 68;
+            // 
+            // nomeCursoDataGridViewTextBoxColumn
+            // 
+            this.nomeCursoDataGridViewTextBoxColumn.DataPropertyName = "NomeCurso";
+            this.nomeCursoDataGridViewTextBoxColumn.HeaderText = "NomeCurso";
+            this.nomeCursoDataGridViewTextBoxColumn.Name = "nomeCursoDataGridViewTextBoxColumn";
+            this.nomeCursoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeCursoDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // Turno
+            // 
+            this.Turno.DataPropertyName = "NomeTurno";
+            this.Turno.HeaderText = "NomeTurno";
+            this.Turno.Name = "Turno";
+            this.Turno.ReadOnly = true;
+            this.Turno.Width = 103;
+            // 
+            // NomeProfessor
+            // 
+            this.NomeProfessor.DataPropertyName = "NomeProfessor";
+            this.NomeProfessor.HeaderText = "NomeProfessor";
+            this.NomeProfessor.Name = "NomeProfessor";
+            this.NomeProfessor.ReadOnly = true;
+            this.NomeProfessor.Width = 126;
+            // 
+            // materiaBindingSource
+            // 
+            this.materiaBindingSource.DataSource = typeof(Ensino.Models.Materia);
             // 
             // btnSalvar
             // 
@@ -309,57 +359,46 @@
             this.comboBoxTurno.TabIndex = 76;
             this.comboBoxTurno.SelectedValueChanged += new System.EventHandler(this.comboBoxTurno_SelectedValueChanged);
             // 
-            // Turno
+            // label11
             // 
-            this.Turno.DataPropertyName = "NomeTurno";
-            this.Turno.HeaderText = "NomeTurno";
-            this.Turno.Name = "Turno";
-            this.Turno.ReadOnly = true;
-            this.Turno.Width = 103;
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(54, 205);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 20);
+            this.label11.TabIndex = 80;
+            this.label11.Text = "Pesquisa";
             // 
-            // NomeProfessor
+            // pictureBox1
             // 
-            this.NomeProfessor.DataPropertyName = "NomeProfessor";
-            this.NomeProfessor.HeaderText = "NomeProfessor";
-            this.NomeProfessor.Name = "NomeProfessor";
-            this.NomeProfessor.ReadOnly = true;
-            this.NomeProfessor.Width = 126;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(325, 228);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 79;
+            this.pictureBox1.TabStop = false;
             // 
-            // idDataGridViewTextBoxColumn
+            // textBoxPesquisa
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 42;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 68;
-            // 
-            // nomeCursoDataGridViewTextBoxColumn
-            // 
-            this.nomeCursoDataGridViewTextBoxColumn.DataPropertyName = "NomeCurso";
-            this.nomeCursoDataGridViewTextBoxColumn.HeaderText = "NomeCurso";
-            this.nomeCursoDataGridViewTextBoxColumn.Name = "nomeCursoDataGridViewTextBoxColumn";
-            this.nomeCursoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeCursoDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // materiaBindingSource
-            // 
-            this.materiaBindingSource.DataSource = typeof(Ensino.Models.Materia);
+            this.textBoxPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPesquisa.Location = new System.Drawing.Point(58, 228);
+            this.textBoxPesquisa.Name = "textBoxPesquisa";
+            this.textBoxPesquisa.Size = new System.Drawing.Size(263, 24);
+            this.textBoxPesquisa.TabIndex = 78;
+            this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
             // 
             // FMateria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 563);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBoxPesquisa);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxTurno);
             this.Controls.Add(this.label2);
@@ -381,6 +420,7 @@
             this.Load += new System.EventHandler(this.FMateria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.materiaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,5 +449,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeCursoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Turno;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeProfessor;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBoxPesquisa;
     }
 }

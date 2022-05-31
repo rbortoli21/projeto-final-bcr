@@ -5,16 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Ensino.Models.Repositories
 {
-    public class ProfessorRepository : IProfessorRepository
+    public class ProfessorRepository : IBaseRepository<Professor>
     {
         private DataContext _dbContext;
-        public ProfessorRepository()
-        {
-            _dbContext = new DataContext();
-        }
+        public ProfessorRepository() => _dbContext = new DataContext();
         public Professor Alterar(Professor professorAtual, Professor professorNovo)
         {
             professorAtual.Nome = professorNovo.Nome;
@@ -27,7 +25,6 @@ namespace Ensino.Models.Repositories
 
             return professorAtual;
         }
-
         public Professor Cadastrar(Professor professor)
         {
             if (_dbContext.Professores.Where(a => a.CPF == professor.CPF).Any())
@@ -37,24 +34,40 @@ namespace Ensino.Models.Repositories
 
             return professor;
         }
-
-        public void Deletar(Professor professor)
+        public Professor Deletar(Professor professor)
         {
             if (_dbContext.Professores.Where(c => c.CPF == professor.CPF).Any())
             {
                 _dbContext.Professores.Remove(professor);
                 _dbContext.SaveChanges();
             }
+            return professor;
         }
-
         public List<Professor> Obter()
-        {
-            return _dbContext.Professores.ToList();
-        }
-
+        => _dbContext.Professores.ToList(); 
         public Professor ObterPorId(int id)
+        => _dbContext.Professores.ToList().FirstOrDefault(p => p.Id == id);
+        public List<Professor> BuscaPorTexto(TextBox textbox)
         {
-            return _dbContext.Professores.ToList().FirstOrDefault(p => p.Id == id);
+            List<Professor> busca = new List<Professor>();
+            foreach (var objeto in Obter())
+            {
+                if (objeto.Id.ToString().ToLower().Contains(textbox.Text.ToLower()))
+                    busca.Add(objeto);
+                else if (objeto.Nome.ToLower().Contains(textbox.Text.ToLower()))
+                    busca.Add(objeto);
+                else if (objeto.CPF.ToString().ToLower().Contains(textbox.Text.ToLower()))
+                    busca.Add(objeto);
+                else if (objeto.Email.ToString().ToLower().Contains(textbox.Text.ToLower()))
+                    busca.Add(objeto);
+                else if (objeto.Endereco.ToLower().Contains(textbox.Text.ToLower()))
+                    busca.Add(objeto);
+                else if (objeto.Telefone.ToLower().Contains(textbox.Text.ToLower()))
+                    busca.Add(objeto);
+                else if (objeto.Turno.ToLower().Contains(textbox.Text.ToLower()))
+                    busca.Add(objeto);
+            }
+            return busca;
         }
     }
 }

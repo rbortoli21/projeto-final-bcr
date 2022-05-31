@@ -2,24 +2,19 @@
 using Ensino.Models.Repositories;
 using Ensino.Models.Repositories.Interfaces;
 using Ensino.Views.Relatorios;
-using Ensino.Views.Turma;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ensino.Views
 {
     public partial class FAlunos : Form
     {
-        private readonly ICursoRepository cursoRepository;
-        public readonly IAlunoRepository alunoRepository;
-        public readonly ITurmaRepository turmaRepository;
+        private readonly CursoRepository cursoRepository;
+        public readonly AlunoRepository alunoRepository;
+        public readonly TurmaRepository turmaRepository;
         public FAlunos()
         {
             InitializeComponent();
@@ -43,7 +38,6 @@ namespace Ensino.Views
                 btnDeletarAluno.Enabled = false;
             }
         }
-
         private void LimparCampos()
         {
             foreach (Control control in Controls)
@@ -64,7 +58,6 @@ namespace Ensino.Views
                 }
             }
         }
-
         private Models.Turma CriarTurma(Aluno aluno)
         {
             Models.Turma turma = new Models.Turma()
@@ -76,21 +69,29 @@ namespace Ensino.Views
             turmaRepository.Cadastrar(turma);
             return turma;
         }
+        private bool VerificarSeATurmaEstaCheia(Models.Turma turma, int quantidadeDeAlunosPorTurma)
+        {
+            var qtdAlunos = alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id);
+            if (qtdAlunos.Count() >= quantidadeDeAlunosPorTurma)
+                return true;
+            return false;
+        }
 
         public int GerarTurma(Aluno aluno)
         {
+            const int quantidadeDeAlunosPorTurma = 10;
+            List<Models.Turma> turmasCheias = new List<Models.Turma>();
             var turmaJaCadastrada = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Where(t => t.TurnoCurso == aluno.TurnoCurso).ToList();
             Models.Turma index;
             var random = new Random();
             if (turmaJaCadastrada.Count != 0)
             {
                 index = turmaJaCadastrada[random.Next(turmaJaCadastrada.Count)];
-                var qtdAlunos = alunoRepository.Obter().Where(a => a.Turma_Id == index.Id).Count();
-                Console.WriteLine(index.NomeCurso);
-                Console.WriteLine(index.Id);
-                Console.WriteLine(qtdAlunos);
-                if (qtdAlunos >= 3)
+                if (VerificarSeATurmaEstaCheia(index, quantidadeDeAlunosPorTurma))
+                    turmasCheias.Add(index);
+                if (turmasCheias.Where(t => t.Id == index.Id).Any())
                 {
+                    Console.WriteLine("Turma Cheia");
                     index = CriarTurma(aluno);
                     return index.Id;
                 }
@@ -99,7 +100,6 @@ namespace Ensino.Views
             index = CriarTurma(aluno);
             return index.Id;
         }
-
         public string GerarMatriculaAleatoria()
         {
             var random = new Random();
@@ -109,7 +109,6 @@ namespace Ensino.Views
 
             return matricula;
         }
-
         private void PegarDadosParaCadastro(Aluno aluno)
         {
             VerificarSeHaCamposVazios();
@@ -148,6 +147,12 @@ namespace Ensino.Views
                     if (string.IsNullOrEmpty(txtBox.Text))
                         throw new ArgumentNullException();
                 }
+                if (control is MaskedTextBox)
+                {
+                    var txtBox = control as MaskedTextBox;
+                    if (!txtBox.MaskCompleted)
+                        throw new ArgumentNullException();
+                }
             }
         }
         //Funções criadas }
@@ -169,7 +174,6 @@ namespace Ensino.Views
             try
             {
                 PegarDadosParaCadastro(aluno);
-                LimitarCpfETelefone(txtBoxCPF, maskedTextBoxTelefoneAluno);
                 alunoRepository.Cadastrar(aluno);
             }
             catch (ArgumentOutOfRangeException ex)
@@ -193,17 +197,16 @@ namespace Ensino.Views
                 MessageBox.Show(ex.Message);
                 return;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show($"O aluno \"{aluno.Nome}\" não pôde ser cadastrado, verifique os campos e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"O aluno \"{aluno.Nome}\" não pôde ser cadastrado, " +
+                    $"verifique os campos e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             MessageBox.Show($"Aluno cadastrado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AtualizarGrid();
             LimparCampos();
         }
-
-
         //Edição
         private void btnEditarAluno_Click(object sender, EventArgs e)
         {
@@ -242,15 +245,16 @@ namespace Ensino.Views
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show($"O aluno \"{aluno.Nome}\" não pôde ser alterado, verifique os dados e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show($"O aluno \"{aluno.Nome}\" não pôde ser alterado, " +
+                            $"verifique os dados e tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                    MessageBox.Show($"O aluno \"{aluno.Nome}\" foi alterado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"O aluno \"{aluno.Nome}\" foi alterado com sucesso.",
+                        "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     AtualizarGrid();
                 }
             }
         }
-
         //Deleção
         private void btnDeletarAluno_Click(object sender, EventArgs e)
         {
@@ -258,41 +262,28 @@ namespace Ensino.Views
             var aluno = alunoRepository.ObterPorId(id);
             try
             {
-                var res = MessageBox.Show("Tem certeza que deseja deletar esse aluno? Este aluno será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                var res = MessageBox.Show("Tem certeza que deseja deletar esse aluno? " +
+                    "Este aluno será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (res != DialogResult.OK)
                     return;
                 alunoRepository.Deletar(aluno);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
-                MessageBox.Show($"O aluno \"{aluno.Nome}\" não pôde ser deletado, tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"O aluno \"{aluno.Nome}\" não pôde ser deletado, " +
+                    $"tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            MessageBox.Show($"O aluno \"{aluno.Nome}\" foi deletado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"O aluno \"{aluno.Nome}\" foi deletado com sucesso.",
+                "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             AtualizarGrid();
             LimparCampos();
         }
-
         //Cancelar
         private void btnCancelarAluno_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
+        => LimparCampos();
         private void comboBoxCursoAluno_SelectedValueChanged(object sender, EventArgs e)
-        {
-            ListarTurnosComboBox(comboBoxTurnoCursoAluno, comboBoxCursoAluno);
-        }
-
-        //Limitar CPF
-        private void LimitarCpfETelefone(MaskedTextBox cpf, MaskedTextBox telefone)
-        {
-            if (cpf.Text.Trim().Replace(" ", "").Length < 14)
-                throw new DataException("O campo CPF deve possuir 11 caracteres.");
-            if (telefone.Text.Trim().Replace(" ", "").Length < 17)
-                throw new DataException("O campo Telefone deve possuir 11 caracteres.");
-        }
+        => ListarTurnosComboBox(comboBoxTurnoCursoAluno, comboBoxCursoAluno);
 
         //Obter id do aluno para editar/deletar
         private int ObterIdDoDataGridView(DataGridView dgv)
@@ -307,7 +298,6 @@ namespace Ensino.Views
                 }
             }
             return Convert.ToInt32(null);
-
         }
         //Relatório
         private void btnImprimirRelatorio_Click(object sender, EventArgs e)
@@ -315,7 +305,11 @@ namespace Ensino.Views
             List<Aluno> dt = (List<Aluno>)dgvAlunos.DataSource;
             using (var form = new FRelatorioAluno(dt))
                 form.ShowDialog();
-
+        }
+        private void textBoxPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            dgvAlunos.DataSource = alunoRepository.BuscaPorTexto(textBoxPesquisa);
+            dgvAlunos.Refresh();
         }
     }
 }

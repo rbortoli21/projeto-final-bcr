@@ -47,8 +47,12 @@
             this.turnoCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtdAlunosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turmaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurmas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnImprimirRelatorio
@@ -110,6 +114,9 @@
             // 
             this.dgvTurmas.AllowUserToAddRows = false;
             this.dgvTurmas.AllowUserToDeleteRows = false;
+            this.dgvTurmas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTurmas.AutoGenerateColumns = false;
             this.dgvTurmas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTurmas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -141,13 +148,13 @@
             this.dgvTurmas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTurmas.EnableHeadersVisualStyles = false;
             this.dgvTurmas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvTurmas.Location = new System.Drawing.Point(66, 212);
+            this.dgvTurmas.Location = new System.Drawing.Point(66, 241);
             this.dgvTurmas.MultiSelect = false;
             this.dgvTurmas.Name = "dgvTurmas";
             this.dgvTurmas.ReadOnly = true;
             this.dgvTurmas.RowHeadersVisible = false;
             this.dgvTurmas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTurmas.Size = new System.Drawing.Size(551, 286);
+            this.dgvTurmas.Size = new System.Drawing.Size(551, 257);
             this.dgvTurmas.TabIndex = 69;
             // 
             // label7
@@ -218,7 +225,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 41;
+            this.idDataGridViewTextBoxColumn.Width = 42;
             // 
             // nomeCursoDataGridViewTextBoxColumn
             // 
@@ -226,7 +233,7 @@
             this.nomeCursoDataGridViewTextBoxColumn.HeaderText = "Curso";
             this.nomeCursoDataGridViewTextBoxColumn.Name = "nomeCursoDataGridViewTextBoxColumn";
             this.nomeCursoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeCursoDataGridViewTextBoxColumn.Width = 65;
+            this.nomeCursoDataGridViewTextBoxColumn.Width = 66;
             // 
             // turnoCursoDataGridViewTextBoxColumn
             // 
@@ -234,7 +241,7 @@
             this.turnoCursoDataGridViewTextBoxColumn.HeaderText = "Turno";
             this.turnoCursoDataGridViewTextBoxColumn.Name = "turnoCursoDataGridViewTextBoxColumn";
             this.turnoCursoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.turnoCursoDataGridViewTextBoxColumn.Width = 65;
+            this.turnoCursoDataGridViewTextBoxColumn.Width = 66;
             // 
             // qtdAlunosDataGridViewTextBoxColumn
             // 
@@ -242,17 +249,52 @@
             this.qtdAlunosDataGridViewTextBoxColumn.HeaderText = "QtdAlunos";
             this.qtdAlunosDataGridViewTextBoxColumn.Name = "qtdAlunosDataGridViewTextBoxColumn";
             this.qtdAlunosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.qtdAlunosDataGridViewTextBoxColumn.Width = 92;
+            this.qtdAlunosDataGridViewTextBoxColumn.Width = 93;
             // 
             // turmaBindingSource
             // 
             this.turmaBindingSource.DataSource = typeof(Ensino.Models.Turma);
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(62, 188);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 20);
+            this.label11.TabIndex = 77;
+            this.label11.Text = "Pesquisa";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(333, 211);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 76;
+            this.pictureBox1.TabStop = false;
+            // 
+            // textBoxPesquisa
+            // 
+            this.textBoxPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPesquisa.Location = new System.Drawing.Point(66, 211);
+            this.textBoxPesquisa.Name = "textBoxPesquisa";
+            this.textBoxPesquisa.Size = new System.Drawing.Size(263, 24);
+            this.textBoxPesquisa.TabIndex = 75;
+            this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
             // 
             // FTurmas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 563);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.textBoxPesquisa);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBoxTurno);
@@ -268,6 +310,7 @@
             this.Load += new System.EventHandler(this.FTurmas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurmas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +332,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeCursoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn turnoCursoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtdAlunosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBoxPesquisa;
     }
 }
