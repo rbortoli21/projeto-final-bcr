@@ -31,11 +31,16 @@ namespace Ensino.Views.Turma
         {
             foreach (Control control in Controls)
             {
-                if (control is ComboBox)
+                if (control.Name != textBoxPesquisa.Name)
                 {
-                    var cbBox = control as ComboBox;
-                    if (string.IsNullOrEmpty(cbBox.Text))
-                        throw new ArgumentNullException();
+
+                    if (control is ComboBox)
+                    {
+                        var cbBox = control as ComboBox;
+                        if (string.IsNullOrEmpty(cbBox.Text))
+                            throw new ArgumentNullException();
+                    }
+
                 }
             }
         }

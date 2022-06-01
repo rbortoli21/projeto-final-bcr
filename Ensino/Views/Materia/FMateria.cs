@@ -68,18 +68,21 @@ namespace Ensino.Views.Materia
         {
             foreach (Control control in Controls)
             {
-                if (control is TextBox)
+                if (control.Name != textBoxPesquisa.Name)
                 {
-                    var txtBox = control as TextBox;
-                    if (string.IsNullOrEmpty(txtBox.Text))
-                        throw new ArgumentNullException();
-                }
-                if (control is ComboBox)
-                {
-                    var cbBox = control as ComboBox;
-                    if (string.IsNullOrEmpty(cbBox.Text))
+                    if (control is TextBox)
                     {
-                        throw new ArgumentNullException();
+                        var txtBox = control as TextBox;
+                        if (string.IsNullOrEmpty(txtBox.Text))
+                            throw new ArgumentNullException();
+                    }
+                    if (control is ComboBox)
+                    {
+                        var cbBox = control as ComboBox;
+                        if (string.IsNullOrEmpty(cbBox.Text))
+                        {
+                            throw new ArgumentNullException();
+                        }
                     }
                 }
             }
@@ -88,18 +91,21 @@ namespace Ensino.Views.Materia
         {
             foreach (Control control in Controls)
             {
-                if (control is TextBox)
+                if (control.Name != textBoxPesquisa.Name)
                 {
-                    var txtBox = control as TextBox;
-                    if (!string.IsNullOrWhiteSpace(txtBox.Text))
-                        txtBox.Text = String.Empty;
-                }
-                if (control is MaskedTextBox)
-                {
-                    var maskedTextBox = control as MaskedTextBox;
-                    if (!string.IsNullOrWhiteSpace(maskedTextBox.Text))
+                    if (control is TextBox)
                     {
-                        maskedTextBox.Text = string.Empty;
+                        var txtBox = control as TextBox;
+                        if (!string.IsNullOrWhiteSpace(txtBox.Text))
+                            txtBox.Text = String.Empty;
+                    }
+                    if (control is MaskedTextBox)
+                    {
+                        var maskedTextBox = control as MaskedTextBox;
+                        if (!string.IsNullOrWhiteSpace(maskedTextBox.Text))
+                        {
+                            maskedTextBox.Text = string.Empty;
+                        }
                     }
                 }
             }
@@ -122,7 +128,7 @@ namespace Ensino.Views.Materia
         private const int CB_SETCUEBANNER = 0x1703;
         [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
         private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, [System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.LPWStr)] string lParam);
-        
+
         private void FMateria_Load(object sender, EventArgs e)
         {
             SendMessage(this.comboBoxProfessor.Handle, CB_SETCUEBANNER, 0, "Selecione um Professor");

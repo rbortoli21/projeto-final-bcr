@@ -85,12 +85,34 @@ namespace Ensino.Views
             AtualizarGrid();
             LimparCampos();
         }
+
+        public void VerificarSeHaCamposVazios()
+        {
+            foreach (Control control in Controls)
+            {
+                if (control.Name != textBoxPesquisa.Name)
+                {
+                    if (control is TextBox)
+                    {
+                        var txtBox = control as TextBox;
+                        if (string.IsNullOrEmpty(txtBox.Text))
+                            throw new ArgumentNullException();
+                    }
+                    if (control is MaskedTextBox)
+                    {
+                        var txtBox = control as MaskedTextBox;
+                        if (!txtBox.MaskCompleted)
+                            throw new ArgumentNullException();
+                    }
+                }
+            }
+        }
+
         private void PegarDadosParaCadastro(Curso curso)
         {
+            VerificarSeHaCamposVazios();
             curso.Nome = txtBoxNomeCurso.Text;
             curso.Turno = comboBoxTurnoCurso.Text;
-            if (string.IsNullOrEmpty(curso.Nome) || string.IsNullOrEmpty(curso.Turno))
-                throw new ArgumentNullException();
             curso.CargaHoraria = (int)numericUpDownCargaHoraria.Value;
         }
         //Edição

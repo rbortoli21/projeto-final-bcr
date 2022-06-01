@@ -49,17 +49,21 @@ namespace Ensino.Views.Professor
         {
             foreach (Control control in Controls)
             {
-                if (control is TextBox)
+                if (control.Name != textBoxPesquisa.Name)
                 {
-                    var txtBox = control as TextBox;
-                    if (string.IsNullOrEmpty(txtBox.Text))
-                        throw new ArgumentNullException();
-                }
-                if(control is ComboBox)
-                {
-                    var cbBox = control as ComboBox;
-                    if (string.IsNullOrEmpty(cbBox.Text))
-                        throw new ArgumentNullException();
+
+                    if (control is TextBox)
+                    {
+                        var txtBox = control as TextBox;
+                        if (string.IsNullOrEmpty(txtBox.Text))
+                            throw new ArgumentNullException();
+                    }
+                    if (control is ComboBox)
+                    {
+                        var cbBox = control as ComboBox;
+                        if (string.IsNullOrEmpty(cbBox.Text))
+                            throw new ArgumentNullException();
+                    }
                 }
             }
         }
