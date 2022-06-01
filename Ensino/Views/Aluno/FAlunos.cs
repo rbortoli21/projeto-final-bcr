@@ -2,6 +2,7 @@
 using Ensino.Models.Repositories;
 using Ensino.Models.Repositories.Interfaces;
 using Ensino.Views.Relatorios;
+using Ensino.Views.Turma;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -45,13 +46,13 @@ namespace Ensino.Views
                 if (control is TextBox)
                 {
                     var txtBox = control as TextBox;
-                    if (!string.IsNullOrEmpty(txtBox.Text))
+                    if (!string.IsNullOrWhiteSpace(txtBox.Text))
                         txtBox.Text = String.Empty;
                 }
                 if (control is MaskedTextBox)
                 {
                     var maskedTextBox = control as MaskedTextBox;
-                    if (!string.IsNullOrEmpty(maskedTextBox.Text))
+                    if (!string.IsNullOrWhiteSpace(maskedTextBox.Text))
                     {
                         maskedTextBox.Text = string.Empty;
                     }
@@ -72,6 +73,9 @@ namespace Ensino.Views
         private bool VerificarSeATurmaEstaCheia(Models.Turma turma, int quantidadeDeAlunosPorTurma)
         {
             var qtdAlunos = alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id);
+            Console.WriteLine("Curso: " + turma.NomeCurso);
+            Console.WriteLine("Id da turma: " + turma.Id);
+            Console.WriteLine("Turma cheia: " + (qtdAlunos.Count() >= quantidadeDeAlunosPorTurma));
             if (qtdAlunos.Count() >= quantidadeDeAlunosPorTurma)
                 return true;
             return false;
@@ -80,26 +84,32 @@ namespace Ensino.Views
         public int GerarTurma(Aluno aluno)
         {
             const int quantidadeDeAlunosPorTurma = 10;
-            List<Models.Turma> turmasCheias = new List<Models.Turma>();
-            var turmaJaCadastrada = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Where(t => t.TurnoCurso == aluno.TurnoCurso).ToList();
             Models.Turma index;
+            var turmaJaCadastrada = turmaRepository.Obter().Where(t => t.NomeCurso == aluno.NomeCurso).Where(t => t.TurnoCurso == aluno.TurnoCurso).ToList();
             var random = new Random();
-            if (turmaJaCadastrada.Count != 0)
+            using (var form = new FTurmas())
+                form.ListarQuantidadeAlunos(turmaRepository.Obter());
+            
+            if (turmaJaCadastrada.Count == 0)
             {
-                index = turmaJaCadastrada[random.Next(turmaJaCadastrada.Count)];
-                if (VerificarSeATurmaEstaCheia(index, quantidadeDeAlunosPorTurma))
-                    turmasCheias.Add(index);
-                if (turmasCheias.Where(t => t.Id == index.Id).Any())
-                {
-                    Console.WriteLine("Turma Cheia");
-                    index = CriarTurma(aluno);
-                    return index.Id;
-                }
+                index = CriarTurma(aluno);
                 return index.Id;
             }
-            index = CriarTurma(aluno);
+            if (turmaJaCadastrada.Where(t => t.QtdAlunos == quantidadeDeAlunosPorTurma).Count() == turmaJaCadastrada.Count)
+            {
+                Console.WriteLine("Criando outra turma...");
+                index = CriarTurma(aluno);
+                return index.Id;
+            }
+            index = turmaJaCadastrada[random.Next(turmaJaCadastrada.Count)];
+            if (VerificarSeATurmaEstaCheia(index, quantidadeDeAlunosPorTurma))
+            {
+                Console.WriteLine("Turma cheia, gerando o método novamente.");
+                return GerarTurma(aluno);
+            }
             return index.Id;
         }
+
         public string GerarMatriculaAleatoria()
         {
             var random = new Random();
@@ -141,17 +151,20 @@ namespace Ensino.Views
         {
             foreach (Control control in Controls)
             {
-                if (control is TextBox)
+                if (control.Name != textBoxPesquisa.Name)
                 {
-                    var txtBox = control as TextBox;
-                    if (string.IsNullOrEmpty(txtBox.Text))
-                        throw new ArgumentNullException();
-                }
-                if (control is MaskedTextBox)
-                {
-                    var txtBox = control as MaskedTextBox;
-                    if (!txtBox.MaskCompleted)
-                        throw new ArgumentNullException();
+                    if (control is TextBox)
+                    {
+                        var txtBox = control as TextBox;
+                        if (string.IsNullOrEmpty(txtBox.Text))
+                            throw new ArgumentNullException();
+                    }
+                    if (control is MaskedTextBox)
+                    {
+                        var txtBox = control as MaskedTextBox;
+                        if (!txtBox.MaskCompleted)
+                            throw new ArgumentNullException();
+                    }
                 }
             }
         }

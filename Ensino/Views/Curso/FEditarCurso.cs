@@ -26,7 +26,7 @@ namespace Ensino.Views
         }
         private void FEditarCurso_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(curso.Nome))
+            if (!string.IsNullOrWhiteSpace(curso.Nome))
             {
                 txtBoxNomeCurso.Text = curso.Nome;
                 comboBoxTurnoCurso.Text = curso.Turno;

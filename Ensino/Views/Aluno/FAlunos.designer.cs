@@ -46,9 +46,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.maskedTextBoxTelefoneAluno = new System.Windows.Forms.MaskedTextBox();
             this.dgvAlunos = new System.Windows.Forms.DataGridView();
-            this.NomeCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TurnoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Turma_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEditarAluno = new System.Windows.Forms.Button();
             this.btnCancelarAluno = new System.Windows.Forms.Button();
             this.btnDeletarAluno = new System.Windows.Forms.Button();
@@ -61,6 +58,9 @@
             this.btnImprimirRelatorio = new System.Windows.Forms.Button();
             this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.alunoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,13 +69,13 @@
             this.responsavelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matriculaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enderecoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alunoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.NomeCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TurnoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Turma_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalvarAluno
@@ -223,6 +223,7 @@
             // 
             this.dgvAlunos.AllowUserToAddRows = false;
             this.dgvAlunos.AllowUserToDeleteRows = false;
+            this.dgvAlunos.AllowUserToOrderColumns = true;
             this.dgvAlunos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -240,7 +241,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAlunos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAlunos.ColumnHeadersHeight = 30;
-            this.dgvAlunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvAlunos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
@@ -272,30 +272,6 @@
             this.dgvAlunos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlunos.Size = new System.Drawing.Size(808, 339);
             this.dgvAlunos.TabIndex = 47;
-            // 
-            // NomeCurso
-            // 
-            this.NomeCurso.DataPropertyName = "NomeCurso";
-            this.NomeCurso.HeaderText = "Curso";
-            this.NomeCurso.Name = "NomeCurso";
-            this.NomeCurso.ReadOnly = true;
-            this.NomeCurso.Width = 66;
-            // 
-            // TurnoCurso
-            // 
-            this.TurnoCurso.DataPropertyName = "TurnoCurso";
-            this.TurnoCurso.HeaderText = "Turno";
-            this.TurnoCurso.Name = "TurnoCurso";
-            this.TurnoCurso.ReadOnly = true;
-            this.TurnoCurso.Width = 66;
-            // 
-            // Turma_Id
-            // 
-            this.Turma_Id.DataPropertyName = "Turma_Id";
-            this.Turma_Id.HeaderText = "Turma";
-            this.Turma_Id.Name = "Turma_Id";
-            this.Turma_Id.ReadOnly = true;
-            this.Turma_Id.Width = 70;
             // 
             // btnEditarAluno
             // 
@@ -469,6 +445,23 @@
             this.label11.TabIndex = 69;
             this.label11.Text = "Pesquisa";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(339, 296);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 64;
+            this.pictureBox1.TabStop = false;
+            // 
+            // alunoBindingSource1
+            // 
+            this.alunoBindingSource1.DataSource = typeof(Ensino.Models.Aluno);
+            // 
+            // alunoBindingSource
+            // 
+            this.alunoBindingSource.DataSource = typeof(Ensino.Models.Aluno);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -535,22 +528,29 @@
             this.enderecoDataGridViewTextBoxColumn.ReadOnly = true;
             this.enderecoDataGridViewTextBoxColumn.Width = 90;
             // 
-            // alunoBindingSource1
+            // NomeCurso
             // 
-            this.alunoBindingSource1.DataSource = typeof(Ensino.Models.Aluno);
+            this.NomeCurso.DataPropertyName = "NomeCurso";
+            this.NomeCurso.HeaderText = "Curso";
+            this.NomeCurso.Name = "NomeCurso";
+            this.NomeCurso.ReadOnly = true;
+            this.NomeCurso.Width = 66;
             // 
-            // alunoBindingSource
+            // TurnoCurso
             // 
-            this.alunoBindingSource.DataSource = typeof(Ensino.Models.Aluno);
+            this.TurnoCurso.DataPropertyName = "TurnoCurso";
+            this.TurnoCurso.HeaderText = "Turno";
+            this.TurnoCurso.Name = "TurnoCurso";
+            this.TurnoCurso.ReadOnly = true;
+            this.TurnoCurso.Width = 66;
             // 
-            // pictureBox1
+            // Turma_Id
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(339, 296);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.TabIndex = 64;
-            this.pictureBox1.TabStop = false;
+            this.Turma_Id.DataPropertyName = "Turma_Id";
+            this.Turma_Id.HeaderText = "Turma";
+            this.Turma_Id.Name = "Turma_Id";
+            this.Turma_Id.ReadOnly = true;
+            this.Turma_Id.Width = 70;
             // 
             // FAlunos
             // 
@@ -589,9 +589,9 @@
             this.Text = "s";
             this.Load += new System.EventHandler(this.FAlunos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -623,6 +623,9 @@
         private System.Windows.Forms.ComboBox comboBoxTurnoCursoAluno;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnImprimirRelatorio;
+        private System.Windows.Forms.TextBox textBoxPesquisa;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cPFDataGridViewTextBoxColumn;
@@ -634,8 +637,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn TurnoCurso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Turma_Id;
-        private System.Windows.Forms.TextBox textBoxPesquisa;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

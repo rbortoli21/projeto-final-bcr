@@ -77,13 +77,13 @@ namespace Ensino.Views.Professor
                 if (control is TextBox)
                 {
                     var txtBox = control as TextBox;
-                    if (!string.IsNullOrEmpty(txtBox.Text))
+                    if (!string.IsNullOrWhiteSpace(txtBox.Text))
                         txtBox.Text = String.Empty;
                 }
                 if (control is MaskedTextBox)
                 {
                     var maskedTextBox = control as MaskedTextBox;
-                    if (!string.IsNullOrEmpty(maskedTextBox.Text))
+                    if (!maskedTextBox.MaskCompleted)
                     {
                         maskedTextBox.Text = string.Empty;
                     }
@@ -119,7 +119,7 @@ namespace Ensino.Views.Professor
                 MessageBox.Show(ex.Message);
                 return;
             }
-            catch (ArgumentNullException ex)
+            catch (ArgumentNullException)
             {
                 MessageBox.Show("Todos os campos devem ser preenchidos, verifique-os e tente novamente.");
                 return;
@@ -186,9 +186,8 @@ namespace Ensino.Views.Professor
                     return;
                 professorRepository.Deletar(professor);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
                 MessageBox.Show($"Professor não pôde ser deletado, tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }

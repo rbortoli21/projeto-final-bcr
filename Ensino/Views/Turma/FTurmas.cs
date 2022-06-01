@@ -95,9 +95,8 @@ namespace Ensino.Views.Turma
                     return;
                 turmaRepository.Deletar(turma);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.ToString());
                 MessageBox.Show($"A turma de {turma.NomeCurso}, no turno {turma.TurnoCurso} não pôde ser deletada, tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }

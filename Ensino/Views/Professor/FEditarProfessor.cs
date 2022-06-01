@@ -31,7 +31,7 @@ namespace Ensino.Views.Professor
                 if (control is TextBox)
                 {
                     var txtBox = control as TextBox;
-                    if (string.IsNullOrEmpty(txtBox.Text))
+                    if (string.IsNullOrWhiteSpace(txtBox.Text))
                         throw new ArgumentNullException();
                 }
                 if(control is MaskedTextBox)
