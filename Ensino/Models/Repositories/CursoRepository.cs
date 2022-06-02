@@ -47,6 +47,11 @@ namespace Ensino.Models.Repositories
         => _dbContext.Cursos.ToList();
         public Curso ObterPorId(int id)
         => _dbContext.Cursos.ToList().FirstOrDefault(curso => curso.Id == id);
+        public void ListarAlunos(Curso curso)
+        {
+            curso.QuantidadeAlunos = _dbContext.Alunos.ToList().Where(a => a.Curso_Id == curso.Id).Count();
+            _dbContext.SaveChanges();
+        }
         public List<Curso> BuscaPorTexto(TextBox textbox)
         {
             List<Curso> busca = new List<Curso>();

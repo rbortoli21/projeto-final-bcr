@@ -40,10 +40,10 @@ namespace Ensino.Views
                 btnDeletar.Enabled = false;
             }
         }
-        private void ListarQuantidadeAlunos(List<Models.Curso> cursos)
+        public void ListarQuantidadeAlunos(List<Models.Curso> cursos)
         {
             foreach (var curso in cursos)
-                curso.QuantidadeAlunos = alunoRepository.Obter().Where(a => a.Curso_Id == curso.Id).Count();
+                cursoRepository.ListarAlunos(curso);
         }
         private const int CB_SETCUEBANNER = 0x1703;
 

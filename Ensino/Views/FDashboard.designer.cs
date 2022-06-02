@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FDashboard));
-            this.dgvDashboard = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.panel21 = new System.Windows.Forms.Panel();
             this.textBoxQtdAlunos = new System.Windows.Forms.TextBox();
             this.alunosQtd = new System.Windows.Forms.Label();
@@ -54,10 +52,10 @@
             this.textBoxQtdProfessor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.graficoPizza = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.turmaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.turmaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDashboard)).BeginInit();
             this.panel21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,50 +66,11 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoPizza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvDashboard
-            // 
-            this.dgvDashboard.AllowUserToAddRows = false;
-            this.dgvDashboard.AllowUserToDeleteRows = false;
-            this.dgvDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDashboard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvDashboard.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvDashboard.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvDashboard.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvDashboard.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDashboard.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDashboard.ColumnHeadersHeight = 30;
-            this.dgvDashboard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDashboard.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDashboard.EnableHeadersVisualStyles = false;
-            this.dgvDashboard.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgvDashboard.Location = new System.Drawing.Point(75, 242);
-            this.dgvDashboard.Name = "dgvDashboard";
-            this.dgvDashboard.ReadOnly = true;
-            this.dgvDashboard.RowHeadersVisible = false;
-            this.dgvDashboard.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDashboard.Size = new System.Drawing.Size(708, 245);
-            this.dgvDashboard.TabIndex = 48;
             // 
             // panel21
             // 
@@ -339,6 +298,23 @@
             this.panel3.TabIndex = 64;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // graficoPizza
+            // 
+            this.graficoPizza.BackColor = System.Drawing.Color.Transparent;
+            this.graficoPizza.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
+            this.graficoPizza.BackSecondaryColor = System.Drawing.Color.WhiteSmoke;
+            this.graficoPizza.BorderlineColor = System.Drawing.Color.Black;
+            this.graficoPizza.BorderSkin.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.graficoPizza.BorderSkin.PageColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.Name = "ChartArea1";
+            this.graficoPizza.ChartAreas.Add(chartArea1);
+            this.graficoPizza.Location = new System.Drawing.Point(519, 243);
+            this.graficoPizza.Name = "graficoPizza";
+            this.graficoPizza.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.graficoPizza.Size = new System.Drawing.Size(264, 267);
+            this.graficoPizza.TabIndex = 65;
+            this.graficoPizza.Text = "Gráfico";
+            // 
             // turmaBindingSource1
             // 
             this.turmaBindingSource1.DataSource = typeof(Ensino.Models.Turma);
@@ -356,7 +332,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(870, 525);
+            this.ClientSize = new System.Drawing.Size(883, 552);
+            this.Controls.Add(this.graficoPizza);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox6);
@@ -366,14 +343,12 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.dgvDashboard);
             this.Controls.Add(this.panel21);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FDashboard";
             this.Text = "InicioResumen";
             this.Load += new System.EventHandler(this.FDashboard_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDashboard)).EndInit();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -389,6 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoPizza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).EndInit();
@@ -398,7 +374,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgvDashboard;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Label alunosQtd;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -423,5 +398,6 @@
         private System.Windows.Forms.BindingSource turmaBindingSource;
         private System.Windows.Forms.BindingSource alunoBindingSource;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart graficoPizza;
     }
 }

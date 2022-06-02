@@ -12,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Windows.Forms.DataVisualization;
 
 namespace Ensino.Views
 {
@@ -33,6 +35,9 @@ namespace Ensino.Views
         }
         private void FDashboard_Load(object sender, EventArgs e)
         {
+            using (var form = new FCursos())
+                form.ListarQuantidadeAlunos(cursoRepository.Obter());
+
             var alunos = alunoRepository.Obter().Count();
             textBoxQtdAlunos.Text = alunos.ToString();
 
@@ -47,6 +52,19 @@ namespace Ensino.Views
 
             var turmas = turmaRepository.Obter().Count();
             textBoxQtdTurma.Text = turmas.ToString();
+
+            GerarGrafico();
+
+        }
+
+        private void GerarGrafico()
+        {
+            var cursos = cursoRepository.Obter().Select(c => c.Nome).ToList();
+            var cursosQtd = cursoRepository.Obter().Select(c => c.QuantidadeAlunos).ToList();
+
+            graficoPizza.Series.Add("Cursos");
+            graficoPizza.Series[0].ChartType = SeriesChartType.Pie;
+            graficoPizza.Series[0].Points.DataBindXY(cursos, cursosQtd);
         }
 
         private void alunosQtd_Click(object sender, EventArgs e)
