@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FDashboard));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel21 = new System.Windows.Forms.Panel();
             this.textBoxQtdAlunos = new System.Windows.Forms.TextBox();
             this.alunosQtd = new System.Windows.Forms.Label();
@@ -300,18 +301,79 @@
             // 
             // graficoPizza
             // 
+            this.graficoPizza.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.graficoPizza.BackColor = System.Drawing.Color.Transparent;
             this.graficoPizza.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
             this.graficoPizza.BackSecondaryColor = System.Drawing.Color.WhiteSmoke;
             this.graficoPizza.BorderlineColor = System.Drawing.Color.Black;
             this.graficoPizza.BorderSkin.BackColor = System.Drawing.Color.WhiteSmoke;
             this.graficoPizza.BorderSkin.PageColor = System.Drawing.Color.WhiteSmoke;
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.Inclination = 60;
+            chartArea1.Area3DStyle.Rotation = 60;
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.White;
+            chartArea1.AxisX2.TitleForeColor = System.Drawing.Color.White;
+            chartArea1.AxisY.TitleForeColor = System.Drawing.Color.White;
+            chartArea1.AxisY2.TitleForeColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
             this.graficoPizza.ChartAreas.Add(chartArea1);
-            this.graficoPizza.Location = new System.Drawing.Point(519, 243);
+            this.graficoPizza.Location = new System.Drawing.Point(75, 204);
             this.graficoPizza.Name = "graficoPizza";
-            this.graficoPizza.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            this.graficoPizza.Size = new System.Drawing.Size(264, 267);
+            this.graficoPizza.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.graficoPizza.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(79)))), ((int)(((byte)(79))))),
+        System.Drawing.Color.SlateBlue,
+        System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(11)))), ((int)(((byte)(2))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(54))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(78)))), ((int)(((byte)(54))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(4)))), ((int)(((byte)(15))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(14)))), ((int)(((byte)(19))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(20)))), ((int)(((byte)(18))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(85)))), ((int)(((byte)(74))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(85)))), ((int)(((byte)(99))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(44)))), ((int)(((byte)(41))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(18)))), ((int)(((byte)(12))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(89))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(2)))), ((int)(((byte)(84))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(80)))), ((int)(((byte)(78))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(84)))), ((int)(((byte)(1))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(15)))), ((int)(((byte)(3))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(45)))), ((int)(((byte)(1))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(11)))), ((int)(((byte)(3))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(13)))), ((int)(((byte)(2))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(10)))), ((int)(((byte)(65))))),
+        System.Drawing.Color.MediumTurquoise,
+        System.Drawing.Color.CadetBlue,
+        System.Drawing.Color.LightGreen,
+        System.Drawing.Color.YellowGreen,
+        System.Drawing.Color.Sienna,
+        System.Drawing.Color.BurlyWood,
+        System.Drawing.Color.MediumOrchid,
+        System.Drawing.Color.LightPink,
+        System.Drawing.Color.Firebrick,
+        System.Drawing.Color.Tomato,
+        System.Drawing.Color.Orange,
+        System.Drawing.Color.Khaki,
+        System.Drawing.Color.Bisque,
+        System.Drawing.Color.PowderBlue,
+        System.Drawing.Color.SteelBlue,
+        System.Drawing.Color.LawnGreen,
+        System.Drawing.Color.RosyBrown,
+        System.Drawing.Color.OrangeRed,
+        System.Drawing.Color.Khaki,
+        System.Drawing.Color.Salmon,
+        System.Drawing.Color.Maroon,
+        System.Drawing.Color.PeachPuff,
+        System.Drawing.Color.MistyRose,
+        System.Drawing.Color.PaleGoldenrod};
+            series1.BorderColor = System.Drawing.Color.Black;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Name = "Series1";
+            this.graficoPizza.Series.Add(series1);
+            this.graficoPizza.Size = new System.Drawing.Size(708, 306);
             this.graficoPizza.TabIndex = 65;
             this.graficoPizza.Text = "Gráfico";
             // 

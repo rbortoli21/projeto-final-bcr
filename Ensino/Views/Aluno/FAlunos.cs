@@ -26,7 +26,8 @@ namespace Ensino.Views
         //Funções criadas {
         public void AtualizarGrid()
         {
-            dgvAlunos.DataSource = alunoRepository.Obter();
+            var query = from c in alunoRepository.Obter() orderby c.Id select c;
+            dgvAlunos.DataSource = query.ToList();
             dgvAlunos.Refresh();
             if (ObterIdDoDataGridView(dgvAlunos) != 0)
             {

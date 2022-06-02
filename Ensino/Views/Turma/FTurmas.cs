@@ -60,7 +60,8 @@ namespace Ensino.Views.Turma
         public void AtualizarGrid()
         {
             ListarQuantidadeAlunos(turmaRepository.Obter());
-            dgvTurmas.DataSource = turmaRepository.Obter();
+            var query = from c in turmaRepository.Obter() orderby c.Id select c;
+            dgvTurmas.DataSource = query.ToList();
             dgvTurmas.Refresh();
         }
         private void btnSalvar_Click(object sender, EventArgs e)

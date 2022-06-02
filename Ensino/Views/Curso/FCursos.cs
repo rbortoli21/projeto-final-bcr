@@ -27,7 +27,8 @@ namespace Ensino.Views
         }
         public void AtualizarGrid()
         {
-            dgvListarCursos.DataSource = cursoRepository.Obter();
+            var query = from c in cursoRepository.Obter() orderby c.Id select c;
+            dgvListarCursos.DataSource = query.ToList();
             dgvListarCursos.Refresh();
             if (ObterIdDoDataGridView(dgvListarCursos) != 0)
             {

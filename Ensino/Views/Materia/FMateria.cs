@@ -41,7 +41,8 @@ namespace Ensino.Views.Materia
         => comboBox.DataSource = professorRepository.Obter().Where(p => p.Turno == texto.Text).Select(p => p.Nome).ToList();
         private void AtualizarGrid()
         {
-            dgvMaterias.DataSource = materiaRepository.Obter();
+            var query = from c in materiaRepository.Obter() orderby c.Id select c;
+            dgvMaterias.DataSource = query.ToList();
             dgvMaterias.Refresh();
             if (ObterIdDoDataGridView(dgvMaterias) != 0)
             {

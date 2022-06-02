@@ -62,8 +62,13 @@ namespace Ensino.Views
             var cursos = cursoRepository.Obter().Select(c => c.Nome).ToList();
             var cursosQtd = cursoRepository.Obter().Select(c => c.QuantidadeAlunos).ToList();
 
-            graficoPizza.Series.Add("Cursos");
             graficoPizza.Series[0].ChartType = SeriesChartType.Pie;
+
+            graficoPizza.Series[0].LabelForeColor = Color.Transparent;
+            
+            graficoPizza.Legends.Add("Legendas");
+            graficoPizza.Legends[0].Title = "Cursos";
+            
             graficoPizza.Series[0].Points.DataBindXY(cursos, cursosQtd);
         }
 

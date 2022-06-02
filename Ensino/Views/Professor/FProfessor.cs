@@ -23,7 +23,8 @@ namespace Ensino.Views.Professor
         }
         private void AtualizarGrid()
         {
-            dgvProfessor.DataSource = professorRepository.Obter();
+            var query = from c in professorRepository.Obter() orderby c.Id select c;
+            dgvProfessor.DataSource = query.ToList();
             dgvProfessor.Refresh();
             if (ObterIdDoDataGridView(dgvProfessor) != 0)
             {
