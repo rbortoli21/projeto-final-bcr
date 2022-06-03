@@ -162,7 +162,6 @@ namespace Ensino.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
                 MessageBox.Show($"O curso \"{curso.Nome}\" não pôde ser deletado, tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
