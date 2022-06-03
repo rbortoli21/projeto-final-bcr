@@ -39,6 +39,17 @@ namespace Ensino.Views
         private void iconmaximizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+            MostrarLogo();
+        }
+
+        private void MostrarLogo()
+        {
+            using (var form = new FDashboard())
+            {
+                if (form.logo.Visible == false)
+                    form.logo.Visible = true;
+                form.logo.Visible = false;
+            }
         }
 
         private void iconrestaurar_Click(object sender, EventArgs e)
@@ -61,7 +72,7 @@ namespace Ensino.Views
         private void BarraTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
-            SendMessage(this.Handle,0x112,0xf012,0);
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
         private void AbrirFormulario(object formulario)

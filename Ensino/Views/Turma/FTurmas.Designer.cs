@@ -42,17 +42,17 @@
             this.comboBoxCurso = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turnoCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtdAlunosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turmaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurmas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnImprimirRelatorio
@@ -217,6 +217,38 @@
             this.label6.TabIndex = 73;
             this.label6.Text = "Curso: *";
             // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(62, 188);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 20);
+            this.label11.TabIndex = 77;
+            this.label11.Text = "Pesquisa";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(333, 211);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 76;
+            this.pictureBox1.TabStop = false;
+            // 
+            // textBoxPesquisa
+            // 
+            this.textBoxPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPesquisa.Location = new System.Drawing.Point(66, 211);
+            this.textBoxPesquisa.Name = "textBoxPesquisa";
+            this.textBoxPesquisa.Size = new System.Drawing.Size(263, 24);
+            this.textBoxPesquisa.TabIndex = 75;
+            this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -255,38 +287,6 @@
             // 
             this.turmaBindingSource.DataSource = typeof(Ensino.Models.Turma);
             // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(62, 188);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(82, 20);
-            this.label11.TabIndex = 77;
-            this.label11.Text = "Pesquisa";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(333, 211);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.TabIndex = 76;
-            this.pictureBox1.TabStop = false;
-            // 
-            // textBoxPesquisa
-            // 
-            this.textBoxPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPesquisa.Location = new System.Drawing.Point(66, 211);
-            this.textBoxPesquisa.Name = "textBoxPesquisa";
-            this.textBoxPesquisa.Size = new System.Drawing.Size(263, 24);
-            this.textBoxPesquisa.TabIndex = 75;
-            this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
-            // 
             // FTurmas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,8 +309,8 @@
             this.Text = "FTurmas";
             this.Load += new System.EventHandler(this.FTurmas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurmas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,19 +1,11 @@
-﻿using Ensino.Models;
-using Ensino.Models.Repositories;
-using Ensino.Views.Materia;
-using Ensino.Views.Professor;
-using Ensino.Views.Turma;
+﻿using Ensino.Models.Repositories;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using System.Windows.Forms.DataVisualization;
 
 namespace Ensino.Views
 {
@@ -55,6 +47,7 @@ namespace Ensino.Views
 
             GerarGrafico();
 
+
         }
 
         private void GerarGrafico()
@@ -94,6 +87,11 @@ namespace Ensino.Views
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void graficoPizza_Click(object sender, EventArgs e)
         {
 
         }

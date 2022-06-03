@@ -47,6 +47,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.painel = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.MenuVertical.SuspendLayout();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimize)).BeginInit();
@@ -55,11 +57,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(59)))));
+            this.MenuVertical.Controls.Add(this.panel1);
             this.MenuVertical.Controls.Add(this.btnProfessor);
             this.MenuVertical.Controls.Add(this.btnMaterias);
             this.MenuVertical.Controls.Add(this.btnTurmas);
@@ -306,6 +311,26 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-148, -44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(510, 213);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(3, 629);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(241, 100);
+            this.panel1.TabIndex = 24;
+            // 
             // FLayout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,6 +354,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconmaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -352,6 +379,8 @@
         private System.Windows.Forms.Button btnTurmas;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
