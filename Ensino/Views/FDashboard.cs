@@ -59,17 +59,33 @@ namespace Ensino.Views
 
         private void GerarGrafico()
         {
-            var cursos = cursoRepository.Obter().Select(c => c.Nome).ToList();
-            var cursosQtd = cursoRepository.Obter().Select(c => c.QuantidadeAlunos).ToList();
+            var cursos = cursoRepository.Obter();
+            var listaCursos = new List<string>();
+            var listaQtd = new List<int>();
 
+            var repetidos = cursos.GroupBy(g => g.Nome)
+            .Select(s => new
+            {
+                Nome = s.Key,
+                Quantidade = s.Sum(c => c.QuantidadeAlunos)
+            }).OrderBy(c => c.Nome);
+            foreach (var curso in repetidos)
+            {
+                Console.WriteLine(curso.Nome);
+                listaCursos.Add(curso.Nome);
+            }
+            foreach (var curso in repetidos)
+            {
+                Console.WriteLine(curso.Quantidade);
+                listaQtd.Add(curso.Quantidade);
+            }
             graficoPizza.Series[0].ChartType = SeriesChartType.Pie;
 
             graficoPizza.Series[0].LabelForeColor = Color.Transparent;
-            
-            graficoPizza.Legends.Add("Legendas");
+
             graficoPizza.Legends[0].Title = "Cursos";
-            
-            graficoPizza.Series[0].Points.DataBindXY(cursos, cursosQtd);
+
+            graficoPizza.Series[0].Points.DataBindXY(listaCursos, listaQtd);
         }
 
         private void alunosQtd_Click(object sender, EventArgs e)

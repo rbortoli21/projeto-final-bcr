@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FDashboard));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel21 = new System.Windows.Forms.Panel();
             this.textBoxQtdAlunos = new System.Windows.Forms.TextBox();
@@ -75,9 +76,11 @@
             // 
             // panel21
             // 
+            this.panel21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel21.Controls.Add(this.textBoxQtdAlunos);
             this.panel21.Controls.Add(this.alunosQtd);
+            this.panel21.Controls.Add(this.pictureBox3);
             this.panel21.Location = new System.Drawing.Point(75, 34);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(122, 164);
@@ -109,29 +112,33 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(83, 60);
+            this.pictureBox3.Location = new System.Drawing.Point(19, 45);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(105, 106);
+            this.pictureBox3.Size = new System.Drawing.Size(82, 86);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 17;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(232, 60);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 45);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(105, 106);
+            this.pictureBox1.Size = new System.Drawing.Size(82, 86);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 52;
             this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBoxQtdCurso);
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(223, 34);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(122, 164);
@@ -162,19 +169,22 @@
             // 
             // pictureBox5
             // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(528, 60);
+            this.pictureBox5.Location = new System.Drawing.Point(19, 45);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(105, 106);
+            this.pictureBox5.Size = new System.Drawing.Size(82, 86);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 58;
             this.pictureBox5.TabStop = false;
             // 
             // panel4
             // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.textBoxQtdMateria);
             this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.pictureBox5);
             this.panel4.Location = new System.Drawing.Point(519, 34);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(122, 164);
@@ -205,19 +215,22 @@
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(670, 60);
+            this.pictureBox6.Location = new System.Drawing.Point(19, 45);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(105, 106);
+            this.pictureBox6.Size = new System.Drawing.Size(82, 86);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 60;
             this.pictureBox6.TabStop = false;
             // 
             // panel5
             // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.textBoxQtdTurma);
+            this.panel5.Controls.Add(this.pictureBox6);
             this.panel5.Location = new System.Drawing.Point(661, 34);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(122, 164);
@@ -248,18 +261,21 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(380, 60);
+            this.pictureBox2.Location = new System.Drawing.Point(19, 45);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(105, 106);
+            this.pictureBox2.Size = new System.Drawing.Size(82, 86);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 62;
             this.pictureBox2.TabStop = false;
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.textBoxQtdProfessor);
+            this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(371, 34);
             this.panel2.Name = "panel2";
@@ -291,7 +307,7 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.AutoSize = true;
             this.panel3.Location = new System.Drawing.Point(75, 34);
             this.panel3.Name = "panel3";
@@ -301,9 +317,7 @@
             // 
             // graficoPizza
             // 
-            this.graficoPizza.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.graficoPizza.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.graficoPizza.BackColor = System.Drawing.Color.Transparent;
             this.graficoPizza.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
             this.graficoPizza.BackSecondaryColor = System.Drawing.Color.WhiteSmoke;
@@ -319,7 +333,13 @@
             chartArea1.AxisY2.TitleForeColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
             this.graficoPizza.ChartAreas.Add(chartArea1);
+            legend1.Alignment = System.Drawing.StringAlignment.Center;
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            this.graficoPizza.Legends.Add(legend1);
             this.graficoPizza.Location = new System.Drawing.Point(75, 204);
+            this.graficoPizza.MaximumSize = new System.Drawing.Size(908, 506);
             this.graficoPizza.Name = "graficoPizza";
             this.graficoPizza.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             this.graficoPizza.PaletteCustomColors = new System.Drawing.Color[] {
@@ -371,6 +391,8 @@
             series1.BorderColor = System.Drawing.Color.Black;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.LabelForeColor = System.Drawing.Color.Transparent;
+            series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.graficoPizza.Series.Add(series1);
             this.graficoPizza.Size = new System.Drawing.Size(708, 306);
@@ -396,15 +418,10 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(883, 552);
             this.Controls.Add(this.graficoPizza);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panel21);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
