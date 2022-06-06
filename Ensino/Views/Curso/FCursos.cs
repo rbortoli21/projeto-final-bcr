@@ -99,6 +99,12 @@ namespace Ensino.Views
                         if (string.IsNullOrEmpty(txtBox.Text))
                             throw new ArgumentNullException();
                     }
+                    if (control is ComboBox)
+                    {
+                        var cbBox = control as ComboBox;
+                        if (string.IsNullOrWhiteSpace(cbBox.Text))
+                            throw new ArgumentNullException();
+                    }
                     if (control is MaskedTextBox)
                     {
                         var txtBox = control as MaskedTextBox;
@@ -158,9 +164,13 @@ namespace Ensino.Views
             var curso = cursoRepository.ObterPorId(id);
             try
             {
+                var res = MessageBox.Show("Tem certeza que deseja deletar esse curso? " +
+                    "Este curso será excluido de forma permanente.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                if (res != DialogResult.OK)
+                    return;
                 cursoRepository.Deletar(curso);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show($"O curso \"{curso.Nome}\" não pôde ser deletado, tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

@@ -46,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.maskedTextBoxTelefoneAluno = new System.Windows.Forms.MaskedTextBox();
             this.dgvAlunos = new System.Windows.Forms.DataGridView();
+            this.alunoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnEditarAluno = new System.Windows.Forms.Button();
             this.btnCancelarAluno = new System.Windows.Forms.Button();
             this.btnDeletarAluno = new System.Windows.Forms.Button();
@@ -59,7 +60,6 @@
             this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.alunoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,8 +73,8 @@
             this.TurnoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Turma_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -273,6 +273,10 @@
             this.dgvAlunos.Size = new System.Drawing.Size(808, 339);
             this.dgvAlunos.TabIndex = 47;
             // 
+            // alunoBindingSource1
+            // 
+            this.alunoBindingSource1.DataSource = typeof(Ensino.Models.Aluno);
+            // 
             // btnEditarAluno
             // 
             this.btnEditarAluno.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -454,10 +458,6 @@
             this.pictureBox1.TabIndex = 64;
             this.pictureBox1.TabStop = false;
             // 
-            // alunoBindingSource1
-            // 
-            this.alunoBindingSource1.DataSource = typeof(Ensino.Models.Aluno);
-            // 
             // alunoBindingSource
             // 
             this.alunoBindingSource.DataSource = typeof(Ensino.Models.Aluno);
@@ -470,7 +470,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 42;
+            this.idDataGridViewTextBoxColumn.Width = 41;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
@@ -478,7 +478,7 @@
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 68;
+            this.nomeDataGridViewTextBoxColumn.Width = 67;
             // 
             // cPFDataGridViewTextBoxColumn
             // 
@@ -486,7 +486,7 @@
             this.cPFDataGridViewTextBoxColumn.HeaderText = "CPF";
             this.cPFDataGridViewTextBoxColumn.Name = "cPFDataGridViewTextBoxColumn";
             this.cPFDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cPFDataGridViewTextBoxColumn.Width = 57;
+            this.cPFDataGridViewTextBoxColumn.Width = 56;
             // 
             // emailDataGridViewTextBoxColumn
             // 
@@ -494,7 +494,7 @@
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 65;
+            this.emailDataGridViewTextBoxColumn.Width = 64;
             // 
             // telefoneDataGridViewTextBoxColumn
             // 
@@ -502,31 +502,31 @@
             this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
             this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
             this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefoneDataGridViewTextBoxColumn.Width = 85;
+            this.telefoneDataGridViewTextBoxColumn.Width = 84;
             // 
             // responsavelDataGridViewTextBoxColumn
             // 
             this.responsavelDataGridViewTextBoxColumn.DataPropertyName = "Responsavel";
-            this.responsavelDataGridViewTextBoxColumn.HeaderText = "Responsavel";
+            this.responsavelDataGridViewTextBoxColumn.HeaderText = "Responsável";
             this.responsavelDataGridViewTextBoxColumn.Name = "responsavelDataGridViewTextBoxColumn";
             this.responsavelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.responsavelDataGridViewTextBoxColumn.Width = 112;
+            this.responsavelDataGridViewTextBoxColumn.Width = 111;
             // 
             // matriculaDataGridViewTextBoxColumn
             // 
             this.matriculaDataGridViewTextBoxColumn.DataPropertyName = "Matricula";
-            this.matriculaDataGridViewTextBoxColumn.HeaderText = "Matricula";
+            this.matriculaDataGridViewTextBoxColumn.HeaderText = "Matrícula";
             this.matriculaDataGridViewTextBoxColumn.Name = "matriculaDataGridViewTextBoxColumn";
             this.matriculaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.matriculaDataGridViewTextBoxColumn.Width = 85;
+            this.matriculaDataGridViewTextBoxColumn.Width = 84;
             // 
             // enderecoDataGridViewTextBoxColumn
             // 
             this.enderecoDataGridViewTextBoxColumn.DataPropertyName = "Endereco";
-            this.enderecoDataGridViewTextBoxColumn.HeaderText = "Endereco";
+            this.enderecoDataGridViewTextBoxColumn.HeaderText = "Endereço";
             this.enderecoDataGridViewTextBoxColumn.Name = "enderecoDataGridViewTextBoxColumn";
             this.enderecoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enderecoDataGridViewTextBoxColumn.Width = 90;
+            this.enderecoDataGridViewTextBoxColumn.Width = 89;
             // 
             // NomeCurso
             // 
@@ -534,7 +534,7 @@
             this.NomeCurso.HeaderText = "Curso";
             this.NomeCurso.Name = "NomeCurso";
             this.NomeCurso.ReadOnly = true;
-            this.NomeCurso.Width = 66;
+            this.NomeCurso.Width = 65;
             // 
             // TurnoCurso
             // 
@@ -542,7 +542,7 @@
             this.TurnoCurso.HeaderText = "Turno";
             this.TurnoCurso.Name = "TurnoCurso";
             this.TurnoCurso.ReadOnly = true;
-            this.TurnoCurso.Width = 66;
+            this.TurnoCurso.Width = 65;
             // 
             // Turma_Id
             // 
@@ -550,7 +550,7 @@
             this.Turma_Id.HeaderText = "Turma";
             this.Turma_Id.Name = "Turma_Id";
             this.Turma_Id.ReadOnly = true;
-            this.Turma_Id.Width = 70;
+            this.Turma_Id.Width = 69;
             // 
             // FAlunos
             // 
@@ -589,8 +589,8 @@
             this.Text = "s";
             this.Load += new System.EventHandler(this.FAlunos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

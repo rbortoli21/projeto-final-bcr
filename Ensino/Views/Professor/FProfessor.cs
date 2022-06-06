@@ -39,6 +39,7 @@ namespace Ensino.Views.Professor
         }
         private void PegarDadosParaCadastro(Models.Professor professor)
         {
+            VerificarSeHaCamposVazios();
             professor.Nome = txtBoxNome.Text;
             professor.Endereco = txtBoxEndereco.Text;
             professor.Email = txtBoxEmail.Text;
@@ -59,6 +60,12 @@ namespace Ensino.Views.Professor
                         if (string.IsNullOrEmpty(txtBox.Text))
                             throw new ArgumentNullException();
                     }
+                    if(control is MaskedTextBox)
+                    {
+                        var maskedTextBox = control as MaskedTextBox;
+                        if (!maskedTextBox.MaskCompleted)
+                            throw new ArgumentNullException();
+                    }
                     if (control is ComboBox)
                     {
                         var cbBox = control as ComboBox;
@@ -67,13 +74,6 @@ namespace Ensino.Views.Professor
                     }
                 }
             }
-        }
-        private void LimitarCpfETelefone(MaskedTextBox cpf, MaskedTextBox telefone)
-        {
-            if (cpf.Text.Trim().Replace(" ", "").Length < 14)
-                throw new DataException("O campo CPF deve possuir 11 caracteres.");
-            if (telefone.Text.Trim().Replace(" ", "").Length < 17)
-                throw new DataException("O campo Telefone deve possuir 11 caracteres.");
         }
         private void LimparCampos()
         {
@@ -115,8 +115,6 @@ namespace Ensino.Views.Professor
             try
             {
                 PegarDadosParaCadastro(professor);
-                VerificarSeHaCamposVazios();
-                LimitarCpfETelefone(txtBoxCPF, maskedTextBoxTelefone);
                 professorRepository.Cadastrar(professor);
             }
             catch (DataException ex)

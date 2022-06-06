@@ -37,6 +37,7 @@
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.dgvTurmas = new System.Windows.Forms.DataGridView();
+            this.turmaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxTurno = new System.Windows.Forms.ComboBox();
             this.comboBoxCurso = new System.Windows.Forms.ComboBox();
@@ -49,10 +50,9 @@
             this.nomeCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turnoCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtdAlunosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turmaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurmas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnImprimirRelatorio
@@ -157,6 +157,10 @@
             this.dgvTurmas.Size = new System.Drawing.Size(551, 257);
             this.dgvTurmas.TabIndex = 69;
             // 
+            // turmaBindingSource
+            // 
+            this.turmaBindingSource.DataSource = typeof(Ensino.Models.Turma);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -257,7 +261,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 42;
+            this.idDataGridViewTextBoxColumn.Width = 41;
             // 
             // nomeCursoDataGridViewTextBoxColumn
             // 
@@ -265,7 +269,7 @@
             this.nomeCursoDataGridViewTextBoxColumn.HeaderText = "Curso";
             this.nomeCursoDataGridViewTextBoxColumn.Name = "nomeCursoDataGridViewTextBoxColumn";
             this.nomeCursoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeCursoDataGridViewTextBoxColumn.Width = 66;
+            this.nomeCursoDataGridViewTextBoxColumn.Width = 65;
             // 
             // turnoCursoDataGridViewTextBoxColumn
             // 
@@ -273,19 +277,15 @@
             this.turnoCursoDataGridViewTextBoxColumn.HeaderText = "Turno";
             this.turnoCursoDataGridViewTextBoxColumn.Name = "turnoCursoDataGridViewTextBoxColumn";
             this.turnoCursoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.turnoCursoDataGridViewTextBoxColumn.Width = 66;
+            this.turnoCursoDataGridViewTextBoxColumn.Width = 65;
             // 
             // qtdAlunosDataGridViewTextBoxColumn
             // 
             this.qtdAlunosDataGridViewTextBoxColumn.DataPropertyName = "QtdAlunos";
-            this.qtdAlunosDataGridViewTextBoxColumn.HeaderText = "QtdAlunos";
+            this.qtdAlunosDataGridViewTextBoxColumn.HeaderText = "Alunos";
             this.qtdAlunosDataGridViewTextBoxColumn.Name = "qtdAlunosDataGridViewTextBoxColumn";
             this.qtdAlunosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.qtdAlunosDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // turmaBindingSource
-            // 
-            this.turmaBindingSource.DataSource = typeof(Ensino.Models.Turma);
+            this.qtdAlunosDataGridViewTextBoxColumn.Width = 71;
             // 
             // FTurmas
             // 
@@ -309,8 +309,8 @@
             this.Text = "FTurmas";
             this.Load += new System.EventHandler(this.FTurmas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurmas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,12 +328,12 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.BindingSource turmaBindingSource;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBoxPesquisa;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeCursoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn turnoCursoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn qtdAlunosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBoxPesquisa;
     }
 }

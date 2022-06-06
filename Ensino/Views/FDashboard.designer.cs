@@ -164,7 +164,7 @@
             // 
             // textBoxQtdProfessor
             // 
-            this.textBoxQtdProfessor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxQtdProfessor.BackColor = System.Drawing.Color.White;
             this.textBoxQtdProfessor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxQtdProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxQtdProfessor.Location = new System.Drawing.Point(-1, 133);
@@ -211,7 +211,7 @@
             // 
             // textBoxQtdTurma
             // 
-            this.textBoxQtdTurma.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxQtdTurma.BackColor = System.Drawing.Color.White;
             this.textBoxQtdTurma.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxQtdTurma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxQtdTurma.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -248,7 +248,7 @@
             // 
             // textBoxQtdMateria
             // 
-            this.textBoxQtdMateria.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxQtdMateria.BackColor = System.Drawing.Color.White;
             this.textBoxQtdMateria.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxQtdMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxQtdMateria.Location = new System.Drawing.Point(-1, 133);
@@ -308,7 +308,7 @@
             // 
             // textBoxQtdCurso
             // 
-            this.textBoxQtdCurso.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxQtdCurso.BackColor = System.Drawing.Color.White;
             this.textBoxQtdCurso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxQtdCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxQtdCurso.Location = new System.Drawing.Point(-1, 133);
@@ -344,7 +344,7 @@
             // 
             // textBoxQtdAlunos
             // 
-            this.textBoxQtdAlunos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textBoxQtdAlunos.BackColor = System.Drawing.Color.White;
             this.textBoxQtdAlunos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxQtdAlunos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxQtdAlunos.Location = new System.Drawing.Point(-1, 133);

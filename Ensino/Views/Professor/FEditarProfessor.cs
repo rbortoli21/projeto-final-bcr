@@ -34,6 +34,12 @@ namespace Ensino.Views.Professor
                     if (string.IsNullOrWhiteSpace(txtBox.Text))
                         throw new ArgumentNullException();
                 }
+                if(control is ComboBox)
+                {
+                    var comboBox = control as ComboBox;
+                    if (string.IsNullOrWhiteSpace(comboBox.Text))
+                        throw new ArgumentNullException();
+                }
                 if(control is MaskedTextBox)
                 {
                     var txtBox = control as MaskedTextBox;
