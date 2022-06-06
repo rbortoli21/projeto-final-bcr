@@ -74,9 +74,6 @@ namespace Ensino.Views
         private bool VerificarSeATurmaEstaCheia(Models.Turma turma, int quantidadeDeAlunosPorTurma)
         {
             var qtdAlunos = alunoRepository.Obter().Where(a => a.Turma_Id == turma.Id);
-            Console.WriteLine("Curso: " + turma.NomeCurso);
-            Console.WriteLine("Id da turma: " + turma.Id);
-            Console.WriteLine("Turma cheia: " + (qtdAlunos.Count() >= quantidadeDeAlunosPorTurma));
             if (qtdAlunos.Count() >= quantidadeDeAlunosPorTurma)
                 return true;
             return false;
@@ -157,7 +154,7 @@ namespace Ensino.Views
                     if (control is TextBox)
                     {
                         var txtBox = control as TextBox;
-                        if (string.IsNullOrEmpty(txtBox.Text))
+                        if (string.IsNullOrWhiteSpace(txtBox.Text))
                             throw new ArgumentNullException();
                     }
                     if (control is MaskedTextBox)
@@ -324,6 +321,11 @@ namespace Ensino.Views
         {
             dgvAlunos.DataSource = alunoRepository.BuscaPorTexto(textBoxPesquisa);
             dgvAlunos.Refresh();
+        }
+
+        private void txtBoxNomeAluno_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

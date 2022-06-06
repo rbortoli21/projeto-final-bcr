@@ -37,7 +37,6 @@
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.dgvTurmas = new System.Windows.Forms.DataGridView();
-            this.turmaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxTurno = new System.Windows.Forms.ComboBox();
             this.comboBoxCurso = new System.Windows.Forms.ComboBox();
@@ -46,13 +45,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxPesquisa = new System.Windows.Forms.TextBox();
+            this.turmaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turnoCursoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtdAlunosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurmas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnImprimirRelatorio
@@ -118,7 +118,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTurmas.AutoGenerateColumns = false;
-            this.dgvTurmas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvTurmas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTurmas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvTurmas.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvTurmas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -156,10 +156,6 @@
             this.dgvTurmas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTurmas.Size = new System.Drawing.Size(551, 257);
             this.dgvTurmas.TabIndex = 69;
-            // 
-            // turmaBindingSource
-            // 
-            this.turmaBindingSource.DataSource = typeof(Ensino.Models.Turma);
             // 
             // label7
             // 
@@ -253,39 +249,49 @@
             this.textBoxPesquisa.TabIndex = 75;
             this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
             // 
+            // turmaBindingSource
+            // 
+            this.turmaBindingSource.DataSource = typeof(Ensino.Models.Turma);
+            // 
             // idDataGridViewTextBoxColumn
             // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.idDataGridViewTextBoxColumn.FillWeight = 71.06599F;
+            this.idDataGridViewTextBoxColumn.Frozen = true;
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 41;
+            this.idDataGridViewTextBoxColumn.Width = 35;
             // 
             // nomeCursoDataGridViewTextBoxColumn
             // 
+            this.nomeCursoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.nomeCursoDataGridViewTextBoxColumn.DataPropertyName = "NomeCurso";
+            this.nomeCursoDataGridViewTextBoxColumn.FillWeight = 308.6295F;
+            this.nomeCursoDataGridViewTextBoxColumn.Frozen = true;
             this.nomeCursoDataGridViewTextBoxColumn.HeaderText = "Curso";
             this.nomeCursoDataGridViewTextBoxColumn.Name = "nomeCursoDataGridViewTextBoxColumn";
             this.nomeCursoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeCursoDataGridViewTextBoxColumn.Width = 65;
+            this.nomeCursoDataGridViewTextBoxColumn.Width = 350;
             // 
             // turnoCursoDataGridViewTextBoxColumn
             // 
             this.turnoCursoDataGridViewTextBoxColumn.DataPropertyName = "TurnoCurso";
+            this.turnoCursoDataGridViewTextBoxColumn.FillWeight = 10.15228F;
             this.turnoCursoDataGridViewTextBoxColumn.HeaderText = "Turno";
             this.turnoCursoDataGridViewTextBoxColumn.Name = "turnoCursoDataGridViewTextBoxColumn";
             this.turnoCursoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.turnoCursoDataGridViewTextBoxColumn.Width = 65;
             // 
             // qtdAlunosDataGridViewTextBoxColumn
             // 
             this.qtdAlunosDataGridViewTextBoxColumn.DataPropertyName = "QtdAlunos";
+            this.qtdAlunosDataGridViewTextBoxColumn.FillWeight = 10.15228F;
             this.qtdAlunosDataGridViewTextBoxColumn.HeaderText = "Alunos";
             this.qtdAlunosDataGridViewTextBoxColumn.Name = "qtdAlunosDataGridViewTextBoxColumn";
             this.qtdAlunosDataGridViewTextBoxColumn.ReadOnly = true;
-            this.qtdAlunosDataGridViewTextBoxColumn.Width = 71;
             // 
             // FTurmas
             // 
@@ -309,8 +315,8 @@
             this.Text = "FTurmas";
             this.Load += new System.EventHandler(this.FTurmas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurmas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.turmaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

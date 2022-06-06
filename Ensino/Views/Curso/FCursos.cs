@@ -171,8 +171,8 @@ namespace Ensino.Views
                 cursoRepository.Deletar(curso);
             }
             catch (Exception)
-            {
-                MessageBox.Show($"O curso \"{curso.Nome}\" não pôde ser deletado, tente novamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            {  
+                MessageBox.Show($"O curso \"{curso.Nome}\" não pôde ser deletado, o mesmo encontra-se na tabela de matéria, aluno ou turma.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             MessageBox.Show($"O curso \"{curso.Nome}\" foi deletado com sucesso.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);

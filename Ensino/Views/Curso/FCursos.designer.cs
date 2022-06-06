@@ -162,7 +162,7 @@
             this.dgvListarCursos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvListarCursos.AutoGenerateColumns = false;
-            this.dgvListarCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvListarCursos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvListarCursos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvListarCursos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvListarCursos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -199,7 +199,7 @@
             this.dgvListarCursos.ReadOnly = true;
             this.dgvListarCursos.RowHeadersVisible = false;
             this.dgvListarCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListarCursos.Size = new System.Drawing.Size(628, 242);
+            this.dgvListarCursos.Size = new System.Drawing.Size(684, 242);
             this.dgvListarCursos.TabIndex = 48;
             // 
             // btnDeletar
@@ -325,45 +325,51 @@
             // 
             // idDataGridViewTextBoxColumn
             // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.idDataGridViewTextBoxColumn.FillWeight = 88.83249F;
+            this.idDataGridViewTextBoxColumn.Frozen = true;
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 41;
+            this.idDataGridViewTextBoxColumn.Width = 35;
             // 
             // nomeDataGridViewTextBoxColumn
             // 
+            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.FillWeight = 102.7919F;
+            this.nomeDataGridViewTextBoxColumn.Frozen = true;
             this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
             this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
             this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 67;
+            this.nomeDataGridViewTextBoxColumn.Width = 350;
             // 
             // turnoDataGridViewTextBoxColumn
             // 
             this.turnoDataGridViewTextBoxColumn.DataPropertyName = "Turno";
+            this.turnoDataGridViewTextBoxColumn.FillWeight = 102.7919F;
             this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
             this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
             this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.turnoDataGridViewTextBoxColumn.Width = 65;
             // 
             // QuantidadeAlunos
             // 
             this.QuantidadeAlunos.DataPropertyName = "QuantidadeAlunos";
+            this.QuantidadeAlunos.FillWeight = 102.7919F;
             this.QuantidadeAlunos.HeaderText = "Alunos";
             this.QuantidadeAlunos.Name = "QuantidadeAlunos";
             this.QuantidadeAlunos.ReadOnly = true;
-            this.QuantidadeAlunos.Width = 71;
             // 
             // CargaHoraria
             // 
             this.CargaHoraria.DataPropertyName = "CargaHoraria";
+            this.CargaHoraria.FillWeight = 102.7919F;
             this.CargaHoraria.HeaderText = "Carga Horária";
             this.CargaHoraria.Name = "CargaHoraria";
             this.CargaHoraria.ReadOnly = true;
-            this.CargaHoraria.Width = 115;
             // 
             // FCursos
             // 

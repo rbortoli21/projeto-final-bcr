@@ -46,7 +46,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.maskedTextBoxTelefoneAluno = new System.Windows.Forms.MaskedTextBox();
             this.dgvAlunos = new System.Windows.Forms.DataGridView();
-            this.alunoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnEditarAluno = new System.Windows.Forms.Button();
             this.btnCancelarAluno = new System.Windows.Forms.Button();
             this.btnDeletarAluno = new System.Windows.Forms.Button();
@@ -60,7 +59,9 @@
             this.textBoxPesquisa = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Turma_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TurnoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,12 +70,11 @@
             this.responsavelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matriculaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enderecoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TurnoCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Turma_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alunoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.alunoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +104,7 @@
             this.txtBoxNomeAluno.Name = "txtBoxNomeAluno";
             this.txtBoxNomeAluno.Size = new System.Drawing.Size(195, 24);
             this.txtBoxNomeAluno.TabIndex = 1;
+            this.txtBoxNomeAluno.TextChanged += new System.EventHandler(this.txtBoxNomeAluno_TextChanged);
             // 
             // txtBoxEmailAluno
             // 
@@ -228,7 +229,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvAlunos.AutoGenerateColumns = false;
-            this.dgvAlunos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAlunos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAlunos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAlunos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvAlunos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -272,10 +273,6 @@
             this.dgvAlunos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlunos.Size = new System.Drawing.Size(808, 339);
             this.dgvAlunos.TabIndex = 47;
-            // 
-            // alunoBindingSource1
-            // 
-            this.alunoBindingSource1.DataSource = typeof(Ensino.Models.Aluno);
             // 
             // btnEditarAluno
             // 
@@ -458,99 +455,109 @@
             this.pictureBox1.TabIndex = 64;
             this.pictureBox1.TabStop = false;
             // 
-            // alunoBindingSource
+            // Turma_Id
             // 
-            this.alunoBindingSource.DataSource = typeof(Ensino.Models.Aluno);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 41;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 67;
-            // 
-            // cPFDataGridViewTextBoxColumn
-            // 
-            this.cPFDataGridViewTextBoxColumn.DataPropertyName = "CPF";
-            this.cPFDataGridViewTextBoxColumn.HeaderText = "CPF";
-            this.cPFDataGridViewTextBoxColumn.Name = "cPFDataGridViewTextBoxColumn";
-            this.cPFDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cPFDataGridViewTextBoxColumn.Width = 56;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // telefoneDataGridViewTextBoxColumn
-            // 
-            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefoneDataGridViewTextBoxColumn.Width = 84;
-            // 
-            // responsavelDataGridViewTextBoxColumn
-            // 
-            this.responsavelDataGridViewTextBoxColumn.DataPropertyName = "Responsavel";
-            this.responsavelDataGridViewTextBoxColumn.HeaderText = "Responsável";
-            this.responsavelDataGridViewTextBoxColumn.Name = "responsavelDataGridViewTextBoxColumn";
-            this.responsavelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.responsavelDataGridViewTextBoxColumn.Width = 111;
-            // 
-            // matriculaDataGridViewTextBoxColumn
-            // 
-            this.matriculaDataGridViewTextBoxColumn.DataPropertyName = "Matricula";
-            this.matriculaDataGridViewTextBoxColumn.HeaderText = "Matrícula";
-            this.matriculaDataGridViewTextBoxColumn.Name = "matriculaDataGridViewTextBoxColumn";
-            this.matriculaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.matriculaDataGridViewTextBoxColumn.Width = 84;
-            // 
-            // enderecoDataGridViewTextBoxColumn
-            // 
-            this.enderecoDataGridViewTextBoxColumn.DataPropertyName = "Endereco";
-            this.enderecoDataGridViewTextBoxColumn.HeaderText = "Endereço";
-            this.enderecoDataGridViewTextBoxColumn.Name = "enderecoDataGridViewTextBoxColumn";
-            this.enderecoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.enderecoDataGridViewTextBoxColumn.Width = 89;
-            // 
-            // NomeCurso
-            // 
-            this.NomeCurso.DataPropertyName = "NomeCurso";
-            this.NomeCurso.HeaderText = "Curso";
-            this.NomeCurso.Name = "NomeCurso";
-            this.NomeCurso.ReadOnly = true;
-            this.NomeCurso.Width = 65;
+            this.Turma_Id.DataPropertyName = "Turma_Id";
+            this.Turma_Id.FillWeight = 90.45686F;
+            this.Turma_Id.HeaderText = "Turma";
+            this.Turma_Id.Name = "Turma_Id";
+            this.Turma_Id.ReadOnly = true;
             // 
             // TurnoCurso
             // 
             this.TurnoCurso.DataPropertyName = "TurnoCurso";
+            this.TurnoCurso.FillWeight = 90.45686F;
             this.TurnoCurso.HeaderText = "Turno";
             this.TurnoCurso.Name = "TurnoCurso";
             this.TurnoCurso.ReadOnly = true;
-            this.TurnoCurso.Width = 65;
             // 
-            // Turma_Id
+            // NomeCurso
             // 
-            this.Turma_Id.DataPropertyName = "Turma_Id";
-            this.Turma_Id.HeaderText = "Turma";
-            this.Turma_Id.Name = "Turma_Id";
-            this.Turma_Id.ReadOnly = true;
-            this.Turma_Id.Width = 69;
+            this.NomeCurso.DataPropertyName = "NomeCurso";
+            this.NomeCurso.FillWeight = 90.45686F;
+            this.NomeCurso.HeaderText = "Curso";
+            this.NomeCurso.Name = "NomeCurso";
+            this.NomeCurso.ReadOnly = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.idDataGridViewTextBoxColumn.FillWeight = 195.4315F;
+            this.idDataGridViewTextBoxColumn.Frozen = true;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 35;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.FillWeight = 90.45686F;
+            this.nomeDataGridViewTextBoxColumn.Frozen = true;
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // cPFDataGridViewTextBoxColumn
+            // 
+            this.cPFDataGridViewTextBoxColumn.DataPropertyName = "CPF";
+            this.cPFDataGridViewTextBoxColumn.FillWeight = 90.45686F;
+            this.cPFDataGridViewTextBoxColumn.HeaderText = "CPF";
+            this.cPFDataGridViewTextBoxColumn.Name = "cPFDataGridViewTextBoxColumn";
+            this.cPFDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.FillWeight = 90.45686F;
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefoneDataGridViewTextBoxColumn
+            // 
+            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.FillWeight = 90.45686F;
+            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // responsavelDataGridViewTextBoxColumn
+            // 
+            this.responsavelDataGridViewTextBoxColumn.DataPropertyName = "Responsavel";
+            this.responsavelDataGridViewTextBoxColumn.FillWeight = 90.45686F;
+            this.responsavelDataGridViewTextBoxColumn.HeaderText = "Responsável";
+            this.responsavelDataGridViewTextBoxColumn.Name = "responsavelDataGridViewTextBoxColumn";
+            this.responsavelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // matriculaDataGridViewTextBoxColumn
+            // 
+            this.matriculaDataGridViewTextBoxColumn.DataPropertyName = "Matricula";
+            this.matriculaDataGridViewTextBoxColumn.FillWeight = 90.45686F;
+            this.matriculaDataGridViewTextBoxColumn.HeaderText = "Matrícula";
+            this.matriculaDataGridViewTextBoxColumn.Name = "matriculaDataGridViewTextBoxColumn";
+            this.matriculaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // enderecoDataGridViewTextBoxColumn
+            // 
+            this.enderecoDataGridViewTextBoxColumn.DataPropertyName = "Endereco";
+            this.enderecoDataGridViewTextBoxColumn.FillWeight = 90.45686F;
+            this.enderecoDataGridViewTextBoxColumn.HeaderText = "Endereço";
+            this.enderecoDataGridViewTextBoxColumn.Name = "enderecoDataGridViewTextBoxColumn";
+            this.enderecoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // alunoBindingSource1
+            // 
+            this.alunoBindingSource1.DataSource = typeof(Ensino.Models.Aluno);
+            // 
+            // alunoBindingSource
+            // 
+            this.alunoBindingSource.DataSource = typeof(Ensino.Models.Aluno);
             // 
             // FAlunos
             // 
@@ -589,8 +596,8 @@
             this.Text = "s";
             this.Load += new System.EventHandler(this.FAlunos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlunos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alunoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
