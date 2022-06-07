@@ -1,0 +1,138 @@
+CREATE DATABASE "Ensino"
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Portuguese_Brazil.1252'
+    LC_CTYPE = 'Portuguese_Brazil.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+
+
+
+-- Table: dbo.Aluno
+
+-- DROP TABLE IF EXISTS dbo."Aluno";
+
+CREATE TABLE IF NOT EXISTS dbo."Aluno"
+(
+    "Id" integer NOT NULL DEFAULT nextval('dbo."Aluno_Id_seq"'::regclass),
+    "Nome" text COLLATE pg_catalog."default",
+    "Email" text COLLATE pg_catalog."default",
+    "Telefone" text COLLATE pg_catalog."default",
+    "Responsavel" text COLLATE pg_catalog."default",
+    "Matricula" text COLLATE pg_catalog."default",
+    "Endereco" text COLLATE pg_catalog."default",
+    "Curso_Id" integer NOT NULL,
+    "NomeCurso" text COLLATE pg_catalog."default",
+    "CPF" text COLLATE pg_catalog."default",
+    "TurnoCurso" text COLLATE pg_catalog."default",
+    "Turma_Id" integer NOT NULL,
+    CONSTRAINT "PK_dbo.Aluno" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_dbo.Aluno_dbo.Curso_Curso_Id" FOREIGN KEY ("Curso_Id")
+        REFERENCES dbo."Curso" ("Id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "FK_dbo.Aluno_dbo.Turma_Turma_Id" FOREIGN KEY ("Turma_Id")
+        REFERENCES dbo."Turma" ("Id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS dbo."Aluno"
+    OWNER to postgres;
+
+
+-- Table: dbo.Curso
+
+-- DROP TABLE IF EXISTS dbo."Curso";
+
+CREATE TABLE IF NOT EXISTS dbo."Curso"
+(
+    "Id" integer NOT NULL DEFAULT nextval('dbo."Curso_Id_seq"'::regclass),
+    "Nome" text COLLATE pg_catalog."default",
+    "Turno" text COLLATE pg_catalog."default",
+    "QuantidadeAlunos" integer NOT NULL,
+    "CargaHoraria" integer NOT NULL,
+    CONSTRAINT "PK_dbo.Curso" PRIMARY KEY ("Id")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS dbo."Curso"
+    OWNER to postgres;
+
+-- Table: dbo.Materia
+
+-- DROP TABLE IF EXISTS dbo."Materia";
+
+CREATE TABLE IF NOT EXISTS dbo."Materia"
+(
+    "Id" integer NOT NULL DEFAULT nextval('dbo."Materia_Id_seq"'::regclass),
+    "Nome" text COLLATE pg_catalog."default",
+    "NomeCurso" text COLLATE pg_catalog."default",
+    "NomeProfessor" text COLLATE pg_catalog."default",
+    "Curso_Id" integer NOT NULL,
+    "Professor_Id" integer NOT NULL,
+    "NomeTurno" text COLLATE pg_catalog."default",
+    CONSTRAINT "PK_dbo.Materia" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_dbo.Materia_dbo.Curso_Curso_Id" FOREIGN KEY ("Curso_Id")
+        REFERENCES dbo."Curso" ("Id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "FK_dbo.Materia_dbo.Professor_Professor_Id" FOREIGN KEY ("Professor_Id")
+        REFERENCES dbo."Professor" ("Id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS dbo."Materia"
+    OWNER to postgres;
+
+-- Table: dbo.Professor
+
+-- DROP TABLE IF EXISTS dbo."Professor";
+
+CREATE TABLE IF NOT EXISTS dbo."Professor"
+(
+    "Id" integer NOT NULL DEFAULT nextval('dbo."Professor_Id_seq"'::regclass),
+    "Nome" text COLLATE pg_catalog."default",
+    "Endereco" text COLLATE pg_catalog."default",
+    "Telefone" text COLLATE pg_catalog."default",
+    "Email" text COLLATE pg_catalog."default",
+    "CPF" text COLLATE pg_catalog."default",
+    "Turno" text COLLATE pg_catalog."default",
+    CONSTRAINT "PK_dbo.Professor" PRIMARY KEY ("Id")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS dbo."Professor"
+    OWNER to postgres;
+
+-- Table: dbo.Turma
+
+-- DROP TABLE IF EXISTS dbo."Turma";
+
+CREATE TABLE IF NOT EXISTS dbo."Turma"
+(
+    "Id" integer NOT NULL DEFAULT nextval('dbo."Turma_Id_seq"'::regclass),
+    "NomeCurso" text COLLATE pg_catalog."default",
+    "TurnoCurso" text COLLATE pg_catalog."default",
+    "QtdAlunos" integer NOT NULL,
+    "Curso_Id" integer NOT NULL,
+    CONSTRAINT "PK_dbo.Turma" PRIMARY KEY ("Id"),
+    CONSTRAINT "FK_dbo.Turma_dbo.Curso_Curso_Id" FOREIGN KEY ("Curso_Id")
+        REFERENCES dbo."Curso" ("Id") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS dbo."Turma"
+    OWNER to postgres;

@@ -15,7 +15,7 @@ namespace Ensino.Views.Professor
 {
     public partial class FProfessor : Form
     {
-        public readonly ProfessorRepository professorRepository;
+        public readonly IProfessorRepository professorRepository;
         public FProfessor()
         {
             InitializeComponent();
