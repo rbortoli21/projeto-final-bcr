@@ -41,6 +41,12 @@
             this.numericUpDownCargaHoraria = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvListarCursos = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantidadeAlunos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CargaHoraria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDeletar = new System.Windows.Forms.Button();
             this.btnCancelarCurso = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -49,16 +55,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxPesquisa = new System.Windows.Forms.TextBox();
-            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantidadeAlunos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CargaHoraria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCargaHoraria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarCursos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalvarCurso
@@ -202,6 +202,58 @@
             this.dgvListarCursos.Size = new System.Drawing.Size(684, 242);
             this.dgvListarCursos.TabIndex = 48;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.idDataGridViewTextBoxColumn.FillWeight = 88.83249F;
+            this.idDataGridViewTextBoxColumn.Frozen = true;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 35;
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.FillWeight = 102.7919F;
+            this.nomeDataGridViewTextBoxColumn.Frozen = true;
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 350;
+            // 
+            // turnoDataGridViewTextBoxColumn
+            // 
+            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "Turno";
+            this.turnoDataGridViewTextBoxColumn.FillWeight = 102.7919F;
+            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
+            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
+            this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // QuantidadeAlunos
+            // 
+            this.QuantidadeAlunos.DataPropertyName = "QuantidadeAlunos";
+            this.QuantidadeAlunos.FillWeight = 102.7919F;
+            this.QuantidadeAlunos.HeaderText = "Alunos";
+            this.QuantidadeAlunos.Name = "QuantidadeAlunos";
+            this.QuantidadeAlunos.ReadOnly = true;
+            // 
+            // CargaHoraria
+            // 
+            this.CargaHoraria.DataPropertyName = "CargaHoraria";
+            this.CargaHoraria.FillWeight = 102.7919F;
+            this.CargaHoraria.HeaderText = "Carga Horária";
+            this.CargaHoraria.Name = "CargaHoraria";
+            this.CargaHoraria.ReadOnly = true;
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataSource = typeof(Ensino.Models.Curso);
+            // 
             // btnDeletar
             // 
             this.btnDeletar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -235,7 +287,7 @@
             this.btnCancelarCurso.Name = "btnCancelarCurso";
             this.btnCancelarCurso.Size = new System.Drawing.Size(115, 35);
             this.btnCancelarCurso.TabIndex = 51;
-            this.btnCancelarCurso.Text = "CANCELAR";
+            this.btnCancelarCurso.Text = "LIMPAR";
             this.btnCancelarCurso.UseVisualStyleBackColor = false;
             this.btnCancelarCurso.Click += new System.EventHandler(this.btnCancelarCurso_Click);
             // 
@@ -319,58 +371,6 @@
             this.textBoxPesquisa.TabIndex = 70;
             this.textBoxPesquisa.TextChanged += new System.EventHandler(this.textBoxPesquisa_TextChanged);
             // 
-            // cursoBindingSource
-            // 
-            this.cursoBindingSource.DataSource = typeof(Ensino.Models.Curso);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.idDataGridViewTextBoxColumn.FillWeight = 88.83249F;
-            this.idDataGridViewTextBoxColumn.Frozen = true;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 35;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.FillWeight = 102.7919F;
-            this.nomeDataGridViewTextBoxColumn.Frozen = true;
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 350;
-            // 
-            // turnoDataGridViewTextBoxColumn
-            // 
-            this.turnoDataGridViewTextBoxColumn.DataPropertyName = "Turno";
-            this.turnoDataGridViewTextBoxColumn.FillWeight = 102.7919F;
-            this.turnoDataGridViewTextBoxColumn.HeaderText = "Turno";
-            this.turnoDataGridViewTextBoxColumn.Name = "turnoDataGridViewTextBoxColumn";
-            this.turnoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // QuantidadeAlunos
-            // 
-            this.QuantidadeAlunos.DataPropertyName = "QuantidadeAlunos";
-            this.QuantidadeAlunos.FillWeight = 102.7919F;
-            this.QuantidadeAlunos.HeaderText = "Alunos";
-            this.QuantidadeAlunos.Name = "QuantidadeAlunos";
-            this.QuantidadeAlunos.ReadOnly = true;
-            // 
-            // CargaHoraria
-            // 
-            this.CargaHoraria.DataPropertyName = "CargaHoraria";
-            this.CargaHoraria.FillWeight = 102.7919F;
-            this.CargaHoraria.HeaderText = "Carga Horária";
-            this.CargaHoraria.Name = "CargaHoraria";
-            this.CargaHoraria.ReadOnly = true;
-            // 
             // FCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,8 +399,8 @@
             this.Load += new System.EventHandler(this.FCursos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCargaHoraria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListarCursos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
