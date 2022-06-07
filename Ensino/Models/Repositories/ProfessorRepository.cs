@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Ensino.Models.Repositories
 {
-    public class ProfessorRepository : IBaseRepository<Professor>
+    public class ProfessorRepository : IProfessorRepository
     {
         private DataContext _dbContext;
         public ProfessorRepository() => _dbContext = new DataContext();
@@ -47,27 +47,18 @@ namespace Ensino.Models.Repositories
         => _dbContext.Professores.ToList(); 
         public Professor ObterPorId(int id)
         => _dbContext.Professores.ToList().FirstOrDefault(p => p.Id == id);
-        public List<Professor> BuscaPorTexto(TextBox textbox)
+        public IEnumerable<Professor> BuscaPorTexto(TextBox textbox)
         {
-            List<Professor> busca = new List<Professor>();
-            foreach (var objeto in Obter())
-            {
-                if (objeto.Id.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.Nome.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.CPF.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.Email.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.Endereco.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.Telefone.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.Turno.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-            }
-            return busca;
+            var busca = from p in Obter()
+                        where p.Endereco.ToLower().Contains(textbox.Text.ToLower()) ||
+                            p.Turno.ToLower().Contains(textbox.Text.ToLower()) ||
+                            p.CPF.ToLower().Contains(textbox.Text.ToLower()) ||
+                            p.Email.ToLower().Contains(textbox.Text.ToLower()) ||
+                            p.Telefone.ToLower().Contains(textbox.Text.ToLower()) ||
+                            p.Id.ToString().ToLower().Contains(textbox.Text.ToLower()) ||
+                            p.Nome.ToLower().Contains(textbox.Text.ToLower())
+                        select p;
+            return busca.ToList();
         }
     }
 }

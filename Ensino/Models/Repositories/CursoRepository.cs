@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Ensino.Models.Repositories
 {
-    public class CursoRepository : IBaseRepository<Curso>
+    public class CursoRepository : ICursoRepository
     {
         private DataContext _dbContext;
         public CursoRepository() => _dbContext = new DataContext();
@@ -19,10 +19,12 @@ namespace Ensino.Models.Repositories
             if (_dbContext.Cursos.Where(c => c.Turno == cursoNovo.Turno).Where(c => c.Nome == cursoNovo.Nome).Any())
                 if(cursoAtual.Id != _dbContext.Cursos.Where(c => c.Turno == cursoNovo.Turno).Where(c => c.Nome == cursoNovo.Nome).FirstOrDefault().Id)
                     throw new DuplicateWaitObjectException();
+            
             cursoAtual.CargaHoraria = cursoNovo.CargaHoraria;
             cursoAtual.Nome = cursoNovo.Nome;
             cursoAtual.Turno = cursoNovo.Turno;
             cursoAtual.QuantidadeAlunos = _dbContext.Alunos.ToList().Where(a => a.NomeCurso == cursoNovo.Nome).Where(a => a.TurnoCurso == cursoNovo.Turno).Count();
+            
             _dbContext.SaveChanges();
             return cursoAtual;
         }
@@ -53,23 +55,15 @@ namespace Ensino.Models.Repositories
             curso.QuantidadeAlunos = _dbContext.Alunos.ToList().Where(a => a.Curso_Id == curso.Id).Count();
             _dbContext.SaveChanges();
         }
-        public List<Curso> BuscaPorTexto(TextBox textbox)
+        public IEnumerable<Curso> BuscaPorTexto(TextBox textbox)
         {
-            List<Curso> busca = new List<Curso>();
-            foreach (var objeto in Obter())
-            {
-                if (objeto.Id.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.Nome.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.CargaHoraria.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.QuantidadeAlunos.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.Turno.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-            }
-            return busca;
+            var busca = from t in Obter()
+                        where t.Nome.ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.CargaHoraria.ToString().ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.Id.ToString().ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.Turno.ToLower().Contains(textbox.Text.ToLower())
+                        select t;
+            return busca.ToList();
         }
     }
 }

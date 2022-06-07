@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace Ensino.Models.Repositories
 {
-    public class AlunoRepository : IBaseRepository<Aluno>
+    public class AlunoRepository : IAlunoRepository
     {
         private DataContext _dbContext;
         public AlunoRepository() => _dbContext = new DataContext();
         public Aluno Alterar(Aluno alunoAtual, Aluno alunoNovo)
         {
             alunoAtual.Nome = alunoNovo.Nome;
-            alunoAtual.Email = alunoNovo.Email;
             alunoAtual.Curso_Id = _dbContext.Cursos.FirstOrDefault(c => c.Id == alunoNovo.Curso_Id).Id;
+            alunoAtual.Email = alunoNovo.Email;
             alunoAtual.Turma_Id = alunoNovo.Turma_Id;
             alunoAtual.Endereco = alunoNovo.Endereco;
             alunoAtual.Telefone = alunoNovo.Telefone;
@@ -55,29 +55,19 @@ namespace Ensino.Models.Repositories
         public Aluno ObterPorId(int id)
         => _dbContext.Alunos.ToList().FirstOrDefault(aluno => aluno.Id == id);
 
-        public List<Aluno> BuscaPorTexto(TextBox textbox)
+        public IEnumerable<Aluno> BuscaPorTexto(TextBox textbox)
         {
-            List<Aluno> busca = new List<Aluno>();
-            foreach (var aluno in Obter())
-            {
-                if (aluno.CPF.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(aluno);
-                else if (aluno.Nome.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(aluno);
-                else if (aluno.Responsavel.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(aluno);
-                else if (aluno.Id.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(aluno);
-                else if (aluno.Telefone.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(aluno);
-                else if (aluno.Matricula.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(aluno);
-                else if (aluno.NomeCurso.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(aluno);
-                else if (aluno.TurnoCurso.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(aluno);
-            }
-            return busca;
+            var busca = from t in Obter()
+                        where t.NomeCurso.ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.Nome.ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.Id.ToString().ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.TurnoCurso.ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.Matricula.ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.Responsavel.ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.Endereco.ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.Telefone.ToLower().Contains(textbox.Text.ToLower())
+                        select t;
+            return busca.ToList();
         }
 
     }

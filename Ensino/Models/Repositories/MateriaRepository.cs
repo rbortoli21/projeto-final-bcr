@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Ensino.Models.Repositories
 {
-    public class MateriaRepository : IBaseRepository<Materia>
+    public class MateriaRepository : IMateriaRepository
     {
         private DataContext _dbContext;
         public MateriaRepository() => _dbContext = new DataContext();
@@ -50,23 +50,15 @@ namespace Ensino.Models.Repositories
         => _dbContext.Materias.ToList();
         public Materia ObterPorId(int id)
         => _dbContext.Materias.ToList().FirstOrDefault(m => m.Id == id);
-        public List<Materia> BuscaPorTexto(TextBox textbox)
+        public IEnumerable<Materia> BuscaPorTexto(TextBox textbox)
         {
-            List<Materia> busca = new List<Materia>();
-            foreach (var objeto in Obter())
-            {
-                if (objeto.Id.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.Nome.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.NomeCurso.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.NomeProfessor.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.NomeTurno.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-            }
-            return busca;
+            var busca = from t in Obter()
+                        where t.NomeCurso.ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.NomeProfessor.ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.Id.ToString().ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.NomeTurno.ToLower().Contains(textbox.Text.ToLower())
+                        select t;
+            return busca.ToList();
         }
     }
 }

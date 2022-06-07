@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Ensino.Models.Repositories
 {
-    public class TurmaRepository : IBaseRepository<Turma>
+    public class TurmaRepository : ITurmaRepository
     {
         private DataContext _dbContext;
         public TurmaRepository() => _dbContext = new DataContext();
@@ -35,28 +35,20 @@ namespace Ensino.Models.Repositories
         => _dbContext.Turmas.ToList();
         public Turma ObterPorId(int id)
         => _dbContext.Turmas.ToList().FirstOrDefault(t => t.Id == id);
-        public Turma Alterar(Turma objetoAtual, Turma objetoNovo)
-        => throw new NotImplementedException();
         public void ListarAlunos(Turma turma)
         {
             turma.QtdAlunos = _dbContext.Alunos.ToList().Where(a => a.Turma_Id == turma.Id).Count();
             _dbContext.SaveChanges();
         }
-        public List<Turma> BuscaPorTexto(TextBox textbox)
+        public IEnumerable<Turma> BuscaPorTexto(TextBox textbox)
         {
-            List<Turma> busca = new List<Turma>();
-            foreach (var objeto in Obter())
-            {
-                if (objeto.Id.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.NomeCurso.ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.QtdAlunos.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-                else if (objeto.TurnoCurso.ToString().ToLower().Contains(textbox.Text.ToLower()))
-                    busca.Add(objeto);
-            }
-            return busca;
+            var busca = from t in Obter()
+                        where t.NomeCurso.ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.TurnoCurso.ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.Id.ToString().ToLower().Contains(textbox.Text.ToLower()) ||
+                            t.QtdAlunos.ToString().ToLower().Contains(textbox.Text.ToLower())
+                        select t;
+            return busca.ToList();
         }
     }
 }
